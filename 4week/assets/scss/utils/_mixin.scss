@@ -1,0 +1,27 @@
+// 상하좌우 중앙 
+@mixin position-c(){
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+//상하중앙
+@mixin position-vt(){
+position: absolute;
+top: 50%;
+transform: translate(0%, -50%);
+}
+//좌우중앙
+@mixin position-hr(){
+position: absolute;
+left: 50%;
+transform: translate(-50%, 0%);
+}
+
+
+//말줄임
+@mixin ellipse(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,128 @@
+/* body세팅(font-family) + 공통코드 ex)blind클래스 */
+body {
+    font-family: 'NanumSquareNeo',Arial,sans-serif;
+    color: #111;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4; /* px 말고 배수로 주기 기억! */
+}
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}
+
+/* 스프라이트 01이미지 */
+.sc-bandYear .card-right .txt-color::after,
+.sc-visual .event-txt::after,
+.sc-visual .full-txt::after,
+#header .logo-img{
+    background-image: url(../images/sprite01.png);
+    background-size: 96px 94px;
+    background-repeat: no-repeat;
+}
+
+.inner{
+    padding: 0 60px;
+    margin: 0 auto;
+    max-width: 1440px;
+    text-align: center;
+}
+.flex-wrap{
+    display: flex;
+    gap: 100px;
+}
+
+.sc-subtitle{
+    /* display: block;
+    padding-top: 83px;
+    margin-bottom: 35px;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 29px;
+    letter-spacing: -1px; */
+}
+.sc-title{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 86px;
+    letter-spacing: -1.5px;
+    margin-bottom: 60px;
+}
+.sc-caution{
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: -0.3px;
+    color: #999;
+}
+
+.txt-color{
+    color: #0dcb67;
+}
+.underline{
+    position: relative;
+}
+.underline::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 16px;
+    background-color: #8cfdcc;
+    z-index: -1;
+}
+.event-num{
+    display: block;
+    width: fit-content;
+    margin: 0 auto 16px;
+    padding: 8px 18px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    background-color: #0dcb67;
+    border-radius: 21px;
+}
+
+.link-black{
+    width: 251px;
+    padding: 19px 28px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #fff;
+    background-color: #111;
+    border-radius: 29px;
+}
+.link-black:hover{
+    background-color: #666;
+}
+.link-white{
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0 48px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 74px;
+    letter-spacing: -0.5px;
+    color: #111;
+    background-color: #fff;
+    border-radius: 37px;
+}
+.link-notice{
+    text-decoration: underline;
+}
+.link-notice:hover{
+    color: #00cb74;
+}
+
+
+
+
+
+

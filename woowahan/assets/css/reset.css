@@ -1,0 +1,99 @@
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;}
+
+html, body {height:100%;}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+
+ul, ol{list-style: none;}
+
+
+@font-face {
+    font-family: "BM HANNA 11yrs old";
+    src: url(../fonts/BMHANNA_11yrs_ttf.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM HANNA Pro";
+    src: url(../fonts/BMHANNAPro.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM HANNA Air";
+    src: url(../fonts/BMHANNAAir_ttf.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM JUA";
+    src: url(../fonts/BMJUA_ttf.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM Euljiro 10 years later";
+    src: url(../fonts/BMEuljiro10yearslater.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM EULJIRO";
+    src: url(../fonts/BMEULJIROTTF.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM DoHyeon";
+    src: url(../fonts/BMDOHYEON_ttf.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM YEONSUNG";
+    src: url(../fonts/BMYEONSUNG_ttf.ttf) format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM KIRANGHAERANG";
+    src: url(../fonts/BMKIRANGHAERANG-TTF.ttf) format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM Euljiro oraeorae";
+    src: url(../fonts/BMEuljirooraeorae.ttf) format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+@font-face {
+    font-family: "BM Kkubulim";
+    src: url(../fonts/BMKkubulimTTF.ttf) format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}

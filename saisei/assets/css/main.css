@@ -1,0 +1,953 @@
+/* 메인 공통 */
+.container{
+    color: #1e1005;
+    background-color: #fbf0da;
+}
+.container .inner{
+    padding: 112px 48px;
+    width: 100%;
+}
+.group-grid{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    gap: 16px;
+}
+.container .title{
+    text-transform: uppercase;
+    width: fit-content;
+    /* display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center; */
+}
+.container .title svg{
+    width: 80px;
+    margin: 0 auto 12px;
+}
+.container .title .top{
+    font-size: 28px;
+    line-height: 1.1;
+    display: block;
+    width: fit-content; /* 가운데정렬 하기위해 width,margin*/
+    margin: 0 auto 12px;
+}
+.container .title .bottom{ /* split-line때문에 margin 0-auto가 안먹혀서 text-align: center 로 바꿔줌 */
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+}
+.container .sub-title{
+    font-size: 82px;
+    line-height: 1;
+    letter-spacing: -1.6px;
+    text-transform: uppercase;
+}
+
+.container .link-detail{
+    display: grid;
+    width: fit-content;
+    border-radius: 1920px;
+    overflow: hidden;
+    opacity: 0;
+}
+.container .link-text{
+    display: block;
+    grid-area: 1/1;
+    color: #fbf0da;
+    background-color: #1e1005;
+    padding: 8px 24px;
+    font-size: 16.5px;
+    transition: transform .5s;
+}
+.container .link-text.first{
+    background-color: #9c7443;
+}
+.container .link-text.last{
+    background-color: #1e1005;
+    transform: translateY(100%);
+}
+.container .link-detail:hover .first{
+    transform: translateY(-100%);
+}
+.container .link-detail:hover .last{
+    transform: translateY(0%);
+}
+
+
+
+/* 섹션1 :visual */
+.sc-visual{
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+.sc-visual .inner{
+    padding: 112px 48px 64px;
+}
+.sc-visual .img-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sc-visual .img-area::after{ /* 이미지태그 자체에는 가상선택자를 사용할 수 없으므로, div로 img태그를 감싸준 후, 가상선택자로 배경opacity를 주었음. */
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.65;
+    pointer-events: none;
+}
+.sc-visual .visual-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(67px) scale(1.3);
+}
+.sc-visual .content-area{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+.sc-visual .title-area {
+    flex: 7;
+    /* max-width: 1262px;
+    width: 100%; */
+    /* height: 341px; */ /* img나 svg에게 height 주지않도록! */
+}
+.sc-visual .text-area{
+    flex: 2;
+    /* max-width: 355px;
+    width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fbf0da;
+}
+.sc-visual .text-area .top{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.sc-visual .text-area svg{
+    width: 90px;
+    height: 45px;
+    opacity: 0;
+    transition: 1s;
+}
+.animation-start .sc-visual .text-area svg{
+    opacity: 1;
+}
+.sc-visual .text-area .visual-txt{
+    font-family: 'Aeonik',sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    width: 257px;
+}
+/* 섹션2 :tradition */
+.sc-tradition{
+    padding: 80px 0 112px;
+    border-bottom: 1px solid #000;
+}
+.sc-tradition .grid-left{
+    grid-column: span 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-tradition .grid-middle{
+    grid-column: 4 / span 4;
+}
+.sc-tradition .grid-right{
+    grid-column: 9 / span 2;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-tradition .grid-right .text-content{
+    margin-bottom: 48px;
+    max-width: 218px;
+    font-family: 'Aeonik',sans-serif;
+    font-size: 16.5px;
+    line-height: 21.5px;
+}
+
+/* 섹션2 :innovation */
+.sc-innovation {
+    height: 500vh; 
+    /* 부모는 .sticky-inner보다 일찍 끝나서 먼저 올라가게 됨. */
+}
+.sc-innovation .sticky-inner{
+    height: 600vh; 
+    /* 그럼 sticky가 여기에 붙게됨. */
+}
+.sc-innovation .sticky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    height: 100vh;
+}
+.sc-innovation .sticky .txt-content{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+.sc-innovation .sticky .kanji-svg{
+    display: block;
+    transform: translateY(100%);
+    margin-bottom: 0;
+}
+.sc-innovation .sticky .title .split-line { 
+    margin-top: 12px;
+}
+.sc-innovation .sticky .sub-title{
+    font-size: 12.5vw; /* 언제나 화면기준에서 12.5%의 폰트사이즈를 가져감(=240px / 1920 * 100을 한 값) */
+    text-align: center;
+    perspective: 800px;
+    /* display: flex; */
+}
+.sc-innovation .sticky .sub-title .char{
+    /* 얘를 3d로 컨트롤하기위해 부모에게 perspective 속성을 준다. */
+    /* transform: translate(0%, -27.3563%) translate3d(19.8087px, 0px, -17.2404px) rotateY(82.0689deg) scale(0.5441, 0.5441) */
+}
+
+.sc-innovation .img-content {
+    /* margin-top: -100vh;  */
+    /* sticky 높이만큼 위로 올려붙여 */
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+}
+.sc-innovation .img-content .top, 
+.sc-innovation .img-content .bottom {
+    height: 100vh;
+}
+.sc-innovation .inner,
+.sc-innovation .group-grid {
+    height: 100%;
+}
+.sc-innovation .top .group-grid {
+    grid-template-rows: repeat(2, auto);
+    gap: 36px 12px;
+}
+.sc-innovation .top .grid-left {
+    grid-column: span 2;
+    grid-row: 2;
+    max-width: 224px;
+}
+.sc-innovation .top .grid-middle {
+    grid-column: 4 / span 4;
+}
+.sc-innovation .top .grid-right {
+    grid-column: 9 / span 2;
+    grid-row: 2;
+    max-width: 224px;
+    justify-self: end;
+}
+.sc-innovation .bottom .group-grid {
+    grid-template-rows: repeat(8, auto);
+    gap: 12px;
+}
+.sc-innovation .bottom .group-grid img{
+    aspect-ratio: 1/1;
+}
+.sc-innovation .bottom .grid-left {
+    grid-column: span 2;
+    grid-row: 5;
+    max-width: 256px;
+}
+.sc-innovation .bottom .grid-middle {
+    grid-column: 5 / span 2;
+    grid-row: 8;
+    max-width: 160px;
+    justify-self: center;
+}
+.sc-innovation .bottom .grid-right {
+    grid-column: 9 / span 2;
+    grid-row: 4;
+    max-width: 224px;
+    justify-self: end;
+}
+
+/* 섹션4 :project */
+.sc-project {
+    color: #fbf0da;
+    /* height: 330vh; */
+    /* border: 5px solid #f0f; */
+}
+.sc-project .sticky{
+    height: 110vh;
+    /* border: 10px dotted #00f; */
+}
+.sc-project .group-project{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sc-project .group-project .inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.sc-project .group-project .img-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.sc-project .img-area::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.65;
+    pointer-events: none;
+}
+.sc-project .group-project .bg-img{
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(-10%);
+}
+.sc-project .group-grid{
+    position: relative;
+    z-index: 1;
+    height: 60%;
+    width: 100%;
+}
+.sc-project .group-project .left{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    grid-column: span 4;
+    align-self: flex-end;
+}
+.sc-project .group-project .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 9 / span 2;
+}
+.sc-project .group-project .text-img{
+    width: 128px;
+}
+.sc-project .group-project h3{
+    font-size: 112px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.sc-project .group-project .pagination{
+    font-size: 28px;
+    line-height: 36px;
+    display: flex;
+    gap: 16px;
+}
+.sc-project .group-project .link-detail{ /* 부모에게 overflow: hidden;이 걸려있기때문에 border도 부모에게 줘야 함. */
+    border: 1px solid #fbf0da;
+}
+.sc-project .group-project .link-text.first{
+    background-color: transparent;
+}
+.sc-project .group-project .link-text.last{
+    color: #000;
+    background-color: #fbf0da;
+    transition: .3s;
+}
+/* 섹션5 :architecture */
+.sc-architecture{
+    padding: 112px 0;
+    border-bottom: 1px solid #000;
+}
+.sc-architecture .grid-left{
+    grid-column: 1 / span 4;
+}
+.sc-architecture .grid-middle{
+    grid-column: 6 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-architecture .grid-right{
+    grid-column: 9 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-architecture .grid-right .text-content{
+    margin-bottom: 64px;
+    max-width: 218px;
+    font-family: 'Aeonik',sans-serif;
+    font-size: 16.5px;
+    line-height: 21.5px;
+}
+
+/* 섹션6 :service */
+.sc-service{
+    padding: 112px 0;
+    border-bottom: 1px solid #000;
+}
+.sc-service .inner > .flex-wrap + .flex-wrap{
+    margin-top: 48px;
+}
+.sc-service .flex-wrap{
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+}
+.sc-service .flex-wrap .sub-title{
+    font-size: 12.5vw; /* 언제나 화면기준에서 12.5%의 폰트사이즈를 가져감(=240px / 1920 * 100을 한 값) */
+}
+.sc-service .flex-wrap img{
+    width: 480px;    
+}
+.sc-service .bottom{
+    display: flex;
+    flex-direction: column;
+}
+.sc-service .bottom .text-content{
+    margin-bottom: 48px;
+    max-width: 277px;
+    font-family: 'Aeonik',sans-serif;
+    font-size: 16.4px;
+    line-height: 21.5px;
+}
+
+/* 섹션7 :catchphrase */
+.sc-catchphrase{
+    color: #fbf0da;
+    position: relative;
+}
+.sc-catchphrase .inner{
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-catchphrase .title svg{
+    width: 320px;
+}
+.sc-catchphrase .title .top{
+    font-size: 26.4px;
+}
+.sc-catchphrase .img-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sc-catchphrase .img-area::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.65;
+    pointer-events: none;
+}
+.sc-catchphrase .bg-img{
+    height: 100%;
+    object-fit: cover;
+}
+.sc-catchphrase .title{
+    position: relative;
+    z-index: 1;
+}
+.sc-catchphrase .text-area{ /* max-width도 줘야하고, width: 20%도 줘야해서 한번 더 감쌀 수 밖에 없음! */
+    width: 20%;
+    margin-left: auto;
+}
+.sc-catchphrase .desc{
+    position: relative;
+    z-index: 1;
+    max-width: 237px;
+    font-family: 'Aeonik',sans-serif;
+    font-size: 16.5px;
+    line-height: 21.5px;
+}
+/* 섹션8 :connect */
+.sc-connect{
+    padding: 112px 0;
+}
+.sc-connect .grid-left{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-connect .grid-left .img-area{
+    max-width: 352px; /* 반응형을 대비하여 width값을 px로 주지않고, max-width로 주도록 해야한다. */
+}
+.sc-connect .grid-left img{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+.sc-connect .grid-middle{
+    grid-column: 4 / span 2;
+}
+.sc-connect .grid-middle .text-content{
+    margin: 48px 0;
+    font-family: 'Aeonik',sans-serif;
+    font-size: 16.4px;
+    line-height: 21.5px;
+}
+.sc-connect .grid-right{
+    grid-column: 7 / span 4;
+}
+.sc-connect .grid-right .img-area{
+    max-width: 720px;
+}
+.sc-connect .grid-right img{
+    width: 100%;
+}
+
+
+
+/* 적응형 미디어쿼리 */
+@media (max-width:1280px) {
+    .container .inner{
+        padding: 85px 30px;
+    }
+    .container .title svg{
+        width: 62px;
+    }
+    .container .title .top{
+        font-size: 23px;
+    }
+    .container .sub-title{
+        font-size: 55px;
+    }
+    .sc-visual .inner{
+        padding: 50px 30px;
+    }
+    .sc-visual .text-area .visual-txt{
+        margin-bottom: 50px;
+    }
+    .sc-tradition{
+        padding: 62px 0 85px;
+    }
+    .sc-tradition .grid-right{
+        gap: 50px;
+    }
+    .sc-innovation .bottom .grid-left {
+        grid-column: span 3;
+    }
+    .sc-project .group-project .left{
+        grid-column: span 5;
+    }
+    .sc-project .group-project h3{
+        font-size: 85px;
+    }
+    .sc-architecture{
+        padding: 85px 0;
+    }
+    .sc-architecture .grid-middle{
+        grid-column: 6 / span 3;
+    }
+    .sc-architecture .grid-right .text-content{
+        margin: 40px 0px;
+    }
+    .sc-service{
+        padding: 85px 0;
+    }
+    .sc-service .inner > .flex-wrap + .flex-wrap{
+        margin-top: 41px;
+    }
+    .sc-service .flex-wrap{
+        gap: 50px;
+        align-items: center;
+    }
+    .sc-service .flex-wrap .sub-title{
+        font-size: 12.5vw;
+    }
+    .sc-service .flex-wrap img{
+        max-width: 256px;
+        width: 100%;    
+    }
+    .sc-catchphrase .inner{
+        padding: 120px 30px;
+    }
+    .sc-catchphrase .title svg{
+        max-width: 230px;
+        width: 100%;
+        margin: 0 auto 16px;
+    }
+    .sc-catchphrase .title .top{
+        font-size: 21.5px;
+    }
+    .sc-connect{
+        padding: 85px 0;
+    }
+    .sc-connect .grid-middle{
+        grid-column: 4 / span 3;
+    }
+    .sc-connect .grid-middle .text-content{
+        max-width: 190px;
+    }
+}
+
+@media (max-width:1024px) {
+    .container .inner{
+        padding: 77px 25px;
+    }
+    .container .title svg{
+        width: 57px;
+        margin: 0 auto 5.5px;
+    }
+    .container .title .top{
+        font-size: 22px;
+        margin: 0 auto 3px;
+    }
+    .container .sub-title{
+        font-size: 47px;
+    }
+    .sc-visual .content-area{
+        flex-direction: column;
+        gap: 40px;
+    }
+    .sc-visual .text-area{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .sc-visual .text-area .visual-txt {
+        margin-bottom: 0;
+        max-width: 309px;
+        width: 100%;
+    }
+    .sc-tradition{
+        padding: 57px 0 77px;
+    }
+    .group-grid{
+        display: flex;
+        flex-direction: column;
+        gap: 39px;
+    }
+    .sc-tradition .grid-left{
+        gap: 24px;
+    }
+    .sc-tradition .sub-title {
+        width: 100%;
+        max-width: 406px;
+    }
+    .sc-tradition .img-area img{ /* 부모한테 비율을 주면 액자는 비율에 맞는데 자식인 그림은 그대로 큰 상태이므로, 사진자체에게 비율을 주는것이 맞다. */
+        aspect-ratio: 16/9;
+    }
+    .sc-tradition .grid-right .text-content{
+        max-width: 100%; /* 그냥 width아닌 max-width를 준 이유: 기존코드가 max-width로 적혀있었기 때문에 상쇄시키기 위해서  */
+    }
+    .sc-tradition .grid-right .text-content {
+        margin-bottom: 39px;
+    }
+    .sc-innovation .group-grid{
+        display: grid;
+    }
+    .sc-innovation .top .group-grid{
+        grid-template-rows: repeat(4, auto);
+    }
+    .sc-innovation .top .grid-middle{
+        grid-row: 2;
+    }
+    .sc-innovation .top .grid-left,
+    .sc-innovation .top .grid-right {
+        grid-row: 4;
+    }
+    .sc-innovation .bottom .group-grid{
+        grid-template-rows: repeat(8, auto);
+    }
+    .sc-innovation .bottom .grid-left {
+        grid-row: 5;
+    }
+    .sc-innovation .bottom .grid-middle{
+        grid-row: 8;
+    }
+    .sc-innovation .bottom .grid-right {
+        grid-row: 4;
+    }
+    .sc-project{
+        margin-top: -100vh;
+    }
+    .sc-project .group-grid{
+        display: grid;
+    }
+    .sc-project .group-project .left {
+        grid-column: span 6;
+    }
+    .sc-project .group-project .right{
+        grid-column: 8 / span 3;
+    }
+    .sc-project .group-project .text-img {
+        width: 88px;
+    }
+    .sc-project .group-project h3 {
+        font-size: 77px;
+    }
+    .sc-project .group-project .pagination {
+        font-size: 22px;
+    }
+    .sc-architecture {
+        padding: 77px 0;
+    }
+    .sc-architecture .img-area img{
+        aspect-ratio: 16/9;
+        width: 100%;
+    }
+    .sc-architecture .group-grid {
+        gap: 16px;
+    }
+    .sc-architecture .grid-middle {
+        gap: 39px;
+    }
+    .sc-architecture .grid-middle .sub-title{
+        max-width: 345px;
+    }
+    .sc-architecture .grid-right .text-content {
+        margin: 39px 0 47px;
+        max-width: 100%;
+    }
+    .sc-service {
+        padding: 77px 0;
+    }
+    .sc-catchphrase .inner {
+        height: 100vh;
+    }
+    .sc-catchphrase .title svg {
+        width: 205px;
+        margin-bottom: 16px;
+    }
+    .sc-catchphrase .title .top {
+        font-size: 20px;
+    }
+    .sc-catchphrase .text-area {
+        width: 50%;
+        margin-left: auto;
+    }
+    .sc-catchphrase .desc{
+        max-width: 100%;
+    }
+    .sc-connect {
+        padding: 77px 0;
+    }
+    .sc-connect .grid-left {
+        gap: 16px;
+    }
+    .sc-connect .grid-left .img-area {
+        max-width: 100%;
+    }
+    .sc-connect .img-area img{
+        aspect-ratio: 16/9;
+    }
+    .sc-connect .sub-title {
+        max-width: 302px;
+    }
+    .sc-connect .grid-middle .text-content {
+        margin: 39px 0;
+        max-width: 340px;
+    }
+}
+
+@media (max-width:768px) {
+    .container .inner{
+        padding: 64px 16px;
+    }
+    .container .title svg{
+        width: 48px;
+        margin: 0 auto 6.4px;
+    }
+    .container .title .top{
+        font-size: 20px;
+        margin: 0 auto;
+    }
+    .container .title .bottom {
+        font-size: 12px;
+    }
+    .container .sub-title{
+        font-size: 33.6px;
+         width: fit-content;
+    }
+    .sc-visual .inner{
+        padding: 64px 16px 40px;
+    }
+    .sc-visual .content-area{
+        gap: 36px;
+    }
+    .sc-visual .text-area{
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        align-items: flex-start;
+    }
+    .sc-visual .text-area .top {
+        gap: 16px;
+    }
+    .sc-visual .text-area svg {
+        width: 58px;
+        height: 28.5px;
+    }
+    .sc-visual .text-area span {
+        font-size: 14px;
+        display: block;
+        margin-left: 0 auto; /* 안되네ㅜ */
+    }
+    .sc-tradition{
+        padding: 48px 0 64px;
+    }
+    .group-grid{
+        gap: 36px;
+    }
+    .sc-tradition .grid-left{
+        align-items: center;
+    }
+    .sc-tradition .grid-right .text-content {
+        margin-bottom: 36px;
+        font-size: 16px;
+    }
+    .sc-tradition .grid-right {
+        gap: 40px;
+    }
+    .sc-innovation .top .grid-middle {
+        grid-column: 3 / span 6;
+    }
+    .sc-innovation .top .grid-left {
+        grid-column: span 5;
+        grid-row: 4;
+        /* max-width: 224px; */
+    }
+    .sc-innovation .top .grid-right {
+        grid-column: 7 / span 3;
+        grid-row: 3;
+    }
+    .sc-innovation .bottom .grid-left {
+        grid-column: span 6;
+        grid-row: 1;
+    }
+    .sc-innovation .bottom .grid-right {
+        grid-column: 10 / span 1;
+        grid-row: 4;
+    }
+    .sc-innovation .bottom .grid-middle {
+        grid-column: 5 / span 2;
+        grid-row: 7;
+    }
+    .sc-project .group-project .text-img {
+        width: 80px;
+    }
+    .sc-project .group-project h3 {
+        font-size: 48px;
+    }
+    .sc-project .group-project .left {
+        grid-column: span 9;
+        gap: 36px;
+    }
+    .sc-project .group-grid {
+        gap: 16px;
+    }
+    .sc-project .group-project .right {
+        grid-column: span 6;
+    }
+    .sc-project .group-project .pagination {
+        font-size: 19.5px;
+    }
+    .sc-architecture {
+        padding: 64px 0;
+    }
+    .sc-architecture .group-grid {
+        gap: 36px;
+    }
+    .sc-architecture .grid-middle {
+        gap: 36px;
+        align-items: center;
+    }
+    .sc-architecture .grid-right .text-content {
+        margin: 36px 0 40px;
+        font-size: 16px;
+    }
+    .sc-service {
+        padding: 64px 0;
+    }
+    .sc-service .inner {
+        padding: 48px 16px;
+    }
+    .sc-service .flex-wrap {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .sc-service .middle{
+        flex-direction: row;
+    }
+    .sc-service .bottom {
+        gap: 36px;
+        width: 100%;
+    }
+    .sc-service .bottom .text-content {
+        margin-bottom: 0;
+        font-size: 16px;
+        max-width: 288px;
+        width: 100%;
+    }
+    .sc-service .flex-wrap img{
+        width: 64px;    
+        height: 39px;
+        aspect-ratio: 4 / 1.6;
+    }
+    .sc-service .inner > .flex-wrap + .flex-wrap {
+        margin-top: 16px;
+    }
+    .sc-catchphrase .inner {
+        height: 80vh;
+    }
+    .sc-catchphrase .title svg {
+        width: 160px;
+        margin: 0 auto 16px;
+    }
+    .sc-catchphrase .title .top {
+        font-size: 17.6px;
+        margin: 0 auto;
+    }
+    .sc-catchphrase .text-area {
+        width: 100%;
+    }
+    .sc-catchphrase .desc {
+        font-size: 16px;
+    }
+    .sc-connect {
+        padding: 64px 0;
+    }
+    .sc-connect .grid-left {
+        align-items: center;
+    }
+    .sc-connect .grid-middle {
+        margin-bottom: 36px;
+    }
+    .sc-connect .grid-middle .text-content {
+        font-size: 16px;
+        margin: 36px 0;
+    }
+    .sc-connect .grid-right {
+        display: none;
+    }
+}

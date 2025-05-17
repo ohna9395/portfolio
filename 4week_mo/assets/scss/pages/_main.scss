@@ -1,0 +1,329 @@
+#container {
+    margin-top: 60px;
+}
+
+.sc-visual{
+
+    .swiper{
+        &-wrapper{}
+        &-slide{
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .swiper-pagination{
+        display: flex; /* 애매한 여백이 위아래로 있어서 flex주었음 */
+        justify-content: center;
+        // background: #f00;
+        bottom: 16px; /* 기본적으로 absolute속성을 가지고 있기때문에 bottom만 쓸 수 있음 */
+
+        // 외우는 개념이 아니라 보고 가져다가 원하는값으로 바꿔 쓰는것
+        &-bullet{
+            width: 10px;
+            height: 10px;
+            border: 1px solid #fff;
+            opacity: 1; /* 투명하게 하기 */
+            background: none;
+
+            // 스와이퍼 js에 있는 변수 이용해서 원하는값으로 바꿔준 것
+            --swiper-pagination-bullet-horizontal-gap: 4px;
+            &-active{
+                background: #fff;
+            }
+        }
+    }
+
+}
+
+
+
+// 메인페이지에서만 쓰는 공통코드(서브페이지에서는 안쓰일때)
+.main-headline{
+    font-size: 20px;
+    font-family: $font-en;
+    font-weight: 700; /* 너무 얇아보여서 700으로 함 */
+    text-align: center;
+    // line-height만 공통으로 줘놓고, 마진은 각각 주도록 한다.
+    line-height: 30px;
+    margin: 35px 0 15px;
+}
+
+/* 이론 
+&:nth-child(1)이라고 쓰면 태그 순서때문에 꼬일 수 있으므로, 
+&:nth-of-type(1)이라고 사용하면 좋을 거 같다. */
+.sc-service{
+    .content{
+        .thumb{
+            img {
+                width: 100%;
+            }
+        }
+        .info{
+            width: 100%;
+            .desc{
+                font-size: 13px;
+                line-height: 21px;
+                padding: 19px 0px 21px;
+                word-break: keep-all;
+            }
+        }
+    }
+}
+
+
+.sc-recomm{
+    .recomm-list{} 
+    .recomm-item{
+        padding: 45px 20px;
+
+        position: relative;
+        .bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* 이미지로 백그라운드 효과 사용법 */
+            object-fit: cover;
+        }
+        .info{
+            position: relative;
+            height: 200px;
+            // 배경색에 투명도 주는 법(scss에서만 사용)
+            background: rgba(#000, 0.5);
+            color: #fff;
+            padding: 17px 15px 0 15px;
+
+            .title{
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 26px;
+            }
+            .desc{
+                margin-top: 9px;
+                font-size: 13px;
+                line-height: 21px;
+            }
+        }
+    }
+}
+
+
+.sc-event{
+    margin-top: 40px;
+    
+    .event-list{
+    }
+
+    .event-item{
+        min-width: 0;
+        & + .event-item {
+            margin-top: 40px;
+        }
+
+        .thumb{
+            img {
+                width: 100%;
+            }
+        }
+        .info{
+            margin-top: 11px;
+            display: flex;
+            flex-direction: column;
+
+            .time{
+                font-size: 12px;
+                line-height: 22px;
+                color: #858585
+            }
+            .title{
+                margin-top: 5px;
+                font-size: 15px;
+                line-height: 25px;
+                font-weight: 700;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .desc{
+                margin-top: 1px;
+                font-size: 12px;
+                line-height: 22px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .link-detail{
+                margin: 18px 0 0;
+            }
+        }
+    }
+}
+
+
+.sc-review{
+    .content{
+        position: relative;
+        padding-bottom: 42px;
+    }
+    // 버튼이 .swiper 안에 있으므로 .swiper에 ralative
+    .swiper{
+
+        &-wrapper{}
+        &-slide{
+            .thumb{
+                img {
+                    width: 100%;
+                }
+            }
+            .info{
+                .title{
+                    display: block;
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 25px;
+                    margin-top: 13px;
+                }
+                .desc{
+                    font-size: 13px;
+                    line-height: 21px;
+                    margin-top: 3px;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                .link-detail{
+                    margin-top: 26px;
+                }
+            }
+        }
+
+    }
+    .swiper-pagination{
+        display: flex; /* 애매한 여백이 위아래로 있어서 flex주었음 */
+        justify-content: center;
+        // background: #f00;
+        bottom: 22px; /* 기본적으로 absolute속성을 가지고 있기때문에 bottom만 쓸 수 있음 */
+
+        // 외우는 개념이 아니라 보고 가져다가 원하는값으로 바꿔 쓰는것
+        &-bullet{
+            width: 10px;
+            height: 10px;
+            border: 1px solid #dddddd;
+            opacity: 1; /* 투명하게 하기 */
+            background: none;
+
+            // 스와이퍼 js에 있는 변수 이용해서 원하는값으로 바꿔준 것
+            --swiper-pagination-bullet-horizontal-gap: 4px;
+            &-active{
+                background: #dddddd;
+            }
+        }
+    }
+}
+
+
+
+.board-inner{
+}
+
+.sc-board{
+    .group-head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+
+        .title{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 26px;
+            padding: 10px 2px;
+            font-family: $font-en;
+        }
+        .link-more{
+            width: 30px;
+            height: 30px;
+            background: url(../images/ic_plus.png);
+        }
+    }
+
+    .board-list{
+        
+    }
+    .board-item{
+        border-top: 2px solid #888888;
+        
+        // 아예 첫번째 li에 border-bottom을 주는 것이 더 좋은 방법일 것 같음.
+        & + .board-item{
+            border-top: 1px solid #888888;
+            
+        }
+        &:nth-last-child(1){
+            border-bottom: 1px solid #888888;
+        }
+        
+        .board-content{
+            padding: 18px 0;
+            display: flex;
+            gap: 10px;
+
+            .time{
+                color: #888888;
+                font-size: 12px;
+                line-height: 22px;
+            }
+            .title{
+                font-size: 12px;
+                line-height: 22px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+    
+            }
+        }
+
+    }
+
+}
+
+
+
+.sns-area{
+    // position: relative;
+    margin-top: 60px;
+    width: 100%;
+    // height: 80px;
+    // background-color: #d71609;
+    
+
+    .sns-list{
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        background-color: #d71609;
+    
+
+        // 질문
+        .facebook{
+            // transform: translateX(-50%);
+            margin-right: 10px;
+        }
+    }
+}

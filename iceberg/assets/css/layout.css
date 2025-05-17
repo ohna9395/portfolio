@@ -1,0 +1,376 @@
+@import url(./reset.css);
+@import url(./common.css);
+
+/* 헤더 */
+#header{
+    color: var(--color-white);
+    left: 0;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr 5fr; /* 6칸 */
+}
+#header .header-logo{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9375vw;
+    font-weight: 600;
+    gap: .05em;
+    letter-spacing: -.03em;
+    line-height: .92em;
+    padding-left: 10px;
+}
+#header .header-logo .upper{
+    display: block;
+    transform: scaleY(-1); /* 뒤집어진모양 */
+}
+#header .group-gnb .gnb-list{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr; /* 5칸 */
+}
+#header .group-gnb .gnb-item {
+    padding-left: 10px;
+}
+#header .group-gnb .link-gnb{
+    font-size: 0.6vw;
+    font-weight: 600;
+    line-height: 3.2307692308em;
+    position: relative;
+}
+#header .group-gnb .link-gnb::after{
+    background-color: var(--color-white);
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 120%;
+    transform: scaleX(0);
+    transform-origin: right top; /* 0으로 돌아오는데 기준점이 오른쪽위란 뜻 */
+    transition: transform .3s ease-in-out,background-color .8s ease-out;
+}
+#header .group-gnb .link-gnb:hover::after{
+    transform: scaleX(1);
+    transform-origin: left top; /* 1로 커지는데 기준점이 왼쪽위란 뜻 */
+}
+
+
+/* 푸터 */
+#footer{
+    background-color: var(--color-black);
+    /* padding-top: 35vw; */
+    position: relative;
+    width: 100%;
+}
+#footer .sc-contact{
+    color: var(--color-white);
+    /* color: #272727; */
+    font-size: 3.75vw;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 102%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 47.4vw;
+
+    padding-top: 15.2vw;
+    padding-bottom: 15vw;
+}
+#footer .sc-contact .txt-area {
+    position: relative;
+}
+#footer .sc-contact .txt-area .svg01 {
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(10%,-10%);
+    width: 12.3vw;
+}
+#footer .sc-contact .txt-area .svg02 {
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 26.3vw;
+    left: 18.2vw;
+    width: 13.125vw;
+}
+#footer .sc-contact h2{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto; /* text-align: center;는 남는영역의 가운데 정렬인데, fit-content 했으므로 남는 영역이 없어서 이렇게 가운데 정렬 시켜줘야 함. */
+}
+#footer .sc-contact .link-contact{
+    display: block;
+    margin-top: 6vw;
+}
+#footer .sc-contact .line{
+    top: 50%;
+    transform: translate(-10%,-50%);
+    width: 150%;
+    max-width: 150%;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+}
+#footer .sc-contact .line path{
+    stroke-width: 1;
+    stroke-dashoffset: 3000px;
+    stroke-dasharray: 3000px;
+}
+#footer .sc-contact:hover .line path{
+    animation: dashDraw 1s linear infinite;
+}
+@keyframes dashDraw {
+    0% {
+      stroke-dashoffset: 3000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+}
+
+#footer .sc-email{
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 17.2vw;
+}
+#footer .sc-email .left{
+    width: 50%;
+}
+#footer .sc-email .newsletter-title{
+    display: block;
+    font-size: 0.7vw;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 1;
+    margin-bottom: 0.7vw;
+}
+#footer .sc-email .left .newsletter-text{
+    padding-right: 2.8vw;
+    font-size: 1.875vw;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 1.1;
+}
+#footer .sc-email .left .email-area{
+    display: flex;
+    margin-left: -0.625vw;
+    margin-bottom: 1.875vw;
+    margin-top: 2vw;
+}
+#footer .sc-email .left .email-area input{
+    background: transparent; /* none은 background-image에 쓰이는 값, transparent는 background-color에 쓰이는 값(투명) */
+    border: 1px solid hsla(0,0%,100%,.2);
+    color: var(--color-white);
+    font-size: 1vw;
+    font-weight: 400;
+    height: 4.9vw;
+    line-height: 1;
+    padding: 0 0.9375vw;
+    padding-top: 0.5vw;
+    /* transition: all .2s ease-in-out; */
+    flex: 1;
+    outline: 0;
+}
+#footer .sc-email .left .email-area .send{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-orange);
+    color: var(--color-white);
+    height: 4.9vw;
+    width: 4.9vw;
+    /* overflow: hidden; */
+    position: relative;
+}
+#footer .sc-email .left .email-area .send svg{
+    height: auto;
+    width: 1.25vw;
+    transition: all .3s ease-in-out;
+}
+/* 체크박스 */
+#footer .checkbox-area input{ /* input은 숨긴다. */
+    position: absolute;
+    width: 1px;height: 1px;overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+#footer .checkbox-area label{
+    position: relative;
+    color: var(--color-gray-dark);
+    display: flex;
+    gap: 10px;
+    font-size: 12.5px;
+    line-height: 1.2;
+}
+#footer .checkbox-area label::before{
+    content: '';
+    border: 1px solid hsla(0,0%,100%,.4);
+    color: transparent;
+    display: block;
+    width: 18px;
+    height: 18px;
+    transition: all .3s ease;
+}
+#footer .checkbox-area svg{
+    display: none;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;left: 0;
+}
+#footer .checkbox-area input:checked+label::before{
+    border-color: var(--color-white);
+    background: url('../images/icon-chk-w.svg') no-repeat center center / 15px auto;
+}
+#footer .checkbox-area input:checked+label svg{
+    display: block;
+}
+#footer .checkbox-area .link-policy{
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+#footer .sc-email .right{
+    text-align: right;
+    width: 26vw;
+}
+#footer .sc-email .right .site-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.46vw;
+    font-size: 1.875vw;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 1.1;
+}
+#footer .sc-email .right .site-item {}
+#footer .sc-email .right .link-site{
+    position: relative;
+}
+#footer .sc-email .right .link-site::after{
+    background-color: var(--color-white);
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    transform: scaleX(0);
+    transform-origin: right top;
+    transition: transform .3s ease-in-out,background-color .8s ease-out;
+    width: 100%;
+}
+#footer .sc-email .right .link-site:hover::after{
+    transform: scaleX(1);
+    transform-origin: left top;
+}
+
+#footer .sc-content{
+    padding: 15vw 17.2vw 0;
+}
+#footer .sc-content .footer-logo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.78vw;
+    padding-bottom: 2.9vw;
+}
+#footer .sc-content .footer-logo span{
+    color: #9a9a9a;
+    font-size: 0.6vw;
+    line-height: 1.2;
+}
+#footer .sc-content .footer-logo img{
+    width: 8.5vw;
+}
+#footer .sc-content .footer-copy{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.9vw;
+    text-transform: uppercase;
+}
+#footer .sc-content .footer-copy span{
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.73vw;
+    letter-spacing: -.01em;
+    line-height: 3.2307692308em;
+}
+#footer .sc-content .footer-copy span:nth-child(1){
+    width: 34.4vw;
+}
+#footer .sc-content .footer-copy span:nth-child(2){
+    display: flex;
+    gap: .35em;
+    flex: 1;
+    padding-left: 0.625vw;
+}
+#footer .sc-content .footer-copy span:nth-child(3){
+    display: flex;
+    justify-content: flex-end; /* 요소들을 컨테이너의 우측으로 정렬 */
+}
+#footer .sc-content .footer-copy a{
+    position: relative;
+}
+#footer .sc-content .footer-copy a::after{
+    background-color: var(--color-white);
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 80%;
+    transform: scaleX(0);
+    transform-origin: right top;
+    transition: transform .3s ease-in-out;
+    width: 100%;
+}
+#footer .sc-content .footer-copy a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left top;
+}
+
+#footer .footer-name{ /* 이렇게 안하면 왜 .footer-name 하단에 공간이 생기나요???*/
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+#footer .footer-name h2{
+    color: var(--color-white);
+    display: block;
+    font-size: 474px;
+    font-weight: 600;
+    letter-spacing: -14.2292px;
+    line-height: 1;
+    text-align: center;
+    /* transform: translate(-1.5%); */
+}
+
+
+/* vertical-line */
+.line-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    pointer-events: none;
+    
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+.line-vt:nth-child(1),
+.line-vt:nth-child(3),
+.line-vt:nth-child(5) {
+    border-right: 1px solid #ccc;
+    opacity: .5;
+}
+    

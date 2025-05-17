@@ -1,0 +1,28 @@
+/* body세팅(font-family) + 공통코드 ex)blind클래스 */
+
+body {
+    font-family: "Neue Montreal", Arial, sans-serif;
+    color: #000;
+    font-size: 62.5%; 
+    font-weight: 400;
+    line-height: 2;
+
+    text-rendering: geometricPrecision; 
+    /* 기하학적으로 정확한 텍스트 렌더링 (모양 유지를 우선) */
+    /* SVG 같은 환경에서 텍스트의 형태를 최대한 정확하게 유지하고 싶다면 사용할 수 있다. 
+    하지만 일반적인 웹사이트에서는 크게 필요하지 않을 수 있다. */
+    text-size-adjust: 100%; 
+    /* 모바일 및 터치스크린 환경에서 텍스트 크기 자동 조정을 비활성화 */
+    /* 모바일 브라우저는 가독성을 높이기 위해 뷰포트 크기에 따라 글자 크기를 자동 조정하는데, 이를 막거나 조정할 수 있다. */
+    /* 디자인이 중요한 웹사이트에서 글자 크기가 변하는 걸 막고 싶을 때 사용 */
+}
+
+
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}

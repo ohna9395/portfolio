@@ -1,0 +1,85 @@
+footer{
+    margin-top: 120px;
+    // height: 260px;
+    background: #aaaaaa;
+
+
+    .inner{
+        // width: 1100px;
+        padding: 48px 0;
+
+        display: flex;
+        justify-content: space-between;
+        
+
+        .group-info{
+            margin-top: 10px;
+
+            .addr-area{
+                color: #fff;
+                font-size: 16px;
+                line-height: 26px;
+
+                .addr{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 26px;
+                    & + .addr {
+                        margin-top: 6px;
+                    }
+
+                    span { 
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    span + span::before{
+                        content: "";
+                        display: block;
+                        background-color: #fff;
+                        width: 3px;
+                        height: 12px;
+                        margin: 0 10px;
+                    }
+                }
+                .copy{
+                    display: block;
+                    margin-top: 23px;
+                }
+            }
+        }
+
+        .group-customer{
+            color: #fff;
+            border: 1px solid #000;
+            padding: 20px 22px 28px 20px;
+            border: 3px solid #fff;
+
+            .title{
+                // margin-top: 26px;
+                font-size: 24px;
+                line-height: 34px;
+                font-family: $font-en;
+            }
+            .runtime{
+                margin-top: 4px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .tel{
+                font-family: $font-en;
+                display: block;
+                margin-top: 20px;
+                font-size: 36px;
+                line-height: 46px;
+            }
+
+        }
+
+            
+
+    }
+
+
+
+}

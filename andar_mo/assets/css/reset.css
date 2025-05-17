@@ -1,0 +1,75 @@
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;}
+/* :root {-webkit-tap-highlight-color:transparent;
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+    cursor:default;
+    line-height:1.5;
+    overflow-wrap:break-word;
+    -moz-tab-size:4;
+    tab-size:4} */
+/* html, body {height:100%;} */
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+
+ul, ol{list-style: none;}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/Gilroy-Regular.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Gilroy-Medium.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/Gilroy-SemiBold.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/Gilroy-Bold.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/notosanskr-light.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/notosanskr-regular.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/notosanskr-medium.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/notosanskr-bold.woff2') format('woff2');
+    /* woff woff2 ttf truetype otf opentype eot embedded-opentype */
+}

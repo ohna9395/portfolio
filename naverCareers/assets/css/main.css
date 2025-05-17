@@ -1,0 +1,543 @@
+#container{
+    padding-top: 64px;
+}
+.inner{
+    padding: 0 104px;
+    max-width: 1408px;
+    margin: 0 auto; /* margin: 0 auto 가 먹히려면 여백이 필요함 = 여백을 주려는 div의 최대 넓이가 정해져있여야 한다는 말. */
+}
+/* 섹션1 : sc-visual */
+.sc-visual{
+    position: relative;
+}
+.sc-visual .swiper-slide{
+    position: relative;
+}
+.sc-visual video{
+    width: 100%;
+    /* height: 544px; */
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    pointer-events: none;
+}
+.sc-visual .group-visual .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    font-size: 100px;
+    line-height: 1.2;
+    letter-spacing: -2.4px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.16);
+    
+    padding: 20px;
+    /* white-space: nowrap; */
+    
+    /* animation: fade-out 0.2s linear forwards; */ /* 사라질때도 효과를 주려고 한거지만 딱히 필요는 없음~ */
+}
+
+.sc-visual .group-visual .swiper-slide-active .title{ /* 스와이퍼의 기본요소 :.swiper-slide-active 활용 */
+    /* opacity: 0;
+    animation: fade 1s forwards 0.8s; */
+    /* active됐을때 title이 아니라 title안의 span에 효과를 주도록 하자! */
+} 
+.sc-visual .group-visual .title span{
+    display: block;
+    width: 0%;
+    overflow: hidden;    
+    white-space: nowrap;
+}
+.sc-visual .group-visual .swiper-slide-active .title span{
+    opacity: 0;
+    animation: wave-in 0.3s ease-out forwards, fade 0.8s  linear forwards;
+    animation-delay: 0.4s;
+}
+/* animation: [이름] [지속시간] [타이밍 함수] [기타 옵션]; */
+/* forwards는 애니메이션이 끝난 뒤 마지막 상태 유지시킴. */
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fade-out { /* 사라질때도 효과를 주려고 한거지만 딱히 필요는 없음~ */
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes wave-in {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+
+/* 섹션1 : sc-visual의 group-search */
+.sc-visual .group-search{
+    /* position: absolute;
+    bottom: -27px;
+    left: 104px;
+    right: 105px; */
+    position: relative;
+    margin-top: -54px;
+    transform: translateY(50%);
+    font-family: "NanumSquare", sans-serif;
+    z-index: 1000;
+    background-color: #fff;
+    
+    height: 54px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.sc-visual .group-search .icon-search{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-position: -245px -40px;
+    margin: 0 28px 0 21px;
+}
+.sc-visual .group-search .search-inner{
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.sc-visual .group-search .search-form .search-inner .box{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.sc-visual .group-search input{
+    flex: 1; /* input이랑select 각각 같은비율로 1:1:1 맞춰줌 */
+    padding: 0 20px 0 9px;
+    font-size: 14px;
+    line-height: 54px;
+    font-weight: bold;
+    border-width: 0; /* 기본테두리없애기 */
+    outline: none; /* 포커스 시, 테두리없애기 */
+}
+.sc-visual .group-search input::placeholder {
+    color: #d0d0d0;
+}
+.sc-visual .group-search select{
+    flex: 1; /* input이랑select 각각 같은비율로 1:1:1 맞춰줌 */
+    padding: 0 25px 0 9px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 54px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #d0d0d0;
+    font-family: "NanumSquare", sans-serif;
+    cursor: pointer;
+    background-image: url(../images/arrow_d.png);
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-size: 8px 5px;
+    appearance:none; /* selectBox의 기본화살표 없애기 */
+    border-width: 0; 
+    outline: none; 
+}
+.sc-visual .group-search option {
+    color: #000000;
+}
+.sc-visual .group-search select.active{ /* 선택한 값 JS로 색상바꿔주기 필요 */
+    color: #000000;
+}
+.sc-visual .group-search .btn-search{
+    width: 97px;
+    height: 54px;
+    line-height: 54px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+.sc-visual .group-search .btn-search:hover{
+    background-color: #16ef72;
+    color: #000;
+}
+
+/* 섹션2 : Teams */
+.sc-teams{
+    padding: 126px 0 89px 0;
+}
+.sc-teams .teams-list{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.sc-teams .teams-item{
+    width: 100%;
+}
+.sc-teams .teams-item .inner{
+    display: flex;
+    /* width: 100%; 부모에게 flex를 줬어서 해줘야했는데, 필요없었던 flex를 삭제해줘서 쓸 필요없어졌음 */ 
+}
+.sc-teams .teams-item:hover{
+    background-color: #ebebeb;
+}
+.sc-teams .link-teams .left{
+    flex: 1;
+    padding: 20px 0;
+    display: flex;
+
+    font-size: 38px;
+    line-height: 60px;
+    letter-spacing: -0.34px;
+
+    max-width: 600px;
+}
+.sc-teams .link-teams .left span{
+    margin-top: 13px;
+    vertical-align: top;
+    margin-left: 18px;
+    font-size: 15px;
+    line-height: 1; /* px로 주지않고 1로 줘야 본인의 기본 line-heigh 값을 가진다. */
+    letter-spacing: -0.3px;
+    position: relative;
+}
+.sc-teams .link-teams .left span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -14px;
+    background-position: -176px -105px;
+    width: 9px;
+    height: 9px;
+}
+.sc-teams .link-teams .right{
+    flex: 1;
+    padding: 20px 0 20px 15px;
+    vertical-align: top;
+    font-size: 22px;
+    line-height: 60px;
+    letter-spacing: -0.44px;
+
+    max-width: 600px;
+}
+
+/* 섹션3 : People */
+.sc-people{
+    padding-top: 95px;
+    overflow: hidden;
+    /* position: relative; */ 
+    /* 스와이퍼 네비게이션의 위치를 잡으려고 relative를 줬던건데
+    swiper 자체가 기본으로 relative를 가지고 있는애라... 
+    .sc-people에 relative가 안먹히고, 더 가까운 부모인 swiper거를 따라감.
+    그래서 padding-bottom을 swiper에게 주고 
+    스와이퍼 네비게이션의 위치를 bottom: 0; 주었음. */
+}
+.sc-people .swiper{
+    margin-top: 60px;
+    overflow: visible; /* auto로 했더니 내부스크롤바가 생겨서 visible로 함 */
+    padding-bottom: 68px;
+}
+/* .sc-people .swiper .img-area{
+    padding-bottom: 47.403%;
+    } */
+.sc-people .swiper img{
+    /* height: 456px;
+    width: 100%; */
+    aspect-ratio: 2.18/1;
+    object-fit: cover;
+    margin-bottom: 29px;
+}
+.sc-people .top{
+    display: flex;
+    gap: 26px;
+    line-height: 36px;
+    font-size: 25px;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+}
+.sc-people .top span{
+    margin-top: 4px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    letter-spacing: -0.36px;
+}
+.sc-people .bottom{
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.28px;
+    font-weight: normal;
+}
+.sc-people .bottom span{
+    margin-right: 12px;
+    position: relative;
+}
+.sc-people .bottom span:nth-child(2):before,
+.sc-people .bottom span:nth-child(3):before{
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 1px;
+    height: 10px;
+    background-color: #000;
+}
+/* 스와이퍼 네비게이션 버튼 : .sc-people 이랑 .sc-benefits 공통으로 사용 (나중에 common으로 이동필요)*/
+.swiper .btn-area{
+    display: flex;
+    gap: 7px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.swiper .btn{
+    /* position: static; */
+    width: 33px;
+    height: 32px;
+    background-position: -187px -172px;
+
+    position: absolute;
+    bottom: 0;
+    right: 55px;
+}
+.swiper .next{
+    transform: rotate(180deg);
+    right: 15px;
+}
+/* 
+.next::after, 
+.prev::after{
+    display: none;
+} */
+.swiper .swiper-button-disabled { /* 스와이퍼의 기본 속성 활용 */
+    background-position: -224px -172px;
+}
+
+
+/* 섹션4 : Benefits */
+.sc-benefits{
+    padding-top: 112px;
+}
+.sc-benefits .swiper{
+    margin-top: 55px;
+    padding-bottom: 68px;
+}
+.sc-benefits .swiper-slide{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sc-benefits .swiper-slide .title{
+    display: block;
+    margin-top: 29px;
+    line-height: 36px;
+    font-size: 25px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+}
+.sc-benefits .swiper-slide .txt{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -0.36px;
+}
+
+/* 섹션5 : Navership */
+.sc-navership{
+    padding: 95px 0 102px 0;
+}
+.sc-navership .title{
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+}
+.sc-navership .apply{
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.36px;
+    font-family: "NanumSquare", sans-serif;
+}
+.sc-navership .apply::after{
+    content: '';
+    background-position: -76px -172px;
+    height: 32px;
+    width: 33px;
+}
+
+
+
+
+
+
+/* 반응형 : 미디어쿼리 */
+@media (max-width:1280px) { /* 1024를 바라본 후, */
+    #container {padding-top: 60px;}
+    .sc-visual .group-visual .title {font-size: 80px;}
+
+    .sc-visual .group-search span{white-space: nowrap;}
+
+    .sc-visual video{
+        aspect-ratio: 2.35/1;
+    }
+
+    .sc-benefits .swiper-slide .txt .br{display: none;}
+}
+
+
+.btn-search-grey{display: none;}
+@media (max-width:1024px) { /* 768를 바라본 후, */
+    #container {padding-top: 60px;}
+    .inner {padding: 0 22px;}
+
+    .sc-visual .group-visual .title {font-size: 60px;}
+
+    .sc-visual .group-search {display: none;}
+
+    .btn-search-grey{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ebebeb;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -0.28px;
+        color: #696868;
+        text-align: left;
+        margin-bottom: 59px;
+    }
+    .btn-search-grey i{
+        display: block;
+        background-position: -140px -125px;
+        width: 19px;
+        height: 19px;
+    }
+    .sc-teams {
+        padding: 22px 0 50px;
+        background-color: #fafafa;
+    }
+    .sc-teams .teams-list {margin-top: 30px;}
+    .sc-teams .link-teams .left {
+        padding: 16px 0;
+        font-size: 24px;
+        line-height: 38px;
+        letter-spacing: -0.48px;
+        max-width: 400px;
+    }
+    .sc-teams .link-teams .left span {
+        margin: 4px 0 0 14px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -0.28px;
+    }
+    .sc-teams .link-teams .right {
+        width: 100%;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+
+    .sc-people {padding: 68px 0 56px;}
+    .sc-people .swiper {
+        margin-top: 25px;
+        padding-bottom: 46px;
+    }
+    .sc-people .swiper img {
+        /* aspect-ratio: 1 / 1; */
+        margin-bottom: 21px;
+    }
+    .sc-people .top {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+    }
+    .sc-people .top span{display: none;}
+    .sc-people .swiper .btn {
+        position: static;
+    }
+
+    .sc-benefits {padding: 0;}
+    .sc-benefits .swiper {
+        margin-top: 25px;
+        padding-bottom: 46px;
+    }
+    .sc-benefits .swiper-slide .title {
+        margin-top: 21px;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+    }
+    .sc-benefits .swiper-slide .txt {
+        margin-top: 3px;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.28px;
+    }
+    .sc-benefits .swiper .btn {
+        position: static;
+    }
+
+    .sc-navership {padding: 71px 0 99px;}
+    .sc-navership .title {
+        font-size: 20px;
+        line-height: 34px;
+        letter-spacing: -0.4px;
+    }
+    .sc-navership .apply {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+}    
+@media (max-width:768px) { /* 320를 바라본 후, */
+    .sc-visual video{
+        aspect-ratio: 1.6/1;
+    }
+    .sc-visual .group-visual .title {
+        font-size: 30px;
+    }
+    .sc-visual .group-visual .title span {
+        overflow: unset;
+    }
+
+    .sc-teams .teams-item {
+        padding: 16px 0;
+    }
+    .sc-teams .teams-item .inner {
+        display: block;
+    }
+    .sc-teams .link-teams .left {
+        padding: 0;
+    }
+    .sc-teams .link-teams .right {
+        padding: 0;
+    }
+    .sc-people .swiper img {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+
+
+
+
+

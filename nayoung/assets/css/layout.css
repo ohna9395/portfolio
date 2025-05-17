@@ -1,0 +1,184 @@
+@import url(./reset.css);
+@import url(./common.css);
+
+/* 헤더 */
+#header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    mix-blend-mode: difference;
+    color: #fff;
+    overflow-x: clip;
+    font-family: AKIRA;
+    pointer-events: none;
+}
+#header .inner{
+    max-width: 154rem;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+#header .logo{
+    font-family: AMORIA;
+    font-size: 16rem;
+    line-height: 1;
+    font-weight: 900;
+    transform-origin: 0% 0%;
+    pointer-events: auto;
+}
+#header .gnb{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: auto;
+}
+#header .gnb.active{
+    opacity: 1;
+    visibility: visible;
+}
+#header .gnb .gnb-list{
+    display: flex;
+    gap: 3rem;
+    padding: 0 2rem;
+    font-size: 2rem;
+}
+#header .external{
+    display: flex;
+    gap: 1rem;
+    pointer-events: auto;
+}
+#header .external a{
+    padding:  1rem;
+    border: 1px solid #fff;
+    background: none;
+    font-size: 1.2rem;
+}
+#header .external .link-notion {
+    border-radius: 0.8rem;
+}
+#header .external .link-github {
+    border-radius: 1.2rem;
+}
+
+/* 푸터 */
+#footer{
+    width: 100%;
+    /* height: 30vh; */
+    height: 100%;
+    background: #f5f4ee;
+    font-family: AKIRA;
+}
+#footer .inner{
+    max-width: 154rem;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+#footer .left{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+#footer .wrap-flex{
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+#footer .icon{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #dfddd6;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: invert(1);
+}
+#footer .icon-resume{
+    background-image: url(../images/icon-resume.jpg);
+    filter: invert(0);
+}
+#footer .icon-github{
+    background-image: url(../images/icon-github.png);
+}
+#footer .icon-notion{
+    background-image: url(../images/icon-notion.webp);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 반응형처리 */
+@media screen and (max-width: 1200px) {
+    #header .gnb .gnb-list{
+        display: flex;
+        gap: 3rem;
+        padding: 0 2rem;
+        font-size: 2rem;
+    }
+    #footer{
+        padding: 4rem 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* 헤더 */
+    #header .inner{
+        padding: 1.5rem;
+    }
+    #header .logo{
+        font-size: 5.3rem;
+    }
+    #header .gnb .gnb-list{
+        display: none;
+    }
+    #header .external a{
+        padding: 0 1rem;
+    }
+    #header .external .link-notion {
+        border-radius: 0.8rem;
+    }
+    /* 푸터 */
+    #footer{
+        height: 100%;
+    }
+    #footer .inner{
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem 1.5rem;
+    }
+    #footer .left{
+        width: 100%;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+    #footer .wrap-flex{
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    #footer .icon{
+        width: 2rem;
+        height: 2rem;
+    }
+    #footer .footer-copy{
+        font-size: 1rem;
+    }
+}

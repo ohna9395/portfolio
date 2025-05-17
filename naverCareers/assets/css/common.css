@@ -1,0 +1,109 @@
+body{
+    font-family: "TTHoves", "NanumSquare" , sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000;
+}
+em,
+address {
+  font-weight: 400;
+}
+
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}
+
+/* 스프라이트 01이미지 */
+#footer .top .btn-site::after,
+.sc-navership .apply::after,
+.sc-benefits .swiper .btn,
+.sc-people .swiper .btn,
+.sc-teams .link-teams .left span::after,
+.sc-visual .group-search .icon-search,
+#header .utils .language i,
+#header .logo-img{
+    background-image: url(../images/sprite01.png);
+    background-size: 328px 205px;
+    background-repeat: no-repeat;
+}
+/* 텍스트밑줄 */
+#container .underline{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.txt{
+    word-break: keep-all;
+}
+/* h2 */
+.main-title{}
+.main-title .title{
+    font-size: 64px;
+    line-height: 71px;
+    letter-spacing: -0.64px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.main-title .txt{
+    display: inline;
+    /* vertical-align: middle; */
+    padding-right: 30px;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+    font-weight: bold;
+}
+/* Learn more */
+.main-title .more{
+    /* display: block; */
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    letter-spacing: -0.36px;
+    white-space: nowrap;
+}
+
+
+
+/* 반응형 : 미디어쿼리 */
+@media (max-width:1024px) { /* 768를 바라본 후, */
+    .mo-gnb .gnb-list .link-gnb .ico-arw,
+    .btn-search-grey i,
+    .btn-hamburger,
+    #header .logo-img{
+        background-image: url(../images/sprite02.png);/* 스프라이트 02이미지 */
+        background-size: 195px 181px;
+        background-repeat: no-repeat;
+    }
+    .main-title .title {
+        margin-bottom: 11px;
+        font-size: 36px;
+        line-height: 50px;
+        letter-spacing: -0.7px;
+    }
+    .main-title .txt {
+        margin-bottom: 9px;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+    .main-title .more{
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: -0.24px;
+    }
+}    
+@media (max-width:768px) { /* 320를 바라본 후, */
+    .main-title .txt {
+        padding-right: 20px;
+        /* width: fit-content; */
+    }
+    .main-title .bottom {
+        display: block;
+    }
+}

@@ -1,0 +1,113 @@
+/* body세팅(font-family) + 공통코드 ex)blind클래스 */
+html {
+    font-size: 10px;
+    background-color: #dfddd6;
+}
+
+body {
+    font-family: 'DMSans','NanumSquareNeo','Akira','AMORIA' ,Arial,sans-serif;
+    color: #2b2b2b;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}
+.pc {
+    display: block;
+} 
+.mobile {
+    display: none;
+}
+
+
+/* 폰트쪼개기 */
+.title[data-text="chars"] .char {
+    margin: 0 2rem;
+}
+
+/* 폰트바꿔주기 */
+.sc-main-p .title,
+.sc-sub-p .title{
+    font-family: Akira;
+}
+.card .txt{
+    font-family: AMORIA;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+/* 노션,깃허브 바로가기 버튼 */
+.shortcut-area{
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.shortcut-link{
+    border: 1px solid #2b2b2b;
+    background: #2b2b2b;
+    color: #dfddd6;
+    border-radius: 12px;
+    padding: 10px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.shortcut-link .wrap-svg{
+    width: 16px;
+    height: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 반응형처리 */
+@media screen and (max-width: 1400px) {
+    html {
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 8px;
+    }
+    .title[data-text="chars"] .char {
+        margin: 0 1rem;
+    }
+    .pc {
+        display: none;
+    } 
+    .mobile {
+        display: block;
+    }
+    .title[data-text="chars"] {
+        text-align: center;
+    }
+    .title[data-text="chars"] .char {
+        margin: 0 0.5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }   
+    .shortcut-area{
+        width: 100%;
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+}

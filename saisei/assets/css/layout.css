@@ -1,0 +1,631 @@
+@import url(./reset.css);
+@import url(./common.css);
+/* 우선 1920기준으로 px로 잡고 반응형은 나중에 미디어쿼리를 추가하는 방향으로 작업 */ /* ???근데 이렇게하면 적응형아닌가요,반응형은 어떻게해요? */
+
+#wrap{
+    position: relative;
+}
+
+.intro {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+}
+.intro .intro-inner {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    background-color: #fbf0da;
+}
+.intro .left {
+    padding-left: 7.5%;
+}
+.intro .right {
+    flex-direction: row-reverse;
+    padding-right: 7.5%;
+}
+.intro .intro-line {
+    display: block;
+    height: 100%;
+    background-color: #1e1005;
+}
+.intro .intro-line.line-01 {
+    width: 4px;
+}
+.intro .intro-line.line-02 {
+    width: 0.5px;
+
+}
+.intro .svg-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 헤더 */
+#header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    color: #fbf0da;
+    position: fixed;
+    z-index: 990;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 1s;
+}
+#header::after{
+    content: ''; 
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #fbf0da;
+    transform: scaleX(0);
+    transition: transform 1s;
+    transform-origin: left top;
+}
+.animation-start #header::after{
+    transform: scaleX(1);
+}
+#header.scroll{
+    transform: translateY(-100%);
+}
+/* #header .header-logo{
+    overflow: hidden; 
+    중요!!부모를 overflow: hidden;한 상태일때 움직이는건 자식요소여야 한다.
+*/
+/*.animation-hidden{  공통클래스로 빼둠 
+    overflow: hidden;
+}*/
+#header .logo{
+    /* width: clamp(2.5rem, 2.2rem + 1.5vw, 4rem); clamp(최소값, 가변값, 최대값) */
+    width: 64px;
+    transform: translateY(100%);
+    transition: transform 1s;
+    display: block;
+}
+.animation-start #header .logo{
+    transform: translateY(0);
+}
+#header .group-nav{
+    display: flex;
+    align-items: center;
+    gap: 206px;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Aeonik',sans-serif;
+}
+#header .group-nav span{
+    transform: translateY(100%);
+    transition: transform 1s;
+    display: block;
+}
+.animation-start #header .group-nav span{
+    transform: translateY(0);
+}
+#header .group-nav .btn-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+}
+
+#header .btn-nav .navline{
+    width: 30px;
+    height: 1px;
+    background-color: #fbf0da;
+    transform: scaleX(0);
+    transition: transform 1s;
+    transform-origin: left top;
+}
+.animation-start #header .btn-nav .navline{
+    transform: scaleX(1);
+}
+#header .btn-nav .navline:nth-child(2){
+    transition-delay: .2s;
+}
+#header .btn-nav:hover .navline{
+    transform: scaleX(0);
+    transform-origin: right top;
+}
+
+/* gnb */
+#gnb{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    z-index: 995;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+#gnb.show{
+    opacity: 1;
+    visibility: visible;
+}
+/* 오답노트!! 이렇게 쓰면, body가 더 부모여서 찾아들어 갈 수가 없다!
+#gnb.show body{
+    overflow: hidden;
+} */
+body.show{
+    overflow: hidden;
+}
+#gnb .gnb-left{
+    transform: translateX(-100%);
+    transition: 1s;
+    /* flex: 1; = flex: 1 1 auto; 이건 flex-grow: 1이어서 남는 여백을 동일 비율로 나누는 거. flex-shrink: 1이어서 내부 컨텐츠 사이즈에 따라서 한쪽이 줄어들어버리기도 해서 */
+    flex: 0 0 50%; /* flex-shrink:0을 줘서 어느 한쪽도 고유 크기보다 줄어들지 않게 설정했어. flex-basis: 50% width:50%와 유사 */
+    /* +.gnb-right에도 동일하게 적어줘야 함! */
+    background: #fbf0da;
+}
+#gnb.show .gnb-left{
+    transform: translateX(0);
+}
+#gnb .gnb-left .gnb-nav{
+    height: 100%;
+}
+#gnb .gnb-left .gnb-list{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#gnb .gnb-left .gnb-item{
+    flex: 1;
+    padding: 0 48px;
+    border-bottom: 1px solid #1e1005;
+}
+#gnb .gnb-left .link-gnb{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#gnb .gnb-left .gnb-item .num{
+    font-size: 16.5px;
+}
+#gnb .gnb-left .gnb-item strong{
+    font-size: 48px;
+    margin-left: 24px;
+}
+#gnb .gnb-left .gnb-item .menu-kanji-area{
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gnb .gnb-left .gnb-item .menu-kanji-num{
+    opacity: 1;
+    transition: opacity .5s;
+    width: 100%;
+    height: 100%;
+    background-color: #9c7443;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+}
+#gnb .gnb-left .gnb-item:hover .menu-kanji-num{
+    opacity: 0;
+}
+#gnb .gnb-left .gnb-item .menu-kanji-num svg{
+    width: 24px;
+    color: #fbf0da;
+}
+#gnb .gnb-left .gnb-item .menu-kanji-txt{
+    width: 45px;
+}
+#gnb .gnb-right{
+    transform: translateX(100%);
+    transition: 1s;
+    flex: 0 0 50%;
+    background: #1e1005;
+    color: #fbf0da;
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+}
+#gnb.show .gnb-right{
+    transform: translateX(0);
+}
+#gnb .gnb-right .btn-close{
+    font-size: 12px;
+    padding: 4px 14px;
+    color: #fbf0da;
+    background: #9c7443;
+    position: absolute;
+    right: 48px;
+    top: 35px;
+    border-radius: 12px;
+}
+#gnb .gnb-right .btn-close:hover{
+    color: #fbf0da;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #fbf0da;
+    transition: .5s;
+}
+#gnb .gnb-right .bottom{
+    grid-row: 7; 
+}
+#gnb .gnb-right .top{
+    padding: 48px 0;
+    border-bottom: 1px solid #fbf0da;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-row: 1 / 7;
+}
+#gnb .gnb-right .top .gnb-logo{
+    width: fit-content;
+    border: 1px solid #fbf0da;
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gnb .gnb-right .top .gnb-logo svg{
+    width: 165px;
+}
+#gnb .info-wrap {
+    /* height: 330px;  */
+}
+#gnb .info-area {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 48px 136px;
+    text-transform: uppercase;
+    width: 100%;
+}
+#gnb .info {
+    min-width: 112px;
+}
+#gnb .info:nth-child(-n+3) { /* 부모 요소의 자식 중 첫 번째부터 세 번째까지의 요소를 선택 */
+    justify-self: end;
+}
+#gnb .info-title {
+    display: block;
+    font-size: 16.5px;
+    margin-bottom: 4px;
+}
+#gnb .info-text {
+    font-family: 'Aeonik',sans-serif;
+    display: block;
+    color: #fbf0da;
+    opacity: .6;
+    font-size: 12px;
+    max-width: 160px;
+}
+#gnb .gnb-right .bottom{
+    font-family: 'Aeonik',sans-serif;
+    font-size: 10px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 136px;
+    align-items: center;
+}
+#gnb .gnb-right .bottom .left{
+    min-width: 112px;
+    justify-self: end;
+    font-size: 12px;
+}
+/* 푸터 */
+#footer {
+    color: #fbf0da;
+    background-color: #1e1005;
+}
+
+#footer .inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 128px 48px 192px;
+    border-bottom: 1px solid #fbf0da;
+}
+
+#footer .footer-left {
+    width: 40%;
+}
+#footer .footer-nav {}
+#footer .fnav-list {}
+
+#footer .fnav-item{
+    position: relative;
+} 
+#footer .fnav-item + .fnav-item { 
+    margin-top: 24px;
+}
+#footer .fnav-item .num {
+    width: 32px;
+    padding-top: 4px;
+    font-size: 16.5px;
+    line-height: 1;
+    vertical-align: top; /* 인라인요소가 위쪽에 정렬되도록 함. */
+}
+#footer .fnav-item .link-fnav {
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-left: 16px;
+}
+
+#footer .footer-right {
+    width: 50%;
+}
+#footer .footer-logo {
+    margin-bottom: 128px;
+}
+#footer .info-area {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 48px 16px;
+    text-transform: uppercase;
+}
+#footer .info-title {
+    display: block;
+    font-size: 16.5px;
+    margin-bottom: 4px;
+}
+#footer .info-text {
+    font-family: 'Aeonik',sans-serif;
+    display: block;
+    color: #fbf0da;
+    opacity: .6;
+    font-size: 12px;
+    max-width: 160px;
+}
+#footer .copyright-box {
+    padding: 48px 48px 80px;
+}
+#footer .copyright {
+    font-family: 'Aeonik',sans-serif;
+    font-size: 12px;
+}
+#footer .copyright .f-service{
+    grid-column: 6 / span 1;
+}
+#footer .copyright .f-policy{
+    grid-column: 9 / span 1;
+}
+#footer .copyright .f-site{
+    grid-column: 10 / span 1;
+    justify-self: flex-end;
+}
+
+
+/* [적응형 미디어쿼리]
+이때까지 작업한건 1920~1280 --->1920을 바라봄
+(max-width:1280px) : 1280px 1024까지 --->1024을 바라봄
+(max-width:1024px) : 1024px 768까지 --->768을 바라봄
+(max-width:768px) : 768px 320까지 --->320을 바라봄 
+*/
+@media (max-width:1280px) {
+    #header .group-nav{
+        gap: 50px;
+    }
+    #gnb .gnb-left .gnb-item{
+        padding: 0 30px;
+    }
+    #gnb .gnb-left .gnb-item strong{
+        font-size: 41px;
+    }
+    #gnb .gnb-right .top .gnb-logo{
+        width: 230px;
+        height: 230px;
+    }
+    #gnb .gnb-right .top .gnb-logo svg{
+        width: 110px;
+    }
+    #gnb .info-wrap {
+        height: 330px; 
+        /* 하나를 더 감싸고 높이를 준 이유: 감싸지 않으면 grid자체에 높이를 주게돼서 여백을 grid내부에서 나눠가지므로, 하나를 더 감싸서 높이를 줌으로써 하단 여백을 가져갈 수 있음. */
+    }
+    #gnb .info-area {
+        gap: 41px 102px;
+    }
+    #footer .inner {
+        padding: 128px 30px 192px;
+    }
+    #footer .fnav-item .num {
+        margin-right: 16px;
+    }
+    #footer .fnav-item .link-fnav {
+        font-size: 29px;
+    }
+    #footer .copyright-box {
+        padding: 40px 30px 62px;
+    }
+    #footer .copyright span{
+        grid-column: span 2;
+    }
+    #footer .copyright .f-service{
+        grid-column: 6 / span 2;
+    }
+    #footer .copyright .f-site{
+        white-space: nowrap;
+    }
+}
+
+@media (max-width:1024px) {
+    #header{
+        padding: 24px 25px;
+    }
+    #header .logo{
+        width: 46px;
+    }
+    #gnb .gnb-left .gnb-item{
+        padding: 0 25px;
+    }
+    #gnb .gnb-left .gnb-item strong{
+        font-size: 24px;
+    }
+    #gnb .gnb-right .top .gnb-logo{
+        width: 205px;
+        height: 205px;
+    }
+    #gnb .gnb-right .top .gnb-logo svg{
+        width: 94.5px;
+    }
+    #gnb .gnb-right .top{
+        padding: 39px 0;
+    }
+    #gnb .info-area {
+        gap: 39px 92px;
+    }
+    #gnb .gnb-right .bottom{
+        gap: 93px;
+    }
+    #footer .inner {
+        padding: 128px 25px 100px;
+    }
+    #footer .group-grid {
+        display: grid;
+    }
+    #footer .fnav-item .link-fnav {
+        font-size: 26.5px;
+    }
+    #footer .info-area {
+        gap: 39px 16px;
+    }
+    #footer .copyright-box {
+        padding: 40px 30px 62px;
+    }
+    #footer .copyright span {
+        grid-column: span 4;
+    }
+    #footer .copyright .f-policy {
+        grid-column: 8 / span 2;
+    }
+}
+
+
+@media (max-width:768px) {
+    #header{
+        /* max-width: 320px; */
+        padding: 24px 16px;
+    }
+    #header .logo{
+        width: 40px;
+    }
+    #header .group-nav {
+        font-size: 12px;
+        gap: 16px;
+    }
+    #header .btn-nav .navline {
+        width: 26px;
+    }
+
+    /* gnb 구현필요 */
+    #gnb{
+        flex-direction: column;
+    }
+    #gnb.show .gnb-left{
+        height: 50vh;
+    }
+    #gnb.show .gnb-right{
+        height: 50vh;
+    }
+    #gnb .gnb-left .gnb-item .num{
+        font-size: 12px;
+    }
+    #gnb .gnb-left .gnb-item strong{
+        margin-left: 15px;
+        font-size: 20px;
+    }
+    #gnb .gnb-left .gnb-item {
+        padding: 0 15px;
+    }
+    #gnb .gnb-left .gnb-item .menu-kanji-area{
+        width: 32px;
+        height: 32px;
+    }
+    #gnb .gnb-right .top .gnb-logo{display: none;}
+    #gnb .gnb-right .top{padding: 36px 16px;}
+    #gnb .info-area{gap: 20px 30px;}
+    #gnb .info-title{font-size: 15px;}
+    #gnb .info-text{font-size: 10px;}
+    #gnb .gnb-right .bottom{
+        padding: 40px 16px;
+        font-size: 12px;
+        gap: 0;
+    }
+    #gnb .gnb-right .btn-close{
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+    }
+
+
+
+    #footer .inner {
+        padding: 56px 16px 76px;
+        flex-direction: column;
+        gap: 36px;
+    }
+    #footer .footer-left {
+        width: 100%;
+    }
+    #footer .fnav-item .link-fnav {
+        font-size: 22px;
+    }
+    #footer .footer-right {
+        width: 100%;
+    }
+    #footer .footer-logo{
+        width: 288px;
+        margin-bottom: 64px;
+    }
+    #footer .info-area {
+        gap: 36px 16px;
+    }
+    #footer .info-area {
+        grid-template-columns: 2fr 2fr;
+    }
+    #footer .copyright-box {
+        padding: 36px 16px 72px;
+    }
+    #footer .group-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 16px;
+    }
+    #footer .group-grid span{
+        grid-column: span 5;
+        margin-bottom: 24px;
+    }
+    #footer .group-grid .f-service{
+        grid-row: 2;
+        grid-column: span 5;
+    }
+    #footer .group-grid .f-policy{
+        grid-row: 3;
+        grid-column: 1 / span 3;
+    }
+    #footer .group-grid .f-site{
+        grid-row: 3;
+        grid-column: 3 / span 3;
+    }
+}

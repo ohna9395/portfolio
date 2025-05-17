@@ -1,0 +1,504 @@
+@import url(./reset.css);
+@import url(./common.css);
+
+.header-inner{
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    height: 64px;
+    padding: 0 104px 0 98px;
+}
+.footer-inner{
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 104px 25px 98px;
+}
+
+/* 헤더 */
+#header{
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 99999;
+}
+#header::before{
+    content: '';
+    height: 158px;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+#header:has(.sub-list.show)::before{
+    display: block;
+}
+#header .logo{
+    display: flex;
+    align-items: center;
+}
+#header .logo-img{
+    display: block;
+    background-position: -105px 0px;
+    width: 223px;
+    height: 35px;
+}
+#header #gnb{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+#header #gnb .gnb-list{
+    display: flex;
+    margin-left: 29px;
+    height: 100%;
+}
+#header #gnb .gnb-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#header #gnb .link-gnb{
+    display: block;
+    padding: 0 10px;
+    font-size: 17px;
+    line-height: 32px;
+    letter-spacing: -0.36px;
+}
+#header #gnb .sub-list{
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background: #fff;
+    padding: 15px 0px ;
+    white-space: nowrap;
+}
+#header #gnb .link-sub{
+    /* display: none; */ /* 얘까지 숨길필요없음! 숨기려는 애의 가장 위 부모만 숨기면 될 일! */
+    padding: 3px 13px;
+    font-size: 17px;
+    line-height: 32px;
+    letter-spacing: -0.36px;
+}
+#header #gnb .gnb-item:hover .sub-list{ /* JS로 했지만, css로도 가능했음.. + hover 자체가 this처럼 마우스올린 요소랑만 상호작용함 */
+    display: block;
+}
+/* JS  gnb hover 시 열림*/
+#header #gnb .sub-list.show{
+    display: block;
+}
+/* JS  gnb hover 시 밑줄*/
+#header .utils .link-util:hover span,
+#header #gnb .link-sub:hover span,
+#header #gnb .link-gnb:hover span {
+    position: relative;
+}
+#header .utils .link-util:hover span::before,
+#header #gnb .link-sub:hover span::before,
+#header #gnb .link-gnb:hover span::before{
+    /* text-decoration: underline; */
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
+
+#header .utils{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+#header .util-list{
+    display: flex;
+}
+#header .utils .link-util{
+    display: block;
+    padding: 0 10px;
+    font-size: 17px;
+    line-height: 32px;
+    letter-spacing: -0.36px;
+}
+#header .utils .link-util.EN{
+    display: none;
+    position: absolute;
+    top: 100%;
+    background: #fff;
+}
+#header .utils .link-util.EN.open{
+    display: block;
+}
+#header .utils .language{
+    display: flex;
+    position: relative;
+}
+#header .utils .language .KR{
+    display: flex;
+    gap: 3px;
+}
+#header .utils .language i{
+    display: block;
+    margin: 13px 0 0 3px;
+    background-position: -122px -93px;
+    width: 10px;
+    height: 6px;
+}
+#header .utils .language i.open{
+    transform: rotate(180deg);
+}
+
+/* 푸터 */
+#footer{
+    background-color: #f2f2f2;
+    position: relative;
+}
+#footer .top{
+    display: flex;
+    /* justify-content: space-between; */ /* .left로 새로 묶고 space-between 할 필요없이, margin-left: auto; 를 줬으면 간단! */
+    align-items: center;
+}
+#footer .left{
+    display: flex;
+    /* gap: 30px; */
+    align-items: center;
+}
+#footer .top small{
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+}
+#footer .top .rule{
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+    color: #909090;
+    font-weight: bold;
+    margin-left: 30px;
+    flex: 1;
+}
+#footer .top .btn-site{
+    width: 280px;
+    text-align: left; /* 왜 기본이 중앙이지? */
+    line-height: 42px;
+    background-color: #f2f2f2;
+    position: relative;
+    margin-left: auto; /* .left로 새로 묶고 space-between 할 필요없이, margin-left: auto; 를 줬으면 간단! */
+}
+#footer .top .btn-site::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* 시안은 1px인데 두꺼워보임 */
+    background-color: #000;
+}
+#footer .top .btn-site::after{
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 10px;
+    height: 6px;
+    background-position: -122px -93px;
+    /* z-index: 100; */
+}
+
+/* 관련사이트 클릭 시 div열림 */
+#footer .top .site-area{
+    /* bottom: 94px;
+    right: 104px; */
+    background: #fff;
+    position: relative;
+}
+#footer .top .btn-site.open{
+    padding: 0 12px;
+    background-color: #fff;
+}
+#footer .top .btn-site.open::before{
+    height: 0px;
+}
+#footer .top .btn-site.open::after{
+    transform: rotate(180deg);
+    right: 5px;
+}
+#footer .top .site-list{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    font-size: 18px;
+    line-height: 42px;
+    width: 280px;
+    background: #fff;
+}
+#footer .top .site-list.open{
+    display: block;
+}
+#footer .top .site-item{
+    position: relative;
+    padding: 0 12px;
+}
+
+/* #footer .top .site-item:first-child::after{
+    content: 'new';
+    display: block;
+    position: absolute;
+    color: #1cba8c;
+    margin-left: 105px;
+    margin-top: -10px;
+    width: 29px;
+    height: 19px;
+    top: 0;
+} */
+#footer .top .site-item i{
+    display: block;
+    position: absolute;
+    color: #1cba8c;
+    margin-left: 105px;
+    margin-top: -10px;
+    width: 29px;
+    height: 19px;
+    top: 0;
+}
+
+/* 관련사이트 내부 hover 시 배경색 */
+#footer .top .site-item:hover{
+    background-color: #f2f2f2;
+}
+
+#footer .family-list{
+    display: flex;
+    /* gap: 20px; */
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+    color: #909090;
+}
+#footer .family-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#footer .family-item::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: #909090;
+    margin: 0 10px;
+}
+#footer .family-item:last-child::after{
+    display: none;
+}
+
+
+
+/* 1920~320 */
+/* 반응형 : 미디어쿼리 */
+@media (max-width:1280px) { /* 1024를 바라본 후, */
+    .header-inner {
+        height: 60px;
+        max-width: 1320px;
+        padding: 0px 22px;
+    }
+}
+
+.btn-hamburger,
+.mo-gnb {display: none;}
+@media (max-width:1024px) { /* 768를 바라본 후, */
+    #header .logo-img {
+        background-position: 0px 0px;
+        width: 160px;
+        height: 23px;
+    }
+    #header #gnb {display: none;}
+    #header .utils {display: none;}
+    .header-inner {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn-hamburger{
+        display: block;
+        background-position: -85px -28px;
+        width: 20px;
+        height: 14px;
+    }
+    .btn-hamburger.on {
+        background-size: 195px 181px;
+        background-position: -85px -49px;
+        width: 15px;
+        height: 15px;
+    }
+    .mo-gnb {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #fff;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+    }
+    .btn-hamburger.on + .mo-gnb {
+        transform: translateX(0);
+    }
+    .mo-gnb .gnb-list {
+        padding: 11px 0 9px;
+    }
+    .mo-gnb .gnb-list + .gnb-list {
+        position: relative;
+        padding: 10px 0 11px;
+    }
+    .mo-gnb .gnb-list + .gnb-list::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 22px;
+        right: 22px;
+        height: 1px;
+        background-color: #d0d0d0;
+    }
+    .mo-gnb .gnb-list .gnb-item.open .link-gnb {
+        background-color: #f2f2f2;
+    }
+    .mo-gnb .gnb-list .link-gnb {
+        display: flex;
+        gap: 3px;
+        padding: 0 22px;
+        font-family: "TTHoves", "NanumSquare", "나눔스퀘어", "돋움", dotum, arial, sans-serif;
+        font-size: 22px;
+        line-height: 46px;
+        letter-spacing: -0.44px;
+    }
+    .mo-gnb .gnb-list .gnb-item.open .ico-arw {
+        transform: rotate(180deg);
+    }
+    .mo-gnb .gnb-list .link-gnb .ico-arw {
+        display: block;
+        margin: 20px 0 0 4px;
+        background-position: -136px -49px;
+        width: 10px;
+        height: 6px;
+    }
+    .mo-gnb .gnb-list .sub-list {
+        display: none;
+        padding: 3px 22px 15px;
+    }
+    .mo-gnb .gnb-list .gnb-item.open .sub-list {
+        display: block;
+    }
+    .mo-gnb .gnb-list .item {
+        margin-top: 13px;
+    }
+    .mo-gnb .gnb-list .link-sub {
+        padding-left: 20px;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+        background-color: #fff;
+        font-weight: normal;
+    }
+    .mo-gnb .gnb-list.language {
+        padding-top: 19px;
+    }
+    .mo-gnb .gnb-list.language .link-gnb {
+        display: block;
+        position: relative;
+        padding: 0 22px;
+        margin-bottom: 9px;
+        font-size: 18px;
+        letter-spacing: -0.36px;
+        line-height: 28px;
+    }
+    .mo-gnb .gnb-list.language .gnb-item.active .link-gnb::before {
+        background-color: #000;
+        border: 1px solid #fff;
+    }
+    .mo-gnb .gnb-list.language .link-gnb::before {
+        content: "";
+        margin: 8px 10px 0 0;
+        display: inline-block;
+        vertical-align: top;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid #d0d0d0;
+    }
+
+    #footer {
+        padding: 25px 0 29px;
+        height: 212px;
+    }
+    .footer-inner {
+        display: block;
+        max-width: 1320px;
+        padding: 0 22px;
+    }
+    #footer .top small {
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: -0.3px;
+    }
+    #footer .top {
+        flex-wrap: wrap;
+        /* display: block; */
+    }
+    #footer .top .site-area {
+        width: 100%;
+        margin-top: 15px;
+    }
+    #footer .top .btn-site {
+        width: 100%;
+        font-size: 12px;
+        color: #1d1d1d;
+    }
+    #footer .top .site-list.open {
+        width: 100%;
+    }
+    #footer .top .btn-site::before {
+        background-color: #b4b4b4;
+    }
+    #footer .top .site-item {
+        font-size: 12px;
+        color: #1d1d1d;
+    }
+    #footer .family-list {
+        margin: 15px 0 0 0;
+    }
+    #footer .top .site-item i {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width:768px) { /* 320를 바라본 후, */
+    #footer {
+        padding: 25px 0 29px;
+    }
+    #footer .inner{
+        height: 158px;
+    }
+    #footer .family-list {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    #footer .top .btn-site::before {
+        height: 1px;
+    }
+    #footer .top .site-item i {
+        margin-left: 70px;
+    }
+}
+
+
+

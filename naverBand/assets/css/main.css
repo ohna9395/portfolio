@@ -1,0 +1,1665 @@
+/* GNB */
+#gnb {
+    position: sticky;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    z-index: 999;
+}
+#gnb .gnb-area{
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+    line-height: 28px;
+}
+#gnb .gnb-list{
+    display: flex;
+    gap: 10px;
+}
+#gnb .link-gnb{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    padding: 7px 16px;
+    border-radius: 16px;
+    transition: background-color .25s linear;
+}
+#gnb .link-gnb.on{
+    background-color: #000;
+    color: #fff;
+}
+#gnb .link-gnb:hover{
+    background-color: rgba(0, 0, 0, 0.08);
+}
+#gnb .link-gnb.on:hover{
+    background-color: #000;
+    color: #fff;
+}
+/* #gnb .link-gnb:not(.on):hover{
+    background-color: rgba(0, 0, 0, 0.08);
+} */
+
+/* section0 : visual */
+.sc-visual{
+    position: relative;
+}
+.sc-visual .video-wrap{
+    position: relative;
+}
+.sc-visual .video-wrap::after{
+    position: absolute;  
+    content: '';    
+    width: 100%;
+    height: 100%;  
+    top: 0;    
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);    
+}
+.sc-visual .visual-video{ /* 이렇게하는거 맞음 */
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+.sc-visual .group-content{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.sc-visual .visual-subtxt{
+    display: block;
+    margin-bottom: 12px;
+    font-size: 29px;
+    font-weight: 900;
+    color: #fff;
+}
+.sc-visual .visual-txt{
+    margin-bottom: 40px;
+    font-size: 98.6px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 104px;
+    color: #fff;
+}
+.sc-visual .btn-wrap{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.sc-visual .btn-full{
+    padding: 0 21px 0 31px;
+    border-radius: 34px;
+    border: 3px solid #fff;
+    background-color: rgba(17, 17, 17, 0.3);
+}
+.sc-visual .full-txt{
+    display: flex;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 62px;
+    letter-spacing: -0.56px;
+    color: #fefefe;
+}
+.sc-visual .full-txt::after{ /* after에 postion: absolute를 무조건 쓰는건 아니고, 상황에 따라서 부모가 :after 요소의 너비를 인식해야하면 positon:static 상태로 두고 부모에게 flex를 해준다. */
+    content: '';
+    background-position: -70px -32px;
+    width: 26px;
+    height: 26px;
+    margin: 18px 0 0 10px;
+}
+.sc-visual .btn-event{
+    padding: 0 27px;
+    border-radius: 34px;
+    background-color: #58ff70;
+}
+.sc-visual .event-txt{
+    display: flex;
+    line-height: 68px;
+    color: #0c101d;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.56px;
+}
+.sc-visual .event-txt::after{
+    content: '';
+    background-position: -37px 0px;
+    width: 28px;
+    height: 28px;
+    margin: 18px 0 0 10px;
+}
+.sc-visual .pagedown{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 19px;
+    height: 11px;
+    background-size: 19px 11px;
+    background-image: url(../images/pagedown.png);
+}
+/* video-dimmed */
+html.dimmed,
+body.dimmed{
+    overflow: hidden;
+}
+.video-dimmed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1001;
+}
+.video-dimmed.dimmed {
+    display: block;
+}
+.video-dimmed .video-dimmed-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    max-width: 1080px;
+    width: 100%;
+    height: 607px;
+}
+.video-dimmed .btn-close{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 1002;
+    width: 42px;
+    height: 42px;
+    background: url(../images/btn-close.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+
+/* section1 : spinnerPhone */
+.sc-spinnerPhone {
+    position: relative;
+    z-index: 2; /* z-index를 주려면 postion이 static이 아닌 다른 값이어야함 */
+    padding-bottom: 300px;
+}
+.sc-spinnerPhone .inner{
+    position: relative; /* .img-wrap의 absolute */
+    padding: 0 80px;
+    text-align: center;
+}
+.sc-spinnerPhone .sc-subtitle{
+    display: block;
+    padding-top: 83px;
+    margin-bottom: 35px;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 29px;
+    letter-spacing: -1px;
+}
+.sc-spinnerPhone .sc-title{
+    margin-bottom: 16px;
+    font-size: 82px;
+    font-weight: 800;
+    line-height: 110px;
+    letter-spacing: -2px;
+}
+.sc-spinnerPhone .data-txt{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #999;
+    display: block;
+}
+.sc-spinnerPhone .bottom{
+    padding-top: 231px;
+    height: 100%;
+}
+.sc-spinnerPhone .sc-caution{
+    display: block;
+    margin-left: 54px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: -.3px;
+    color: #999;
+    text-align: left;
+}
+/* 마크업은 애니메이션이 끝났을 때의 모습으로 잡는다고 함! */
+.sc-spinnerPhone .img-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 300px; /* 애니메이션으로 img가 올라올 위치를 확보한 것 */
+    transform: translate(-50%, -50%);
+}
+.sc-spinnerPhone .img-wrap img{
+    width: 320px;
+    height: 640px;
+}
+
+/* section2 : scrollIcon */
+.sc-scrollIcon {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+}
+.sc-scrollIcon .before {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.sc-scrollIcon .after {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: #fff;
+    background-color: #0dcb67;
+    position: relative;
+    clip-path: inset(100% 0% 0% 0%);
+}
+.sc-scrollIcon .after .txt-color{
+    color: #fff;
+}
+.sc-scrollIcon .before .sc-title{
+    margin-top: -15px; /* new band가 없어서 높이 상이하여 margin으로 올려줌 */
+}
+.sc-scrollIcon .sc-title{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 86px;
+    letter-spacing: -1.5px;
+    margin-bottom: 60px;
+}
+.sc-scrollIcon .img-wrap{
+    display: block;
+    margin: 0 auto 40px;
+    width: 220px;
+    height: 220px;
+}
+.sc-scrollIcon .bottom-txt{
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* section3 : userAge */
+.sc-userAge {
+    margin-bottom: 36px;
+    height: 100vh;
+}
+.sc-userAge .inner{
+    padding: 140px 80px 0;
+    height: 100%;
+}
+.sc-userAge .flex-wrap{
+    gap: 40px;
+    margin-bottom: 25px;
+}
+.sc-userAge .card-item{
+    height: 406px;
+    border: 1px solid #ccc;
+    border-radius: 28px;
+    text-align: center;
+    flex: 33.33%; /* flex:1로 주면 패딩값에 따라 너비가 달라질 수 있으므로, %로 주도록 한다. */
+    padding-top: 77px;
+}
+.sc-userAge .card-item strong{
+    display: block;
+    font-size: 72px;
+    line-height: 90px;
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+.sc-userAge .left{
+    position: relative;
+    text-align: left;
+    padding-left: 40px;
+}
+.sc-userAge .left .girl{
+    position: absolute;
+    top: -150px;
+    right: 20px;
+    width: 140px;
+    height: 140px;
+}
+.sc-userAge .left .top-txt{
+    margin-bottom: 80px;
+}
+.sc-userAge .left .bottom-txt{
+    text-align: right;
+    margin: 0 70px 80px 0;
+}
+.sc-userAge .left .top-bubble{
+    position: absolute;
+    top: -110px;
+    left: 120px;
+    width: 130px;
+    height: 58px;
+    background: url(../images/sc-userAge01.png) no-repeat 0 0;
+    background-size: 130px 58px;
+}
+.sc-userAge .left .bottom-bubble{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 147px;
+    height: 58px;
+    background: url(../images/sc-userAge02.png) no-repeat 0 0;
+    background-size: 147px 58px;
+}
+.sc-userAge .middle{
+    position: relative;
+}
+.sc-userAge .middle .desc{
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: block;
+    margin-top: 26px;
+}
+.sc-userAge .middle .bubble{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 186px;
+    height: 56px;
+    background: url(../images/sc-userAge03.png) no-repeat 0 0;
+    background-size: 186px 56px;
+}
+.sc-userAge .right{
+    position: relative;
+}
+.sc-userAge .right .boy{
+    position: absolute;
+    bottom: -120px;
+    right: 30px;
+    width: 140px;
+    height: 140px;
+}
+.sc-userAge .right .bottom-txt{
+    margin-top: 80px;
+}
+.sc-userAge .right .bubble{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 285px;
+    height: 56px;
+    background: url(../images/sc-userAge04.png) no-repeat 0 0;
+    background-size: 285px 56px;
+}
+
+
+/* section4 : scrollMarqee */
+.sc-scrollMarqee{
+    /* padding-top: 653px; */
+    text-align: center;
+    overflow: hidden;
+}
+.sc-scrollMarqee .title-area{
+    position: relative;
+    height: 653px;
+}
+.sc-scrollMarqee #lottie-firecracker{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+/* .sc-scrollMarqee #lottie-firecracker svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.sc-scrollMarqee .sc-title{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 82px;
+    line-height: 116px;
+    letter-spacing: -2px;
+    margin-bottom: 0;
+}
+.sc-scrollMarqee .scrollMarqee-area{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    white-space: nowrap;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: -1.9px;
+    color: #222;
+    
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.sc-scrollMarqee .top{
+    display: flex;
+    justify-content: center;
+}
+.sc-scrollMarqee .bottom{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+}
+.sc-scrollMarqee span{
+    position: relative;
+    padding: 72px 200px 72px 0; /* after의 너비같을걸 고려해서 span에 padding을 줌으로써 after의 위치를 잡아줄 수 있었음. */
+}
+.sc-scrollMarqee span::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    right: 40px;
+}
+.sc-scrollMarqee .download::after{
+    background: url(../images/sc-scrollMarqee01.png) no-repeat 0 0;
+    background-size: 120px 120px;
+}
+.sc-scrollMarqee .write::after{
+    background: url(../images/sc-scrollMarqee02.png) no-repeat 0 0;
+    background-size: 120px 120px;
+}
+.sc-scrollMarqee .reply::after{
+    background: url(../images/sc-scrollMarqee03.png) no-repeat 0 0;
+    background-size: 120px 120px;
+}
+.sc-scrollMarqee .chat::after{
+    background: url(../images/sc-scrollMarqee04.png) no-repeat 0 0;
+    background-size: 120px 120px;
+}
+
+/* section5 : keyword */
+.sc-keyword {
+    padding: 140px 0;
+    text-align: center;
+}
+.sc-keyword .sc-title{
+    margin-bottom: 30px;
+}
+.sc-keyword .tab-area{
+    padding: 6px;
+    background-color: #f4f5f6;
+    max-width: 406px;
+    margin: 0 auto;
+    border-radius: 27px;
+}
+.sc-keyword .tab-list{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.sc-keyword .tab-item{
+    flex: 1;
+    font-size: 18px;
+    font-weight: 800;
+    color: #999;
+    padding: 9px 0;
+    transition: color 0.25s linear;
+    z-index: 1;
+}
+.sc-keyword .tab-item:hover{
+    color: #111;
+}
+.sc-keyword .tab-item.active{
+    color: #fff;
+}
+.sc-keyword .slider{ /* JS로 클릭시, 위치이동 구현 필요 */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #222;
+    transform: translateY(-50%);
+    border-radius: 27px;
+}
+.sc-keyword .tab-content{
+    margin-bottom: 13px;
+}
+.tab-content .content-area {
+    display: none;
+}
+/* 활성화된 area만 보이게 */
+.tab-content .content-area.show {
+    display: block;
+}
+
+
+
+/* section6 : marquee */
+.sc-marquee {}
+.sc-marquee .inner{
+    padding: 0 80px;
+}
+.sc-marquee .content-area{
+    overflow: hidden;
+    padding: 80px 0;
+    height: 670px;
+    background-image: linear-gradient(to top, #09e0ed 0%, #1d9bf7 100%);
+    border-radius: 28px;
+    color: #fff;
+}
+.sc-marquee .sc-subtitle{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+.sc-marquee .sc-title{
+    margin-bottom: 54px;
+}
+/* 일정하게 재생되야 하는데 
+swiper-wrapper에 transition-duration 값이 들어가 있어서 
+일정하게 흐르지 않는다. 
+그럴경우 swiper-wrapper에 transition-timing-function: linear;
+을 주면 해결된다. */
+.sc-marquee .swiper-wrapper{
+    transition-timing-function: linear;
+}
+.sc-marquee .swiper-slide{
+    width: 1800px;
+    height: 355px;
+}
+.sc-marquee .swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+
+/* section7 : local */
+/* 자동으로 이미지가 넘어가기때문에 tab이 아닌 swiper로 구현 */
+.sc-local .inner{
+    padding: 140px 80px 0;
+}
+.sc-local .sc-title{
+    margin-bottom: 40px;
+}
+.sc-local .tab-area{
+    position: relative;
+    width: 100%;
+    height: 760px;
+    border-radius: 28px;
+    overflow: hidden;
+}
+.sc-local .tab-list{
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sc-local .tab-item{
+    width: fit-content;
+    margin: 0 auto 42px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: -1.17px;
+    color: rgba(255, 255, 255, 0.3);
+}
+.sc-local .tab-item:hover{
+    color: #fff;
+}
+.sc-local .tab-item.active{
+    position: relative;
+    transition: width .25s ease-out;
+    color: #fff;
+}
+.sc-local .tab-item.active::after{
+    content: '';
+    width: 100%; /* 부모의 width를 글자길이에 맞게 맞춰주었음 */
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+.sc-local .tab-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.sc-local .tab-content img{
+    height: 100%;
+    object-fit: cover;
+}
+.sc-local .link{
+    position: absolute;
+    z-index: 10;
+    bottom: 106px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sc-local .sc-caution{
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+.sc-local .swiper {
+    height: 760px;
+}
+.sc-local .swiper img{
+    height: 100%;
+    object-fit: cover;
+}
+
+/* section8 : bandYear */
+.sc-bandYear .inner{
+    padding: 140px 80px 0;
+}
+.sc-bandYear .flex-wrap{
+    justify-content: center;
+    gap: 40px;
+}
+.sc-bandYear .card{
+    padding: 50px 0 40px;
+    max-width: 575px;
+    width: 100%;
+    flex: 50%;
+    border-radius: 28px;
+}
+.sc-bandYear .card .sc-subtitle{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+.sc-bandYear .card .sc-title{
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: -1px;
+    margin: 0;
+    padding-bottom: 360px;
+    position: relative;
+    z-index: 2;
+}
+.sc-bandYear .card-left{
+    position: relative;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+.sc-bandYear .card-left .video-wrap{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 710px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sc-bandYear .card-left .video-before{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* '밀어서 축하하기' label 버튼 꾸밈 */
+.sc-bandYear .card-left .switch{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 106px;
+    height: 52px;
+}
+.sc-bandYear .card-left .switch_slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; 이렇게 쓰는것보다 가운데정렬 해주기가 쉽다(margin: auto; 해주면 상하좌우 가운데정렬이 바로 되므로) */
+    background-color: #d6d7d9;
+    cursor: pointer;
+    border-radius: 34px;
+}
+.sc-bandYear .card-left .switch_slide::after{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    height: 40px;
+    width: 40px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+}
+.sc-bandYear .card-left .card-desc{
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.sc-bandYear .card-right{
+    position: relative;
+    background-color: #0E142B;
+    color: #fff;
+}
+.sc-bandYear .swiper-controller{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    right: 24px;
+    z-index: 10; /* 클릭이 안되어서, z-index를 높여주었음 */
+    transform: translateY(-50%);
+}
+.sc-bandYear .btn{
+    width: 42px;
+    height: 42px;
+}
+.sc-bandYear .prev{
+    background: url(../images/sc-bandYear-btnL.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-bandYear .next{
+    background: url(../images/sc-bandYear-btnR.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-bandYear .swiper-pagination-bullet {    
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+}
+.sc-bandYear .swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+.sc-bandYear .swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden; /* display:none은 자리 자체가 사라져서 flex 부모 입장에서 item이 하나로 인식되어버림 */
+}
+
+.sc-bandYear .card-right .sc-title{
+    padding: 0;
+    margin-bottom: 50px;
+}
+.sc-bandYear .card-right .video-wrap{
+    margin: 0 auto 62px;
+    width: 380px;
+    height: 380px;
+}
+.sc-bandYear .card-right .desc{
+    margin-bottom: 45px;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 38px;
+    letter-spacing: -0.68px;
+}
+.sc-bandYear .card-right .desc .txt-color{
+    display: flex;
+    justify-content: center;
+}
+.sc-bandYear .card-right .desc .txt-color::after{ /* absolute로 띄워서 위치맞추지 않고 부모에게 flex줘서 위치시켜주었음 */
+    content: '';
+    margin-top: 6px;
+    margin-left: 10px;
+    background-position: 0px -70px;
+    width: 24px;
+    height: 24px;
+}
+.sc-bandYear .card-right img {
+    
+}
+.sc-bandYear .card-right .sc-caution{
+    color: #888;
+}
+.sc-bandYear .card-right .god-list{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;    justify-content: center;
+    margin: 93px auto 0;
+    width: 325px;
+}
+.sc-bandYear .card-right .link-god{
+    display: block;
+    height: 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(1) .link-god{
+    width: 171px;
+    background: url(../images/sc-bandyear001.png) no-repeat 0 0;
+    background-size: 171px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(2) .link-god{
+    width: 141px;
+    background: url(../images/sc-bandyear002.png) no-repeat 0 0;
+    background-size: 141px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(3) .link-god{
+    width: 141px;
+    background: url(../images/sc-bandyear003.png) no-repeat 0 0;
+    background-size: 141px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(4) .link-god{
+    width: 171px;
+    background: url(../images/sc-bandyear004.png) no-repeat 0 0;
+    background-size: 171px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(5) .link-god{
+    width: 171px;
+    background: url(../images/sc-bandyear005.png) no-repeat 0 0;
+    background-size: 171px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(6) .link-god{
+    width: 141px;
+    background: url(../images/sc-bandyear006.png) no-repeat 0 0;
+    background-size: 141px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(7) .link-god{
+    width: 202px;
+    background: url(../images/sc-bandyear007.png) no-repeat 0 0;
+    background-size: 202px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(8) .link-god{
+    width: 111px;
+    background: url(../images/sc-bandyear008.png) no-repeat 0 0;
+    background-size: 111px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(9) .link-god{
+    width: 141px;
+    background: url(../images/sc-bandyear009.png) no-repeat 0 0;
+    background-size: 141px 60px;
+}
+.sc-bandYear .card-right .god-item:nth-child(10) .link-god{
+    width: 171px;
+    background: url(../images/sc-bandyear010.png) no-repeat 0 0;
+    background-size: 171px 60px;
+}
+
+/* section9 : thank */
+.sc-thank{
+    position: relative;
+    padding: 255px 0 220px;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+.sc-thank .sc-title{
+    font-size: 96px;
+    line-height: 126px;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+.sc-thank .video-wrap{
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    transform: scale(0);
+    transform-origin: center center;
+    background-color: white; */
+}
+.sc-thank .video-wrap .heart01{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 120px;
+    left: 350px;
+    /* transition: .5s;
+    margin-left: -350px; */
+}
+.sc-thank .video-wrap .heart02{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 424px;
+    right: 200px;
+    /* transition: .5s;
+    margin-left: 350px; */
+}
+.sc-thank .video-wrap .heart03{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 553px;
+    left: 200px;
+    /* transition: .5s;
+    margin-left: -500px; */
+}
+
+/* section10 : story */
+.sc-story {
+    background-color: #f6f6f6;
+}
+.sc-story .inner{
+    padding: 120px 80px 140px;
+}
+.sc-story .swiper{
+    height: 100%;
+}
+.sc-story .sc-title{
+    margin-bottom: 26px;
+}
+.sc-story .sc-subtitle{
+    margin-bottom: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.sc-story .flex-wrap{
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+.sc-story .left-area{
+    position: relative;
+    flex: 1;
+    max-width: 575px;
+    width: 100%;
+    height: 710px;
+    background: url("../images/sc-storybg.png") no-repeat 0 0;
+    background-size: 575px 710px;
+    border-radius: 28px;
+}
+/* storyitem의 버튼 */
+.sc-story .storyitem .btn{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: url(../images/sc-story-btn.png) no-repeat 50% 50%;
+    transition: .1s;
+    background-size: 28px 28px;
+}
+.sc-story .storyitem .btn:hover{
+    background-image: url(../images/sc-story-btn-h.png);
+}
+.sc-story .storyitem .btn.on{
+    width: 32px;
+    height: 32px;
+    background: url(../images/sc-story-btn-on.png) no-repeat 50% 50%;
+    background-size: 32px 32px;
+}
+.sc-story .storyitem .btn1{
+    top: 283px; left: 363px;
+}
+.sc-story .storyitem .info-bubble{
+    position: absolute;
+    top: -57px;
+    left: -113px;
+    width: 175px;
+    height: 54px;
+    background: url(../images/info-bubble.png) no-repeat 0 0;
+    background-size: 175px 54px;
+    transition: .5s;
+}
+.sc-story .storyitem .info-bubble.remove{
+    /* display: none; */ /* 서서히 사라지는 효과가 있으므로 opacity를 써야함. */
+    opacity: 0;
+    visibility: hidden;
+}
+.sc-story .storyitem .btn2{
+    top: 35px; left: 248px;
+}
+.sc-story .storyitem .btn3{
+    top: 590px; left: 183px;
+}
+.sc-story .storyitem .btn4{
+    top: 454px; left: 448px;
+}
+.sc-story .storyitem .btn5{
+    top: 129px; left: 100px;
+}
+.sc-story .storyitem .btn6{
+    top: 123px; left: 298px;
+}
+.sc-story .storyitem .btn7{
+    top: 422px; left: 314px;
+}
+.sc-story .storyitem .btn8{
+    top: 474px; left: 78px;
+}
+.sc-story .storyitem .btn9{
+    top: 89px; left: 401px;
+}
+.sc-story .storyitem .btn10{
+    top: 585px; left: 321px;
+}
+.sc-story .storyitem .btn11{
+    top: 371px; left: 142px;
+}
+.sc-story .storyitem .btn12{
+    top: 540px; left: 415px;
+}
+
+.sc-story .right-area{
+    flex: 1;
+    max-width: 575px;
+    width: 100%;
+    height: 710px;
+    background-color: #fff;
+    box-shadow: 2px 2px 100px 0 rgba(127, 134, 136, 0.2);
+    border-radius: 28px;
+    padding: 40px 0 90px;
+    /* overflow: hidden; */
+}
+.sc-story .right-area .swiper-slide{
+    padding: 0 26px 0 50px;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: keep-all;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sc-story .right-area .btn-area{
+}
+.sc-story .right-area .btn-area .btn{
+    width: 42px;
+    height: 42px;
+    transition: background .25s linear;
+}
+.sc-story .right-area .btn-area .prev{
+    left: auto;
+    right: 108px;
+    background: url(../images/swiper-l.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-story .right-area .btn-area .prev:hover{
+    background: url(../images/swiper-l-h.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-story .right-area .btn-area .next{
+    right: 50px;
+    background: url(../images/swiper-r.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-story .right-area .btn-area .next:hover{
+    background: url(../images/swiper-r-h.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-story .right-area .swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+}
+.sc-story .right-area .swiper-controller{
+    /* position: relative; */
+    background-color: #ff0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sc-story .right-area .swiper-pagination{
+    /* position: absolute;
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%); */
+    position: initial;
+    width: fit-content;
+}
+.sc-story .right-area .swiper-pagination-current {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #0dcb67;
+}
+
+.sc-story .right-area .card-title{
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+}
+.sc-story .right-area .desc{
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -0.6px;
+    color: #666;
+}
+.sc-story .right-area .content-area .content-title{
+    display: block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+}
+.sc-story .right-area .content-area .content-sub{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.sc-story .right-area .function .desc{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.sc-story .right-area .function .img-wrap{
+    margin-bottom: 50px;
+}
+.sc-story .right-area .episode .content-sub{
+    padding-top: 40px;
+    border-top: 1px solid #ebebeb;
+    margin-bottom: 26px;
+}
+.sc-story .right-area .slogan-area .slogan-title{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+}
+.sc-story .right-area .slogan-area .slogan-txt{
+    display: block;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+    border-bottom: 1px solid #ebebeb;
+}
+.sc-story .link-black{
+    width: 217px;
+    font-size: 16px;
+    line-height: 58px;
+    color: #fefefe;
+    padding: 0;
+}
+
+/* section11 : dna */
+.sc-dna .inner{
+    padding: 140px 80px 160px;
+}
+.sc-dna .card{
+    padding: 50px;
+    max-width: 575px;
+    width: 100%;
+    border-radius: 28px;
+    color: #fff;
+    text-align: center;
+}
+.sc-dna .flex-wrap{
+    gap: 40px;
+    justify-content: center;
+}
+.sc-dna .sc-subtitle{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+.sc-dna .sc-title{
+    display: block;
+    margin-bottom: 29px;
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: -1px;
+}
+.sc-dna .card-left{
+    background-color: #c383dd;
+}
+.sc-dna .card-left .img-area{
+    margin: 0 auto;
+    width: 360px;
+    height: 324px;
+}
+.sc-dna .card-left .pop-txt{
+    display: block;
+    margin-bottom: 11px;
+    padding-top: 15px;
+    height: 69px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    background: url(../images/sc-dna02.png) no-repeat 50% 0;
+    background-size: 279px 69px;
+}
+.sc-dna .card-right{
+    background-color: #00cb74;
+}
+.sc-dna .card-right .sc-title{
+    margin-bottom: 77px;
+}
+.sc-dna .card-right .img-area{
+    margin: 0 auto 35px;
+    width: 210px;
+    height: 210px;
+}
+.sc-dna .card-right .pop-txt{
+    display: block;
+    margin-bottom: 8px;
+    height: 97px;
+    background: url(../images/sc-dna04.png) no-repeat 50% 0;
+    background-size: 294px 97px;
+}
+
+
+/* event 공통 */
+.event .sc-title{
+    margin-bottom: 30px;
+}
+.event .desc{
+    margin-bottom: 80px;
+    font-size: 20px;
+    line-height: 38px;
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+.event .info-title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+.event .info-title .num{
+    margin-right: 10px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #00cb74;
+}
+.event .way-item{
+    position: relative;
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+}
+.event .way-item .num{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.event .info-item .info-txt{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+}
+.event .caution{
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.3px;
+    color: #444;
+}
+.event .underline {
+    /* display: inline-block; */
+    /* display: block;
+    width: fit-content; */
+    display: inline-flex;
+    line-height: 28px;
+}
+
+/* section12 : event1 */
+.sc-event1 .inner{
+    padding: 0 80px;
+    margin-bottom: 164px;
+}
+.sc-event1 .swiper {
+    max-width: 1190px;
+    padding-bottom: 96px;
+}
+.sc-event1 .swiper-slide {
+    overflow: hidden;
+    border-radius: 22px;
+}
+.sc-event1 .swiper .link-event1{
+    position: relative;
+    display: block;
+    width: 370px;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid #ccc;
+}
+.sc-event1 .swiper .link-event1::after{
+    position: absolute;
+    content: '';
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+    background: url(../images/sc-event-download.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-event1 .swiper-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 46px;
+}
+.sc-event1 .swiper .btn {
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;    
+    transition: background .25s linear;
+}
+.sc-event1 .swiper .prev {
+    background: url(../images/swiper-l.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-event1 .swiper .next {
+    background: url(../images/swiper-r.png) no-repeat 0 0;
+    background-size: 42px 42px;
+}
+.sc-event1 .swiper-pagination{
+    position: initial;
+    width: fit-content;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 800;
+    color: #666;
+}
+.sc-event1 .swiper-pagination-current {
+    color: #0dcb67;
+}
+
+.sc-event1 .info-area {
+    margin: 0 auto 80px;
+    max-width: 904px;
+    text-align: left;
+}
+.sc-event1 .info-list {
+    display: grid;
+    gap: 45px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.sc-event1 .info-item:first-child {
+    grid-row: span 3;
+}
+.sc-event1 .way-item + .way-item {
+    margin-top: 20px;
+}
+.sc-event1 .way-list .txt-color{
+    font-weight: 800;
+}
+
+.sc-event1 .info-item .gift-list li{
+    position: relative;
+    padding-left: 8px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+}
+.sc-event1 .info-item .gift-list li::before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #111;
+}
+
+.sc-event1 .info-item .gift-list .underline::after{
+    height: 10px;
+}
+.sc-event1 .link-black{
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    padding: 0px 63px;
+    font-size: 20px;
+    line-height: 74px;
+    border-radius: 37px;
+}
+
+
+/* section13 : event2 */
+.sc-event2 .inner{
+    padding: 0 80px 120px;
+}
+.sc-event2 .title-area .desc{
+    margin-bottom: 50px;
+}
+.sc-event2 .img-area .desc{
+    display: block;
+    margin: 0 auto 20px;
+    width: 371px;
+    height: 66px;
+    background: url(../images/sc-event2-txt.png) no-repeat 0 0;
+    background-size: 371px 66px;
+}
+.sc-event2 .img-area img{
+    width: 384px;
+    height: 394px;
+    margin: 0 auto 75px;
+}
+.sc-event2 .info-area{
+    margin: 0 auto 80px;
+    max-width: 963px;
+    text-align: left;
+}
+
+.sc-event2 .info-list {
+    display: grid;
+    gap: 45px;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+}
+.sc-event2 .info-item:first-child {
+    grid-row: span 1;
+}
+.sc-event2 .way-item + .way-item {
+    margin-top: 20px;
+}
+.sc-event2 .gift-list .info-txt {
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+}
+.sc-event2 .gift-list .info-txt::after {
+    height: 10px;
+}
+.sc-event2 .caution{
+    position: relative;
+    padding-left: 8px;
+}
+.sc-event2 .caution::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #444;
+}
+.sc-event2 .link-black{
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    padding: 0px 48px;
+    font-size: 20px;
+    line-height: 74px;
+    border-radius: 37px;
+}
+
+
+/* section14 : team */
+.sc-team{
+    background-color: #f6f6f6;
+}
+.sc-team .inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 140px 80px 160px;
+    text-align: center;
+}
+.sc-team .sc-title{
+    margin-bottom: 70px;
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: -1px;
+}
+.sc-team .flex-wrap{
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.sc-team .video-wrap{
+    max-width: 787px;
+    width: 100%;
+    height: 443px;
+    border-radius: 28px;
+    overflow: hidden;
+}
+.sc-team .video-wrap iframe{
+    width: 100%;
+    height: 100%;
+}
+.sc-team .right{
+    text-align: left;
+    max-width: 320px;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+.sc-team .sc-subtitle{
+    display: block;
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 38px;
+    letter-spacing: -0.5px;
+}
+.sc-team .interview .desc{
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #666;
+}
+.sc-team .interview .link-interview{
+    display: flex;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #00cb74;
+}
+.sc-team .interview .link-interview::after{
+    content: '';
+    display: block;
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/sc-team01.png) no-repeat 0 0;
+    background-size: 16px 16px;
+}
+
+
+/* section15 : notice */
+.sc-notice .inner{
+    padding: 108px 80px 0;
+    text-align: left;
+}
+.sc-notice .notice-cotent{
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #444;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+.sc-notice .notice-title{
+    padding: 30px 40px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    width: 100%;
+    text-align: left;
+}
+.sc-notice .notice-list{
+    display: none;
+    padding: 0 40px 40px;
+}
+.sc-notice .notice-cotent.open .notice-list{
+    display: block;
+}
+.sc-notice .notice-item{
+    position: relative;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.sc-notice .notice-item::before{
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #444;
+}
+.sc-notice .notice-cotent + .notice-cotent{
+    margin-top: 20px;
+}
+
+.sc-notice .notice-cotent{
+    position: relative;
+}
+.sc-notice .notice-cotent::after{
+    content: '';
+    position: absolute;
+    right: 40px;
+    top: 35px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/sc-notice-arrow.png) no-repeat 0 0;
+    background-size: 24px 24px;
+    transition: background .25s linear;
+}
+.sc-notice .notice-cotent.open::after{
+    transform: rotate(180deg);
+}
+.sc-notice .notice-cotent:hover{
+    background-color: #f4f4f4;
+}
+.sc-notice .notice-cotent:hover::after{
+    background-image: url(../images/sc-notice-arrow-h.png);
+}

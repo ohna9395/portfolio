@@ -1,0 +1,579 @@
+/* 섹션1 */
+.sc-visual .swiper {
+    position: relative;
+}
+
+.sc-visual .link-swiper {
+    position: relative;
+}
+
+.sc-visual .link-swiper img {
+    width: 100%;
+    object-fit: cover;
+    /* aspect-ratio: 1 / 1.26; */
+}
+
+.sc-visual .txt-area {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 70px 20px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    letter-spacing: -1.5px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.sc-visual .visual-txt {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* 페이지네이션 속성 복붙 */
+.sc-visual .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    width: 100%;
+    top: var(--swiper-pagination-top, auto);
+    left: 0;
+}
+
+.sc-visual .swiper-pagination-bullet {
+    margin: 0;
+    background: #fff;
+    border-radius: 0;
+    width: 20px;
+    height: 2px;
+    opacity: 0.3;
+}
+
+.sc-visual .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* 섹션2 */
+.sc-model {
+    margin-top: 40px;
+    padding: 0 16px;
+}
+
+.sc-model .video-area {
+    border-radius: 8px;
+    overflow: hidden;
+    /* position: relative; */
+    /* padding-top: 133%; */
+}
+
+.sc-model video {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1.33; /* position을 주고 padding-top: 133%; 맞춰주는것과 동일한 방법 */
+}
+
+.sc-model .txt-area {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sc-model .model-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #212326;
+}
+
+.sc-model .model-txt {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    color: #212326;
+}
+
+.sc-model .shop {
+    margin-top: 25px;
+    padding: 15px 25px;
+    background-color: #0f0f10;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+}
+
+/* 섹션3 */
+.sc-new {
+    margin: 70px 0 80px;
+}
+
+.sc-new .new-list {
+    padding: 0 16px;
+    margin-top: 52px;
+}
+
+.sc-new .new-item {
+    display: flex;
+    gap: 16px;
+}
+
+.sc-new .new-item:nth-child(1) {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e8eaed;
+
+}
+
+.sc-new .link-new {
+    display: block;
+    width: 100px;
+    height: 150px;
+    position: relative;
+}
+
+/* 섹션4 */
+.sc-best {
+    margin-bottom: 80px;
+}
+
+.sc-best .title {
+    margin-bottom: 12px;
+}
+
+.sc-best .bestgnb-list {
+    margin-bottom: 25px;
+    padding: 0 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.sc-best .link-bestgnb {
+    color: #93969d;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.32px;
+    padding: 8px 0;
+}
+
+.sc-best .link-bestgnb.active {
+    color: #212326;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.32px;
+    padding: 8px 0;
+}
+
+.sc-best .best-list {
+    display: block;
+}
+.sc-best .best-list img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* 섹션4의 탭 내용 */
+
+.sc-best .tap-con {
+    display: none;
+}
+
+.sc-best .tap-con.show {
+    display: block;
+}
+
+.sc-best .best-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 8px;
+    counter-reset: list-counter; /* 카운터 초기화 */
+}
+.sc-best .best-item {
+    counter-increment: list-counter; /* li마다 증가 */
+}
+
+.sc-best .best-list .link-best {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* 뱃지스티커 커스텀 */
+.sc-best .best-list .badge-new::before {
+    width: 16%; /* 부모기준의 너비16%를 차지하겠다는 말 */
+    /* 안다르홈페이지를 참고 */
+    min-width: 38px;
+    max-height: 100%;
+}
+
+.sc-best .best-list .badge-hot::before {
+    width: 16%;
+    /* 안다르홈페이지를 참고 */
+    min-width: 38px;
+    max-height: 100%;
+}
+
+/* 순위숫자 뱃지스티커*/
+.sc-best .best-list .link-best::after {
+    content: counter(list-counter); /* 숫자 출력 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0f0f10;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;   
+    line-height: 1;
+    letter-spacing: -0.327px;
+}
+
+/* .sc-best .best-list .best-item:nth-child(1) .link-best::after {
+    content: '1';
+}
+.sc-best .best-list .best-item:nth-child(2) .link-best::after {
+    content: '2';
+}
+.sc-best .best-list .best-item:nth-child(3) .link-best::after {
+    content: '3';
+}
+.sc-best .best-list .best-item:nth-child(4) .link-best::after {
+    content: '4';
+} */
+.sc-best .productinfo-area {
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 섹션5 */
+.sc-ad {
+    margin-bottom: 80px;
+}
+
+.sc-ad .swiper-slide {}
+.sc-ad img {
+    width: 100%;
+}
+
+.sc-ad .swiper-pagination {
+    right: 16px;
+    top: 16px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.40);
+    height: 22px;
+    line-height: 22px;
+    padding: 0 12px;
+    color: #fff;
+    left: auto;
+    /* 페이지네이션 자체에 left:0값이 있었기때문에 왼쪽에서부터 차지함. */
+    width: auto;
+}
+
+/* 섹션6 */
+.sc-recomm {
+    margin-bottom: 80px;
+}
+
+.sc-recomm .link-recomm {
+    position: relative;
+}
+
+.sc-recomm .link-recomm img {
+    width: 100%;
+}
+
+.sc-recomm .txt-area {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 25px 12px;
+    color: #fff;
+    line-height: 1.3;
+    transition: all 0.5s;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.sc-recomm .txt-area .recomm-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.sc-recomm .txt-area .recomm-txt {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.28px;
+    line-height: 1.3;
+    text-decoration: underline;
+}
+
+/* 안다르페이지에서 가져옴 */
+.sc-recomm .swiper .swiper-slide {
+    will-change: auto; /* 구글링 : will-change 속성을 사용하면 브라우저는 요소의 변경을 예상하고 최적화를 수행합니다. */
+    transform: scale(0.86);
+    transition: all 0.5s;
+    transform-origin: top;
+}
+
+.sc-recomm .swiper .swiper-slide-active {
+    transform: scale(1);
+    box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.sc-recomm .swiper-pagination {
+    position: static;
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    /* 똑같이 마진을 8px로 줬는데 더 넓게 잡힘 : pagiination의 bullet에 기본적으로 마진이 있었기 때문! 
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px); 
+    이걸 빼줘야 한다.*/
+}
+
+/* .swiper-pagination을 추가해준 후에 점수가 높아져서, swiper의 기본속성값을 덮어씌울 수 있었다. */
+.sc-recomm .swiper-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    background: #c8cbd2;
+    opacity: 1;
+}
+
+.sc-recomm .swiper-pagination .swiper-pagination-bullet-active {
+    background: #0f0f10;
+}
+
+/* 섹션7 */
+.sc-banner {
+    margin-bottom: 80px;
+}
+
+.sc-banner .contents {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sc-banner .banner {
+    position: relative;
+}
+
+.sc-banner .banner-img {
+    display: block;
+    width: 100%;
+    /* padding-top: 54.2682%; */
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sc-banner .txt-area {
+    position: absolute;
+    color: #fff;
+    padding-left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sc-banner .banner-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.sc-banner .banner-txt {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.22px;
+    margin-bottom: 18px;
+}
+
+.sc-banner .banner-more {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.36px;
+    text-decoration: underline;
+}
+
+/* 섹션8 */
+.sc-lookbook {
+    margin-bottom: 80px;
+}
+
+.sc-lookbook .contents-area {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.sc-lookbook .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.sc-lookbook .contents .thumbnail {
+    position: relative;
+    display: block;
+
+    background-image: url(../images/lb01.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+
+    /* max-width: 670px; */
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+}
+.sc-lookbook .contents .thumbnail2 {
+    background-image: url(../images/lb04.jpg);
+}
+
+.sc-lookbook .contents .desc {
+    position: absolute;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+    width: 100%;
+    bottom: 0;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.sc-lookbook .contents .lb-title {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sc-lookbook .contents .lb-txt {
+    color: rgba(232, 234, 237, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.sc-lookbook .lb-list {
+    padding: 0 16px;
+}
+
+.sc-lookbook .lb-item {
+    display: flex;
+    gap: 16px;
+}
+
+.sc-lookbook .lb-item:nth-child(1) {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.sc-lookbook .link-lb {
+    width: 100px;
+    height: 150px;
+}
+
+/* 뱃지스티커 커스텀 */
+.sc-lookbook .lb-list .badge-hot::before {
+    width: 14.25px;
+    height: 14px;
+}
+
+/* 섹션9 */
+.sc-with .content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sc-with .content {
+    position: relative;
+}
+
+.sc-with .content img {
+    width: 100%;
+}
+
+.sc-with .txt-area {
+    position: absolute;
+    padding: 0 16px;
+    color: #fff;
+    line-height: 1.3;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sc-with .txt-area .txt {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.sc-with .txt-area .with-more {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.28px;
+    text-decoration: underline;
+}
+
+/* 플로팅버튼 */
+.fix-btns {
+    position: fixed;
+    right: 10px;
+    bottom: 50px;
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255, 0.9);
+    box-shadow: 0 0 6px rgb(0, 0, 0, 0.2);
+    border-radius: 50%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.fix-btns.show {
+    opacity: 1;
+    visibility: visible;
+}
+.fix-btns .btn-top{
+    background-image: url(../images/btn-fix.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+}

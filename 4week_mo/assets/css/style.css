@@ -1,0 +1,454 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+body {
+  color: #222;
+  font-size: 16px;
+  letter-spacing: -0.025em;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+#wrap {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+.inner {
+  padding: 0 10px;
+}
+.inner:nth-of-type(2) {
+  padding: 0 35px;
+}
+
+.link-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 125px;
+  margin: 0 auto;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  border: 1px solid #222;
+}
+
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+#header .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 18px;
+}
+#header .logo {
+  width: 132px;
+}
+#header .btn {
+  height: 23px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+}
+#header .btn-hamburger {
+  width: 25px;
+  /* 백그라운드의 속성 */
+  /*background-image: url();
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  background-color: #000;*/
+  background-image: url(../images/icon-hamburger.png);
+}
+#header .btn-cart {
+  width: 23px;
+  background-image: url(../images/icon-cart.png);
+}
+
+footer {
+  background: #aaaaaa;
+}
+footer .inner {
+  padding: 35px 20px 30px;
+}
+footer .inner .group-info {
+  margin-top: 41px;
+}
+footer .inner .group-info .logo-area {
+  width: 135px;
+  margin-bottom: 20px;
+}
+footer .inner .group-info .addr-area {
+  color: #fff;
+  font-size: 12px;
+  line-height: 19px;
+}
+footer .inner .group-info .addr-area .addr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .inner .group-info .addr-area .addr span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .inner .group-info .addr-area .addr span + span::before {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 1.5px;
+  height: 12px;
+  margin: 0 8px;
+}
+footer .inner .group-info .addr-area .copy {
+  display: block;
+  margin-top: 20px;
+}
+footer .inner .group-customer {
+  width: 195px;
+  margin: 0 auto;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 14px 19px 16px;
+  text-align: center;
+  border: 1.5px solid #fff;
+}
+footer .inner .group-customer .title {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+footer .inner .group-customer .runtime {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 22px;
+}
+footer .inner .group-customer .tel {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  display: block;
+  margin-top: 5px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#container {
+  margin-top: 60px;
+}
+
+.sc-visual .swiper-slide img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-visual .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* 애매한 여백이 위아래로 있어서 flex주었음 */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 16px; /* 기본적으로 absolute속성을 가지고 있기때문에 bottom만 쓸 수 있음 */
+}
+.sc-visual .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  opacity: 1; /* 투명하게 하기 */
+  background: none;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+}
+.sc-visual .swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.main-headline {
+  font-size: 20px;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700; /* 너무 얇아보여서 700으로 함 */
+  text-align: center;
+  line-height: 30px;
+  margin: 35px 0 15px;
+}
+
+/* 이론 
+&:nth-child(1)이라고 쓰면 태그 순서때문에 꼬일 수 있으므로, 
+&:nth-of-type(1)이라고 사용하면 좋을 거 같다. */
+.sc-service .content .thumb img {
+  width: 100%;
+}
+.sc-service .content .info {
+  width: 100%;
+}
+.sc-service .content .info .desc {
+  font-size: 13px;
+  line-height: 21px;
+  padding: 19px 0px 21px;
+  word-break: keep-all;
+}
+
+.sc-recomm .recomm-item {
+  padding: 45px 20px;
+  position: relative;
+}
+.sc-recomm .recomm-item .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 이미지로 백그라운드 효과 사용법 */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-recomm .recomm-item .info {
+  position: relative;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 17px 15px 0 15px;
+}
+.sc-recomm .recomm-item .info .title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+.sc-recomm .recomm-item .info .desc {
+  margin-top: 9px;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.sc-event {
+  margin-top: 40px;
+}
+.sc-event .event-item {
+  min-width: 0;
+}
+.sc-event .event-item + .event-item {
+  margin-top: 40px;
+}
+.sc-event .event-item .thumb img {
+  width: 100%;
+}
+.sc-event .event-item .info {
+  margin-top: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.sc-event .event-item .info .time {
+  font-size: 12px;
+  line-height: 22px;
+  color: #858585;
+}
+.sc-event .event-item .info .title {
+  margin-top: 5px;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sc-event .event-item .info .desc {
+  margin-top: 1px;
+  font-size: 12px;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sc-event .event-item .info .link-detail {
+  margin: 18px 0 0;
+}
+
+.sc-review .content {
+  position: relative;
+  padding-bottom: 42px;
+}
+.sc-review .swiper-slide .thumb img {
+  width: 100%;
+}
+.sc-review .swiper-slide .info .title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-top: 13px;
+}
+.sc-review .swiper-slide .info .desc {
+  font-size: 13px;
+  line-height: 21px;
+  margin-top: 3px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.sc-review .swiper-slide .info .link-detail {
+  margin-top: 26px;
+}
+.sc-review .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* 애매한 여백이 위아래로 있어서 flex주었음 */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 22px; /* 기본적으로 absolute속성을 가지고 있기때문에 bottom만 쓸 수 있음 */
+}
+.sc-review .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #dddddd;
+  opacity: 1; /* 투명하게 하기 */
+  background: none;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+}
+.sc-review .swiper-pagination-bullet-active {
+  background: #dddddd;
+}
+
+.sc-board .group-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+.sc-board .group-head .title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  padding: 10px 2px;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+.sc-board .group-head .link-more {
+  width: 30px;
+  height: 30px;
+  background: url(../images/ic_plus.png);
+}
+.sc-board .board-item {
+  border-top: 2px solid #888888;
+}
+.sc-board .board-item + .board-item {
+  border-top: 1px solid #888888;
+}
+.sc-board .board-item:nth-last-child(1) {
+  border-bottom: 1px solid #888888;
+}
+.sc-board .board-item .board-content {
+  padding: 18px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.sc-board .board-item .board-content .time {
+  color: #888888;
+  font-size: 12px;
+  line-height: 22px;
+}
+.sc-board .board-item .board-content .title {
+  font-size: 12px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.sns-area {
+  margin-top: 60px;
+  width: 100%;
+}
+.sns-area .sns-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  background-color: #d71609;
+}
+.sns-area .sns-list .facebook {
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */

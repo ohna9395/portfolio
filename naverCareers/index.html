@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!-- 스와이퍼 -->
+    <script src="./assets/js/layout.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <!-- 오답노트 : JS는 script태그로 불러와야함. -->
+    <!-- 오답노트 : defer -->
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header-inner">
+                <div class="logo">
+                    <h1>
+                        <a href="#" class="logo-img"><span class="blind">NAVER Careers</span></a>
+                    </h1>
+                </div>
+                <nav id="gnb">
+                    <ul class="gnb-list">
+                        <li class="gnb-item">
+                            <a href="#" class="link-gnb"><span>Teams</span></a>
+                            <ul class="sub-list">
+                                <li class="item"><a href="#" class="link-sub"><span>Tech</span></a></li>
+                                <li class="item"><a href="#" class="link-sub"><span>Design</span></a></li>
+                                <li class="item"><a href="#" class="link-sub"><span>Service & Business</span></a></li>
+                                <li class="item"><a href="#" class="link-sub"><span>Corporate</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>People</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Benefits</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Culture</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Value</span></a></li>
+                    </ul>
+                </nav>
+                <div class="utils">
+                    <ul class="util-list">
+                        <li class="util-item"><a href="#" class="link-util"><span>Jobs</span></a></li>
+                        <li class="util-item"><a href="#" class="link-util"><span>Login</span></a></li>
+                        <li class="util-item"><a href="#" class="link-util"><span>FAQ</span></a></li>
+                        <li class="util-item language">
+                            <a href="#" class="link-util KR">KR <i></i></a>
+                            <a href="#" class="link-util EN">EN</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn-hamburger"><span class="blind">햄버거버튼</span></button>
+                <div id="moGnb" class="mo-gnb">
+                    <ul class="gnb-list">
+                        <li class="gnb-item">
+                            <a href="#" class="link-gnb"><span>Teams</span><i class="ico-arw"></i></a>
+                            <ul class="sub-list">
+                                <li class="item"><a href="#" class="link-sub"><span>Tech</span></a></li>
+                                <li class="item"><a href="#" class="link-sub"><span>Design</span></a></li>
+                                <li class="item"><a href="#" class="link-sub"><span>Service & Business</span></a></li>
+                                <li class="item"><a href="#" class="link-sub"><span>Corporate</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>People</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Benefits</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Culture</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Value</span></a></li>
+                    </ul>
+                    <ul class="gnb-list">
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Jobs</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>Login</span></a></li>
+                        <li class="gnb-item"><a href="#" class="link-gnb"><span>FAQ</span></a></li>
+                    </ul>
+                    <ul class="gnb-list language">
+                        <li class="gnb-item active">
+                            <a href="#" class="link-gnb KR">KR <i></i></a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="#" class="link-gnb EN">EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main id="container">
+            <!-- 섹션1 : sc-visual -->
+            <section class="sc-visual">
+                <h2 class="blind">main visual</h2>
+                <div class="group-visual">
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <video muted autoplay loop playsinline src="./assets/images/main-visual03.mp4"></video>
+                                    <strong class="title"><span>Board the Navership</span></strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <video muted autoplay loop playsinline src="./assets/images/main-visual02.mp4"></video>
+                                    <strong class="title"><span>We the Navigators</span></strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <video muted autoplay loop playsinline src="./assets/images/main-visual01.mp4"></video>
+                                    <strong class="title"><span>Navigate New Horizons</span></strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner">
+                    <!-- [form,fieldset,legend] -->
+                    <div class="group-search"> 
+                        <form action="" method="get" class="search-form">
+                            <fieldset class="search-inner">
+                                <legend class="blind">검색</legend>
+                                
+                                    <i class="icon-search"></i>
+                                    <div class="box">
+                                        <span>키워드</span>
+                                        <input type="text" placeholder="프론트엔드 개발자">
+                                    </div>
+                                    <div class="box">
+                                        <span>법인</span>
+                                        <select name="" id="">
+                                            <option disabled hidden selected>
+                                                법인선택
+                                            </option>
+                                            <option value="NA">NAVER</option>
+                                            <option value="NC">NAVER Cloud</option>
+                                            <option value="SNOW">SNOW</option>
+                                            <option value="LABS">NAVER LABS</option>
+                                            <option value="WEBTOON">NAVER WEBTOON</option>
+                                            <option value="FINANCIAL">NAVER FINANCIAL</option>
+                                            <option value="IS">NAVER I&S</option>
+                                        </select>
+                                    </div>
+                                    <div class="box">
+                                        <span>직군</span>
+                                        <select name="" id="">
+                                            <option disabled hidden selected>
+                                                직군선택
+                                            </option>
+                                            <option value="">Tech</option>
+                                            <option value="">Design</option>
+                                            <option value="">Service & Business</option>
+                                            <option value="">Corporate</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-search">검색</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션2 : Teams -->
+            <section class="sc-teams">
+                    <div class="inner">
+                    <button class="btn-search-grey">
+                        Search Jobs
+                        <i><span class="blind">돋보기아이콘</span></i>
+                    </button>
+
+                    <div class="main-title"><!-- 공통코드 -->
+                        <h2 class="title">Teams</h2>
+                        <div class="bottom">
+                            <p class="txt">서로 다른 사람들이 모여 한 방향으로 나아갑니다</p>
+                            <a href="#" class="more underline">Learn more</a>
+                        </div>
+                    </div>
+                    </div>
+                    <ul class="teams-list">
+                            <li class="teams-item">
+                                <a href="#" class="link-teams" class="link-teams">
+                                    <div class="inner">
+                                        <div class="left">
+                                            <strong>Tech</strong>
+                                            <span>12</span>
+                                        </div>
+                                        <p class="right">다가오는 미래를 구현합니다</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="teams-item">
+                                <a href="#" class="link-teams">
+                                    <div class="inner">
+                                        <div class="left">
+                                            <strong>Design</strong>
+                                            <span>2</span>
+                                        </div>
+                                        <p class="right">경험을 설계합니다</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="teams-item">
+                                <a href="#" class="link-teams">
+                                    <div class="inner">
+                                        <div class="left">
+                                            <strong>Service & Business</strong>
+                                            <span>9</span>
+                                        </div>
+                                        <p class="right">일상을 풍요롭게 합니다</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="teams-item">
+                                <a href="#" class="link-teams">
+                                    <div class="inner">
+                                        <div class="left">
+                                            <strong>Corporate</strong>
+                                            <span>2</span>
+                                        </div>
+                                        <p class="right">네이버의 추진력을 만듭니다</p>
+                                    </div>
+                                </a>
+                            </li>
+                    </ul>
+                </section>
+                <!-- 섹션3 : People -->
+                <section class="sc-people">
+                    <!-- sc-people자체를 inner에서 뺀 후, 내부에 inner를 주고 sc-people에 overflow: hidden;처리를 하였다 -->
+                    <!-- 즉, 안에서만 inner를 쓰고 큰 영역에 overflow: hidden을 써서 가로스크롤을 없애준 것 -->
+                    <div class="inner"> 
+                        <div class="main-title"><!-- 공통코드 -->
+                            <h2 class="title">People</h2>
+                            <div class="bottom">
+                                <p class="txt">성장을 위한 가장 확실한 방법은 뛰어난 동료들 사이에 있는 것입니다</p>
+                                <a href="#" class="more underline">Learn more</a>
+                            </div>
+                        </div>
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img-area">
+                                            <img src="./assets/images/people05.jpg" alt>
+                                        </div>
+                                        <div class="top">
+                                            <strong>당연하지만, 당연하지 않은 일</strong>
+                                            <span class="underline">Interview</span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span>NAVER PAY</span>
+                                            <span>Service & Business</span>
+                                            <span>정일화</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img-area">
+                                            <img src="./assets/images/people06.jpg" alt>
+                                        </div>
+                                        <div class="top">
+                                            <strong>오아시스를 찾을 때까지</strong>
+                                            <span class="underline">Interview</span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span>NAVER Cloud</span>
+                                            <span>Service & Business</span>
+                                            <span>장근창</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img-area">
+                                            <img src="./assets/images/people01.jpg" alt>
+                                        </div>
+                                        <div class="top">
+                                            <strong>새로운 세상을 여는 기술</strong>
+                                            <span class="underline">Interview</span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span>NAVER Cloud</span>
+                                            <span>Tech</span>
+                                            <span>유강민</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img-area">
+                                            <img src="./assets/images/people02.jpg" alt>
+                                        </div>
+                                        <div class="top">
+                                            <strong>호기심을 잃지 않도록</strong>
+                                            <span class="underline">Interview</span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span>NAVER</span>
+                                            <span>Service & Business</span>
+                                            <span>임정화</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img-area">
+                                            <img src="./assets/images/people03.jpg" alt>
+                                        </div>
+                                        <div class="top">
+                                            <strong>재미의 증폭</strong>
+                                            <span class="underline">Interview</span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span>NAVER WEBTOON</span>
+                                            <span>Design</span>
+                                            <span>정혁구</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img-area">
+                                            <img src="./assets/images/people04.jpg" alt>
+                                        </div>
+                                        <div class="top">
+                                            <strong>기술로 디자인하다</strong>
+                                            <span class="underline">Interview</span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span>SNOW</span>
+                                            <span>Design</span>
+                                            <span>이근실</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <div class="btn-area">
+                                <button class="btn prev"><span class="blind">이전</span></button>
+                                <button class="btn next"><span class="blind">다음</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="inner">
+                <!-- 섹션4 : Benefits -->
+                <section class="sc-benefits">
+                    <div class="main-title"><!-- 공통코드 -->
+                        <h2 class="title">Benefits</h2>
+                        <div class="bottom">
+                            <p class="txt">네이버의 일하는 문화는 계속 진화합니다</p>
+                            <a href="#" class="more underline">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits01.png" alt>
+                                    <strong class="title">Financial Wellbeing</strong>
+                                    <p class="txt">회사의 미래가치와 성과를 함께 나누고, <br class="br">생활의 안정을 지원합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits02.png" alt>
+                                    <strong class="title">Time & Refresh</strong>
+                                    <p class="txt">저마다 몰입할 수 있는 환경이 다름을 알기에<br class="br">
+                                        시간과 공간 선택의 자율성을 가지며,<br class="br">
+                                        리프레시를 위한 충전의 기회도 마련합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits03.png" alt>
+                                    <strong class="title">Work Space</strong>
+                                    <p class="txt">공간이 우리에게 미치는 영향을 잘 알기에, <br class="br">우리가 일할 공간을 직접 설계합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits04.png" alt>
+                                    <strong class="title">Work Tools</strong>
+                                    <p class="txt">최고의 퍼포먼스를 위해 최적의 장비를 지원합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits05.png" alt>
+                                    <strong class="title">Meal & Snack</strong>
+                                    <p class="txt">우리를 움직이는 에너지원이자, 동료들과의 대화를<br class="br">이끌어 내는 음식을 풍성하게 제공합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits06.png" alt>
+                                    <strong class="title">Growth</strong>
+                                    <p class="txt">탁월함을 위한 성장의 노력들을 적극 지원하며,<br class="br">회사와 함께 성장할 수 있는 기회를 만들어 갑니다.
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits07.png" alt>
+                                    <strong class="title">Wellness</strong>
+                                    <p class="txt">몸과 마음이 건강할 때 온전히 발현될 수 있습니다.<br class="br">예방부터 치료, 상담까지, 세심하게 케어합니다.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="./assets/images/benefits08.png" alt>
+                                    <strong class="title">Family</strong>
+                                    <p class="txt">가족은 우리 모두의 든든한 지원군이자 안전망입니다.<br class="br">이 안전망을 탄탄하게 뒷받침합니다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn prev"><span class="blind">이전</span></button>
+                            <button class="btn next"><span class="blind">다음</span></button>
+                        </div>
+                    </div>
+                </section>
+                <!-- 섹션5 : Board the Navership -->
+                <section class="sc-navership">
+                    <h2 class="title">Board the Navership</h2>
+                    <a href="#" class="apply">지원하기</a>
+                </section>
+                <!-- after아이콘 추가필요 -->
+            </div>
+        </main>
+        
+        <footer id="footer">
+            <h2 class="blind">네이버커리어푸터</h2>
+            <div class="footer-inner">
+                <div class="top">
+                    
+                    <small><a href="#">© NAVER Corp.</a></small>
+                    <a href="#" class="rule">개인정보 처리방침</a>
+
+                    <div class="site-area">
+                        
+                        <button class="btn-site">관련 사이트</button>
+                        
+                        <ul class="site-list">
+                            <li class="site-item"><a href="#">NAVERfficial <i>NEW</i></a></li>
+                            <li class="site-item"><a href="#">NAVER DIARY</a></li>
+                            <li class="site-item"><a href="#">PLAY NAVER</a></li>
+                            <li class="site-item"><a href="#">CH. TECH</a></li>
+                            <li class="site-item"><a href="#">NAVER D2</a></li>
+                        
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="family-list">
+                    <li class="family-item"><a href="#">NAVER Cloud</a></li>
+                    <li class="family-item"><a href="#">SNOW</a></li>
+                    <li class="family-item"><a href="#">NAVER LABS</a></li>
+                    <li class="family-item"><a href="#">NAVER WEBTOON</a></li>
+                    <li class="family-item"><a href="#">NAVER FINANCIAL</a></li>
+                    <li class="family-item"><a href="#">NAVER I&S</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

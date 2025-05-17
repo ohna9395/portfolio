@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/common.js" defer></script>
+    <script src="./assets/js/layout.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header id="header">
+
+            <!-- 기본헤더 -->
+            <div class="main-header">
+                <!-- 띠배너 -->
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#" class="header-banner">
+                                <p><strong class="bold">[공지사항] </strong>2025 설 연휴 배송 일정 안내</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="header-banner">
+                                <p><strong class="bold">[공식몰 단독] </strong>카톡 채널 추가하고 <strong class="bold">1만 원 할인 받기</strong></p>
+                                <img src="./assets/images/icon_kakao.png" alt>
+                                <img src="./assets/images/arrow_r.png" alt class="arrow">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 로고 (버전2개) -->
+                <div class="group-logo"> <!-- 공통으로 쓰고 js로 색만 바꿔주기 -->
+                    <div class="left">
+                            <button class="btn-hamburger">
+                                <span class="blind">햄버거버튼</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17" viewBox="0 0 22 17" fill="none">
+                                    <path d="M22 0H0V1.5H22V0Z" fill="white"></path>
+                                    <path d="M22 7.72754H0V9.22754H22V7.72754Z" fill="white"></path>
+                                    <path d="M17 15.4541H0V16.9541H17V15.4541Z" fill="white"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-search">
+                                <span class="blind">검색버튼</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path d="M20 19.361L15.1854 14.5464C16.3833 13.0632 17.1135 11.1807 17.1135 9.12707C17.1135 4.40374 13.2801 0.570312 8.55676 0.570312C3.83343 0.570312 0 4.40374 0 9.12707C0 13.8504 3.83343 17.6838 8.55676 17.6838C10.6104 17.6838 12.4929 16.9537 13.976 15.7557L18.7906 20.5703L20 19.361ZM1.71135 9.12707C1.71135 5.35069 4.78038 2.28166 8.55676 2.28166C12.3331 2.28166 15.4022 5.35069 15.4022 9.12707C15.4022 12.9035 12.3331 15.9725 8.55676 15.9725C4.78038 15.9725 1.71135 12.9035 1.71135 9.12707Z" fill="white"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    <h1 class="logo">
+                        <a href="#">
+                            <img class="logo-d" src="./assets/images/logo.svg" alt="안다르">
+                            <img class="logo-scroll" src="./assets/images/logo_2.svg" alt="안다르">
+                        </a>
+                    </h1>
+                    <div class="right">
+                        <a href="#" class="cart">
+                            <span class="blind">장바구니</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M20.8889 8.01476H16.9444C16.6667 5.51476 14.5778 3.57031 12 3.57031C9.42222 3.57031 7.33333 5.51476 7.05556 8.01476H3.11111L2 23.5703H22L20.8889 8.01476ZM12 5.23698C13.6444 5.23698 15.0111 6.44809 15.2778 8.01476H8.72222C8.98889 6.44809 10.3556 5.23698 12 5.23698ZM3.78889 21.9036L4.66667 9.68142H7V11.9036H8.66667V9.68142H15.3333V11.9036H17V9.68142H19.3333L20.2111 21.9036H3.78889Z" fill="white"></path></svg>
+                            <span class="num">0</span>
+                        </a>
+                        <a href="#">
+                            <span class="blind">마이페이지</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M12.5889 9.38056C14.0333 8.50278 15 6.93611 15 5.125C15 2.35833 12.7667 0.125 10 0.125C7.23333 0.125 5 2.35833 5 5.125C5 6.93611 5.96667 8.50278 7.41111 9.38056C3.14444 10.5917 0 14.6806 0 19.5694H1.66667C1.66667 14.6694 5.4 10.6806 10 10.6806C14.6 10.6806 18.3333 14.6694 18.3333 19.5694H20C20 14.6806 16.8556 10.5917 12.5889 9.38056ZM10 1.79167C11.8333 1.79167 13.3333 3.29167 13.3333 5.125C13.3333 6.95833 11.8333 8.45833 10 8.45833C8.16667 8.45833 6.66667 6.95833 6.66667 5.125C6.66667 3.29167 8.16667 1.79167 10 1.79167Z" fill="white"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- gnb -->
+                <nav id="gnb" class="gnb-nav">
+
+                    <div class="front"> <!-- gnb-list와 btngnb-all부분을 같은 위치에 두고 front로 한번 묶어주었음-->
+                        <ul class="gnb-list">
+                            <li class="gnb-item"><a href="#" class="link-gnb color">새해 특별전</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb point">신상</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">베스트</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">우먼즈</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">맨즈</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">언더웨어</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">운동별 추천</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">전지현 세트</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">주니어</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">가방/용품/신발</a></li>
+                            <li class="gnb-item"><a href="#" class="link-gnb">상품권</a></li>
+                        </ul>
+                        
+                        <p class="txt">전체메뉴</p>
+                        <button class="btngnb-all"><img src="./assets/images/arrow_bottom.png" alt="전체메뉴"></button>
+                    </div>
+
+                    <div class="all-menu">
+                        <div class="drop-menu">
+                            <ul class="drop-list">
+                                <li class="drop-item"><a href="#" class="link-drop color">새해 특별전</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop point">신상</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">베스트</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">우먼즈</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">맨즈</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">언더웨어</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">운동별 추천</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">전지현 세트</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">주니어</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">가방/용품/신발</a></li>
+                                <li class="drop-item"><a href="#" class="link-drop">아울렛</a></li>
+                            </ul>
+                        </div>                        
+                    </div>
+                </nav>
+            </div>
+
+            <!-- 햄버거 내부영역 -->
+            <div class="hamburger">
+                    <div class="hbg-top">
+                        <div class="util-area">
+                            <div class="utils">
+                                <a href="#" class="login">로그인</a>
+                                <a href="#" class="join">회원가입</a>
+                            </div>
+                            <button class="close"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M17 1.99414L16.0059 1L9 8.00586L1.99414 1L1 1.99414L8.00586 9L1 16.0059L1.99414 17L9 9.99414L16.0059 17L17 16.0059L9.99414 9L17 1.99414Z" fill="#C4C4C4" stroke="#C4C4C4" stroke-width="0.4"></path></svg></button>
+                        </div>
+                        <p>로그인 하고, <span class="bold">회원 전용 혜택</span> 확인하기</p>
+                    </div>
+                    <div class="hbg-mid">
+                        <ul class="gnb-font depth1-list">
+                            <li class="depth1-item">
+                                <a href="#" class="link-depth1 color arrow">새해 특별전</a>
+                                <ul class="depth2-list">
+                                    <li class="depth2-item"><a href="#" class="link-depth2">전체</a></li>
+                                    <li class="depth2-item">
+                                        <a href="#" class="link-depth2 arrow">기모 파이널 특가</a>
+                                        <div class="depth3-area"> <!-- 껍데기로 한번 감싼 애를 토글효과로 쓰고, 원래 있던 li에 flex를 줘야 한다. -->
+                                            <ul class="depth3-list">
+                                                <li class="depth3-item"><a href="#" class="link-depth3">전체</a></li>
+                                                <li class="depth3-item"><a href="#" class="link-depth3">우먼즈</a></li>
+                                                <li class="depth3-item"><a href="#" class="link-depth3">맨즈</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2-item"><a href="#" class="link-depth2">팬츠 특별전</a></li>
+                                    <li class="depth2-item"><a href="#" class="link-depth2">언더웨어 특별전</a></li>
+                                    <li class="depth2-item"><a href="#" class="link-depth2">주니어 스페셜 특가</a></li>
+                                    <li class="depth2-item"><a href="#" class="link-depth2">우먼즈</a></li>
+                                    <li class="depth2-item"><a href="#" class="link-depth2">맨즈</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1-item"><a href="#" class="link-depth1 point">신상</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">베스트</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">우먼즈</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">맨즈</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">언더웨어</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">운동별 추천</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">전지현 세트</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">주니어</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">가방/용품/신발</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">상품권</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">아울렛</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">고객지원</a></li>
+                            <li class="depth1-item"><a href="#" class="link-depth1">안다르 스토리</a></li>
+                        </ul>
+                    </div>
+                    <div class="hbg-bottom">
+                        <p class="issue-title">브랜드 이슈</p>
+                        <a href="#" class="link-issue">
+                            <img src="./assets/images/brand-issue.jpg" alt="브랜드이슈이미지">
+                            <div class="issue-txt">
+                                <p>25SS 신상 보러 가기</p>
+                                <span>전체 →</span>
+                            </div>
+                        </a>
+                        <div class="brand-story">
+                            <a href="#">브랜드스토리</a>
+                            <a href="#">전국매장안내</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="dimmed"></div>
+
+            <!-- 돋보기 내부영역 -->
+            <div class="search">
+                <div class="inner sticky-wrap">
+                    <div class="group-search">
+                        <div class="search-area">
+                            <a href="#" class="prev"><img src="./assets/images/arrow_prev.svg" alt="이전"></a>
+                            <div class="search-bar">
+                                <i><img src="./assets/images/icon-search.svg" alt="돋보기이미지"></i>
+                                <input type="text" placeholder="✨올데이핏 후크형 브라 재입고✨">
+                            </div>
+                            <a href="#" class="cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M20.8889 8.01476H16.9444C16.6667 5.51476 14.5778 3.57031 12 3.57031C9.42222 3.57031 7.33333 5.51476 7.05556 8.01476H3.11111L2 23.5703H22L20.8889 8.01476ZM12 5.23698C13.6444 5.23698 15.0111 6.44809 15.2778 8.01476H8.72222C8.98889 6.44809 10.3556 5.23698 12 5.23698ZM3.78889 21.9036L4.66667 9.68142H7V11.9036H8.66667V9.68142H15.3333V11.9036H17V9.68142H19.3333L20.2111 21.9036H3.78889Z" fill="white"></path></svg>
+                                <span class="num">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="./assets/images/seach-banner.jpg" alt="테크니컬 애슬레저 안다르 베스트셀러">
+                
+                <div class="inner">
+                    <div class="recent-word">
+                        <div class="top">
+                            <span>최근 검색어</span>
+                            <button class="small">전체 삭제</button>
+                        </div>
+                        <p>검색 내역이 없습니다.</p>
+                    </div>
+                    <div class="popular-word">
+                        <div class="top">
+                            <span>인기 검색어</span>
+                            <span class="small">2025. 01. 31 업데이트</span>
+                        </div>
+                        <ul class="popular-list">
+                            <li class="popular-item">
+                                <span class="rank">1</span>
+                                <span><a href="#" class="link-popular">치노팬츠</a></span>
+                            </li>
+                            <li class="popular-item">
+                                <span class="rank">2</span>
+                                <span><a href="#" class="link-popular">부츠컷</a></span>
+                            </li>
+                            <li class="popular-item">
+                                <span class="rank">3</span>
+                                <span><a href="#" class="link-popular">레깅스</a></span>
+                            </li>
+                            <li class="popular-item">
+                                <span>4</span>
+                                <span><a href="#" class="link-popular">브라탑</a></span>
+                            </li>
+                            <li class="popular-item">
+                                <span>5</span>
+                                <span><a href="#" class="link-popular">수영복</a></span>
+                            </li>
+                            <li class="popular-item">
+                                <span>6</span>
+                                <span><a href="#" class="link-popular">에어리핏</a></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="material">
+                        <span class="top">원단별 탐색</span>
+                        <div class="material-area">
+                            <div class="material-card">
+                                <a href="#"><span class="blind">베스트셀러 에어쿨링</span></a> <!-- 이미지를 a태그의 background-img로 넣어보자 -->
+                                <span class="txt">베스트셀러 에어쿨링</span>
+                            </div>
+                            <div class="material-card">
+                                <a href="#"><span class="blind">공기처럼 가벼운 에어엑스퍼트</span></a> <!-- 이미지를 a태그의 background-img로 넣어보자 -->
+                                <span class="txt">공기처럼 가벼운 에어엑스퍼트</span>
+                            </div>
+                            <div class="material-card">
+                                <a href="#"><span class="blind">부드럽고 유연한 릴레어</span></a> <!-- 이미지를 a태그의 background-img로 넣어보자 -->
+                                <span class="txt">부드럽고 유연한 릴레어</span>
+                            </div>
+                            <div class="material-card">
+                                <a href="#"><span class="blind">기모도 슬림하게, 에어웜</span></a> <!-- 이미지를 a태그의 background-img로 넣어보자 -->
+                                <span class="txt">기모도 슬림하게, 에어웜</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        
+        <main id="container">
+            
+            <!-- 메인섹션 1 : 메인비주얼 슬라이드 -->
+            <section class="sc-visual">
+                <h2 class="blind">메인비주얼</h2>
+                
+                <div class="swiper"> <!-- 스와이퍼와 페이지네이션을 div.swiper로 감싸줌. -->
+                    <!-- 스와이퍼 -->
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#" class="link-swiper">
+                                <img src="./assets/images/main-visual01.jpg" alt="비주얼이미지1">
+                                <div class="txt-area">
+                                    <strong>새로운 시작도 안다르와 함께<br>2025 새해 특별전</strong>
+                                    <p class="visual-txt">단 하루, 전 상품 1만원 쿠폰 혜택으로 만나보세요. </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-swiper">
+                                <img src="./assets/images/main-visual02.jpg" alt="비주얼이미지2">
+                                <div class="txt-area">
+                                    <strong> "오직 안다르에만"</strong>
+                                    <p class="visual-txt">전지현 착장 그대로 쇼핑하기<br>전지현의 화보 속 코디를 확인해보세요.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-swiper">
+                                <img src="./assets/images/main-visual03.jpg" alt="비주얼이미지3">
+                                <div class="txt-area">
+                                    <strong>전국 백화점 및 프리미엄 아울렛<br>주요매장안내</strong>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-swiper">
+                                <img src="./assets/images/main-visual04.jpg" alt="비주얼이미지4">
+                                <div class="txt-area">
+                                    <strong>"여러 겹 껴입어도 편안"</strong>
+                                    <p class="visual-txt"> 둔해보이지 않는 안다르 아우터<br>심지어 가볍기까지 하니까,<br>출근·모임·데이트 어디든 손색 없죠.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-swiper">
+                                <img src="./assets/images/main-visual05.png" alt="비주얼이미지5">
+                                <div class="txt-area">
+                                    <strong>안다르의 베스트셀러</strong>
+                                    <p class="visual-txt">안다르가 추천하는 제품들로,<br>더 특별한 새해를 만들어보세요.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 페이지네이션 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </section>
+
+            <!-- 메인섹션 2 : 전지현 영상광고 -->
+            <section class="sc-model">
+                <div class="video-area">
+                    <video src="https://dailynco.ycdn2.kollus.com/kr/media1/dailynco/20240516/23342585/23342585_20240516-9954a5c286ef4ca8_pc1_dailynco-pc1-high-20240516160836.mp4?auth_key=1738221821-679885fdc02e3-0-d2fd69ffe20d2fbe2cd47260839b9f94&amp;channelkey=vpb4j9tpwwt1m1y3" autoplay="" playsinline="" loop="" preload="auto" muted="" controlslist="nodownload noremoteplayback noplaybackrate" disableremoteplayback=""></video>
+                </div>
+                <div class="txt-area">
+                    <h2 class="model-title">전지현의 안다르</h2>
+                    <p class="model-txt">전지현이 선택한 애슬레저 스타일링,  지금 만나보세요.</p>
+                    <a href="#" class="shop">전지현 세트 쇼핑하기</a>
+                </div>
+            </section>
+            
+            <!-- 메인섹션 3 : 신상 -->
+            <section class="sc-new">
+                
+                <div class="title"> <!-- 공통코드 -->
+                    <p class="top">25SS NEW ITEM</p>
+                    <h2 class="bottom">주목해야 할 안다르 신상</h2>
+                </div>
+
+                <ul class="new-list">
+                    <li class="new-item">
+                        <a href="#" class="link-new badge-new">
+                            <img src="./assets/images/new01.jpg" alt="마일드무스셋업">
+                        </a>
+                        <!-- tag-new라는 클래스가 들어가면 해당이미지 우측상단에 태그이미지가 들어갔으면 좋겠음. -->
+                        <div class="productinfo-area"> <!-- 공통코드 -->
+                            <p class="name">[SET] 마일드무스 셋업</p>
+                            <div class="price-area">
+                                <p class="price">119,000원</p>
+                                <p class="fixed">168,000원</p>
+                                <p class="per">29%</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="new-item">
+                        <a href="#" class="link-new badge-new"><img src="./assets/images/new02.jpg" alt="마일드무스오버핏후디"></a>
+                        <div class="productinfo-area">
+                            <p class="name">[SET] 마일드무스 오버핏 후디</p>
+                            <p class="price">79,000원</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#" class="more"> <!-- 공통코드 -->
+                    신상 더보기
+                    <img src="./assets/images/arrow_more.png" alt>
+                </a>
+            </section>
+            
+            <!-- 메인섹션 4 : 베스트 -->
+            <section class="sc-best">
+
+                <div class="title"> <!-- 공통코드 -->
+                    <p class="top">BEST SELLERS</p>
+                    <h2 class="bottom">가장 사랑받는 베스트 아이템</h2>
+                </div>
+
+                <ul class="bestgnb-list"> <!-- 탭 -->
+                    <li class="bestgnb-item">
+                        <a href="#" class="link-bestgnb active" data-con="#bestListAll">전체</a>
+                    </li>
+                    <li class="bestgnb-item" >
+                        <a href="#" class="link-bestgnb" data-con="#bestListWomen">우먼즈</a>
+                    </li>
+                    <li class="bestgnb-item">
+                        <a href="#" class="link-bestgnb" data-con="#bestListMen">맨즈</a>
+                    </li>
+                    <li class="bestgnb-item">
+                        <a href="#" class="link-bestgnb" data-con="#bestListJunior">주니어</a>
+                    </li>
+                    <li class="bestgnb-item">
+                        <a href="#" class="link-bestgnb" data-con="#bestListHomeT">홈트 용품 & ACC</a>
+                    </li>
+                </ul>
+
+                <!-- 탭 내용 -->
+                <div class="tap-con show" id="bestListAll">
+                    <ul class="best-list">
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best01.jpg" alt="[3 SET] NEW 에어리핏 티셔츠 (오버핏, 스탠다드핏, 슬림핏)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">[3 SET] NEW 에어리핏 티셔츠 (오버핏, 스탠다드핏, 슬림핏)</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best02.jpg" alt="[3 SET] NEW 에어리핏 맨즈 티셔츠 (운동 & 일상)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">[3 SET] NEW 에어리핏 맨즈 티셔츠 (운동 & 일상)</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-new"><img src="./assets/images/best03.jpg" alt="[SET] 마일드무스 맨즈 셋업"></a>
+                            <div class="productinfo-area">
+                                <p class="name">[SET] 마일드무스 맨즈 셋업</p>
+                                <div class="price-area">
+                                    <p class="price">119,000원</p>
+                                    <p class="fixed">178,000원</p>
+                                    <p class="per">33%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-hot"><img src="./assets/images/best04.jpg" alt="[1&1] 에어무스 맨즈 기모 퍼포먼스 조거팬츠"></a>
+                            <div class="productinfo-area">
+                                <p class="name">[1&1] 에어무스 맨즈 기모 퍼포먼스 조거팬츠</p>
+                                <div class="price-area">
+                                    <p class="price">94,000원</p>
+                                    <p class="fixed">138,000원</p>
+                                    <p class="per">32%</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tap-con" id="bestListWomen">
+                    <ul class="best-list">
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best01.jpg" alt="[3 SET] NEW 에어리핏 티셔츠 (오버핏, 스탠다드핏, 슬림핏)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">우먼즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best02.jpg" alt="[3 SET] NEW 에어리핏 맨즈 티셔츠 (운동 & 일상)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">우먼즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-new"><img src="./assets/images/best03.jpg" alt="[SET] 마일드무스 맨즈 셋업"></a>
+                            <div class="productinfo-area">
+                                <p class="name">우먼즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">119,000원</p>
+                                    <p class="fixed">178,000원</p>
+                                    <p class="per">33%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-hot"><img src="./assets/images/best04.jpg" alt="[1&1] 에어무스 맨즈 기모 퍼포먼스 조거팬츠"></a>
+                            <div class="productinfo-area">
+                                <p class="name">우먼즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">94,000원</p>
+                                    <p class="fixed">138,000원</p>
+                                    <p class="per">32%</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tap-con" id="bestListMen">
+                    <ul class="best-list">
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best01.jpg" alt="[3 SET] NEW 에어리핏 티셔츠 (오버핏, 스탠다드핏, 슬림핏)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">맨즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best02.jpg" alt="[3 SET] NEW 에어리핏 맨즈 티셔츠 (운동 & 일상)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">맨즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-new"><img src="./assets/images/best03.jpg" alt="[SET] 마일드무스 맨즈 셋업"></a>
+                            <div class="productinfo-area">
+                                <p class="name">맨즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">119,000원</p>
+                                    <p class="fixed">178,000원</p>
+                                    <p class="per">33%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-hot"><img src="./assets/images/best04.jpg" alt="[1&1] 에어무스 맨즈 기모 퍼포먼스 조거팬츠"></a>
+                            <div class="productinfo-area">
+                                <p class="name">맨즈입니다</p>
+                                <div class="price-area">
+                                    <p class="price">94,000원</p>
+                                    <p class="fixed">138,000원</p>
+                                    <p class="per">32%</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tap-con" id="bestListJunior">
+                    <ul class="best-list">
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best01.jpg" alt="[3 SET] NEW 에어리핏 티셔츠 (오버핏, 스탠다드핏, 슬림핏)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">주니어입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best02.jpg" alt="[3 SET] NEW 에어리핏 맨즈 티셔츠 (운동 & 일상)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">주니어입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-new"><img src="./assets/images/best03.jpg" alt="[SET] 마일드무스 맨즈 셋업"></a>
+                            <div class="productinfo-area">
+                                <p class="name">주니어입니다</p>
+                                <div class="price-area">
+                                    <p class="price">119,000원</p>
+                                    <p class="fixed">178,000원</p>
+                                    <p class="per">33%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-hot"><img src="./assets/images/best04.jpg" alt="[1&1] 에어무스 맨즈 기모 퍼포먼스 조거팬츠"></a>
+                            <div class="productinfo-area">
+                                <p class="name">주니어입니다</p>
+                                <div class="price-area">
+                                    <p class="price">94,000원</p>
+                                    <p class="fixed">138,000원</p>
+                                    <p class="per">32%</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tap-con" id="bestListHomeT">
+                    <ul class="best-list">
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best01.jpg" alt="[3 SET] NEW 에어리핏 티셔츠 (오버핏, 스탠다드핏, 슬림핏)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">홈트용품입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best"><img src="./assets/images/best02.jpg" alt="[3 SET] NEW 에어리핏 맨즈 티셔츠 (운동 & 일상)"></a>
+                            <div class="productinfo-area">
+                                <p class="name">홈트용품입니다</p>
+                                <div class="price-area">
+                                    <p class="price">58,000원</p>
+                                    <p class="fixed">117,000원</p>
+                                    <p class="per">50%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-new"><img src="./assets/images/best03.jpg" alt="[SET] 마일드무스 맨즈 셋업"></a>
+                            <div class="productinfo-area">
+                                <p class="name">홈트용품입니다</p>
+                                <div class="price-area">
+                                    <p class="price">119,000원</p>
+                                    <p class="fixed">178,000원</p>
+                                    <p class="per">33%</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="best-item">
+                            <a href="#" class="link-best badge-hot"><img src="./assets/images/best04.jpg" alt="[1&1] 에어무스 맨즈 기모 퍼포먼스 조거팬츠"></a>
+                            <div class="productinfo-area">
+                                <p class="name">홈트용품입니다</p>
+                                <div class="price-area">
+                                    <p class="price">94,000원</p>
+                                    <p class="fixed">138,000원</p>
+                                    <p class="per">32%</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="more"> <!-- 공통코드 -->
+                    베스트 아이템 더보기
+                    <img src="./assets/images/arrow_more.png" alt>
+                </a>
+            </section>
+
+            <!-- 메인섹션 5 : 슬라이드배너광고 -->
+            <section class="sc-ad">
+                <h2 class="blind">슬라이드배너광고</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#"><img src="./assets/images/ad-banner01.jpg" alt="1만원할인쿠폰받기"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#"><img src="./assets/images/ad-banner02.jpg" alt="멤버십전용혜택확인"></a>
+                        </li>
+                    </ul>
+                    <!-- 페이지네이션 -->
+                     <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- 메인섹션 6 : 운동별추천스타일 -->
+            <section class="sc-recomm">
+                <div class="title"> <!-- 공통코드 -->
+                    <p class="top">SHOP BY ACTIVITY</p>
+                    <h2 class="bottom">운동별 추천 스타일</h2>
+                </div>
+
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#" class="link-recomm">
+                                <!-- <img src="" alt="등산"> --> <!-- a링크의 백그라운드이미지로 넣어보자 -->
+                                <!-- 이렇게 해보려고 했지만, swiper가 loop효과가 있는 상태에서는 .swiper-slide:nth-child로 
+                                     백그라운드 이미지를 덮어씌웠을 때 오류가 나서...... 다시 img태그로 수정ㅜ -->
+                                <!-- 결론 : 이 부분은 관리가 되어야하는 영역이므로 img태그를 사용하여 마크업하는 것이 맞음! -->
+                                <img src="./assets/images/recomm01.jpg" alt>
+                                <div class="txt-area">
+                                    <strong class="recomm-title">등산</strong>
+                                    <p class="recomm-txt">상품 보러가기</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-recomm">
+                                <img src="./assets/images/recomm02.jpg" alt>
+                                <div class="txt-area">
+                                    <strong class="recomm-title">러닝</strong>
+                                    <p class="recomm-txt">상품 보러가기</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-recomm">
+                                <img src="./assets/images/recomm03.jpg" alt>
+                                <div class="txt-area">
+                                    <strong class="recomm-title">필라테스/요가</strong>
+                                    <p class="recomm-txt">상품 보러가기</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-recomm">
+                                <img src="./assets/images/recomm04.jpg" alt>
+                                <div class="txt-area">
+                                    <strong class="recomm-title">골프</strong>
+                                    <p class="recomm-txt">상품 보러가기</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#" class="link-recomm">
+                                <img src="./assets/images/recomm05.jpg" alt>
+                                <div class="txt-area">
+                                    <strong class="recomm-title">GYM</strong>
+                                    <p class="recomm-txt">상품 보러가기</p>
+                                </div>
+                            </a>
+                        </li>```
+                    </ul>
+                    <!-- 페이지네이션 -->
+                     <div class="swiper-pagination"></div>
+                </div>
+
+                <a href="#" class="more"> <!-- 공통코드 -->
+                    운동별 추천 더보기
+                    <img src="./assets/images/arrow_more.png" alt>
+                </a>
+            </section>
+
+            <!-- 메인섹션 7 : 배너 -->
+            <section class="sc-banner">
+                <h2 class="blind">배너</h2>
+                <div class="contents">
+                    <a href="#" class="banner">
+                        <img src="./assets/images/banner01.jpg" alt="배너이미지" class="banner-img">
+                        <div class="txt-area">
+                            <strong class="banner-title">브랜드 스토리</strong>
+                            <p class="banner-txt">테크니컬 애슬레저 안다르<br>Technical Athleisure andar</p>
+                            <p class="banner-more">자세히 보기</p>
+                        </div>
+                    </a>
+                    <a href="#" class="banner">
+                        <img src="./assets/images/banner02.jpg" alt="배너이미지" class="banner-img">
+                        <div class="txt-area">
+                            <strong class="banner-title">시그니처 원단 '에어쿨링'</strong>
+                            <p class="banner-txt">Athleisure Innovation Lab에서 개발한,<br>혁신적 기술의 기능성 원단</p>
+                            <p class="banner-more">자세히 보기</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 메인섹션 8 : 룩북 -->
+            <section class="sc-lookbook">
+                <div class="title"> <!-- 공통코드 -->
+                    <p class="top">LOOK BOOK</p>
+                    <h2 class="bottom">지금, 안다르가 제안하는 조합</h2>
+                </div>
+
+                <div class="contents-area">
+                    <div class="contents">
+                        <a href="#" class="thumbnail"> <!-- a링크의 백그라운드이미지로 삽입해보자 -->
+                            <div class="desc">
+                                <p class="lb-title">스타일은 UP, 무게는 DOWN<br>따뜻하고 세련된 겨울 트렌치 코트</p>
+                                <p class="lb-txt">허리를 잡아주어 깔끔한 핏이 트렌디하죠.</p>
+                            </div>
+                        </a>
+
+                        <ul class="lb-list">
+                            <li class="lb-item">
+                                <a href="#" class="link-lb"><img src="./assets/images/lb02.jpg" alt="프리마로프트윈터윈드자켓"></a>
+                                <div class="productinfo-area">
+                                    <p class="name">프리마로프트 윈터 윈드자켓</p>
+                                    <p class="price">229,000원</p>
+                                </div>
+                            </li>
+                            <li class="lb-item">
+                                <a href="#" class="link-lb badge-hot"><img src="./assets/images/lb03.jpg" alt="NEW에어웜기모샤론부츠컷레깅스"></a>
+                                <div class="productinfo-area">
+                                    <p class="name">NEW 에어웜 기모 샤론 부츠컷 레깅스</p>
+                                    <div class="price-area">
+                                        <p class="price">45,000원</p>
+                                        <p class="fixed">49,000원</p>
+                                        <p class="per">8%</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contents">
+                        <a href="#" class="thumbnail thumbnail2"> <!-- a링크의 백그라운드이미지로 삽입해보자 -->
+                            <div class="desc">
+                                <p class="lb-title">"칼바람도 이겨내는 겨울 필수템"<br>후디까지 꽉 채운 프리미엄 덕다운</p>
+                                <p class="lb-txt">높은 솜털 비율로, 한파 출근길에도 따뜻하죠.</p>
+                            </div>
+                        </a>
+                        <ul class="lb-list">
+                            <li class="lb-item">
+                                <a href="#" class="link-lb"><img src="./assets/images/lb05.jpg" alt="웨더브레이크맨즈덕다운후디자켓"></a>
+                                <div class="productinfo-area">
+                                    <p class="name">웨더브레이크 맨즈 덕다운 후디 자켓</p>
+                                    <p class="price">229,000원</p>
+                                </div>
+                            </li>
+                            <li class="lb-item">
+                                <a href="#" class="link-lb badge-hot"><img src="./assets/images/lb06.jpg" alt="에어솔리드맨즈약기모카고슬랙스"></a>
+                                <div class="productinfo-area">
+                                    <p class="name">에어솔리드 맨즈 약기모 카고 슬랙스</p>
+                                    <div class="price-area">
+                                        <p class="price">45,000원</p>
+                                        <p class="fixed">49,000원</p>
+                                        <p class="per">8%</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 메인섹션 9 : WITH안다르 -->
+            <section class="sc-with">
+                <div class="title"> <!-- 공통코드 -->
+                    <p class="top">WITH andar</p>
+                    <h2 class="bottom">안다르와 함께하기</h2>
+                </div>
+
+                <div class="content-area">
+                    <a href="#" class="content">
+                        <img src="./assets/images/with01.jpg" alt>
+                        <div class="txt-area">
+                            <p class="txt">안다르 멤버십</p>
+                            <p class="with-more">자세히 보기</p>
+                        </div>
+                    </a>
+                    <a href="#" class="content">
+                        <img src="./assets/images/with02.jpg" alt>
+                        <div class="txt-area">
+                            <p class="txt">안다르 오프라인 스토어</p>
+                            <p class="with-more">자세히 보기</p>
+                        </div>
+                    </a>
+                    <a href="#" class="content">
+                        <img src="./assets/images/with03.jpg" alt>
+                        <div class="txt-area">
+                            <p class="txt">안다르<br>‘애슬릿 리더’ 멤버십</p>
+                            <p class="with-more">자세히 보기</p>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+            
+            <!-- 플로팅 버튼 -->
+            <div class="fix-btns">
+                <button class="btn-top"></button>
+            </div>
+            
+        </main>
+
+
+        <footer id="footer">
+            <h2><a href="#" class="footer-logo"><img src="./assets/images/footer-logo.svg" alt="안다르"></a></h2>
+            <p class="prize">애슬레저 1위, 4년 연속(2022~2025) 대한민국 패션품질대상 <br>스포츠 애슬레저 부문</p>
+            <div class="cs">
+                <p>고객센터</p>
+                <div class="chat">
+                    <a href="tel:1566-7318" class="bold">1566-7318</a>
+                    <a href="#" class="inquiry">
+                        <!-- before로 넣으려고 했는데 svg는 backgroud-img로 넣으려면 인코딩 해야한다고 해서 태그로 수정. -->
+                        <!-- 해결법 : svg태그를 이미지파일로 만들어주고 그걸 backgroud-img의 url로 사용하는 방법이 있음. -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M9.00281 0H1.00281C0.452808 0 0.00780761 0.45 0.00780761 1L0.00280762 10L2.00281 8H9.00281C9.55281 8 10.0028 7.55 10.0028 7V1C10.0028 0.45 9.55281 0 9.00281 0ZM2.00281 3.5H8.00281V4.5H2.00281V3.5ZM6.00281 6H2.00281V5H6.00281V6ZM8.00281 3H2.00281V2H8.00281V3Z" fill="#76787E"></path></svg>
+                        채팅 문의하기
+                    </a> 
+                </div>
+                <p class="time">평일 AM 10:00 ~ PM 05:30 / 주말, 공휴일 휴무<br>점심 PM 12:00 ~ PM 01:00</p>
+            </div>
+            
+            <div class="sns-area">
+                <a href="#"><img src="./assets/images/icon_facebook.svg" alt="페이스북"></a>
+                <a href="#"><img src="./assets/images/icon_youtube.svg" alt="유튜브"></a>
+                <a href="#"><img src="./assets/images/icon_instagram.svg" alt="인스타그램"></a>
+            </div>
+
+            <div class="guide">
+                <div class="top">
+                    <a href="#" class="link-txt"><span>이용약관</span></a>
+                    <a href="#" class="link-txt"><span>상품권 이용약관</span></a>
+                    <a href="#" class="link-txt"><span>개인정보처리방침</span></a>
+                </div>
+                <div class="bottom">
+                    <a href="#" class="link-txt"><span>쇼핑몰 이용안내</span></a>
+                    <a href="#" class="link-txt"><span>대량구매 안내</span></a>
+                    <a href="#" class="link-txt"><span>'애슬릿 리더' 신청</span></a>
+                </div>
+            </div>
+
+            <address class="info-area">
+                <div class="txt divide">
+                    <span>주식회사 안다르</span>
+                    <span class="line"></span>
+                    <span>대표이사 : 김철웅, 공성아</span>
+                </div>
+                <div class="txt"><span>사업자등록번호 : 103-88-00990</span></div>
+                <div class="txt"><span>통신판매업신고 : 2024-서울송파-3789</span></div>
+                <div class="txt">
+                    <span>주소 : 05510 서울 송파구 올림픽로35다길 42 한국루터회관 9,11,12층</span>
+                </div>
+                <div class="txt divide">
+                    <span>TEL : 1566-7318</span>
+                    <span class="line"></span>
+                    <span>호스팅제공자 : 카페24(주)</span>
+                </div>
+                <div class="txt"><span>이용 문의 : <a href="mailto:help@andar.co.kr">help@andar.co.kr</a></span></div>
+                <div class="txt"><span>마케팅제휴 문의 : <a href="mailto:partnership@andar.co.kr">partnership@andar.co.kr</a></a></span></div>
+                <div class="txt"><span>해외수출 문의 : <a href="mailto:overseas@andar.co.kr">overseas@andar.co.kr</a></a></span></div>
+            </address>
+
+            <small>Copyright by <span class="light">안다르</span>. all rights reserved.</small>
+
+            <div class="mark">
+                <a href="#"><img src="./assets/images/icon_ffc.svg" alt="공정거래위원회"></a>
+                <a href="#"><img src="./assets/images/icon_symantec.svg" alt="symantec"></a>
+                <a href="#"><img src="./assets/images//icon_kg.svg" alt="KG"></a>
+            </div>
+
+        </footer>
+
+        <div class="modal">
+            <div class="modal-centered">
+                <div class="modal-box">
+                    <button class="btn close">
+                        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 7.70711C18.0976 7.31658 18.0976 6.68342 17.707 6.29289C17.3165 5.90237 16.6834 5.90237 16.2928 6.29289L12 10.5857L7.70717 6.29289C7.31664 5.90237 6.68348 5.90237 6.29295 6.29289C5.90243 6.68342 5.90243 7.31658 6.29295 7.70711L10.5858 11.9999L6.29283 16.2929C5.90231 16.6834 5.90231 17.3166 6.29283 17.7071C6.68336 18.0976 7.31652 18.0976 7.70705 17.7071L12 13.4142L16.293 17.7071C16.6835 18.0976 17.3166 18.0976 17.7072 17.7071C18.0977 17.3166 18.0977 16.6834 17.7072 16.2929L13.4142 11.9999L17.707 7.70711Z" fill="rgba(158, 158, 158, 1)"></path></svg>
+                        <span class="blind">팝업 닫기</span>
+                    </button>
+                    <div class="modal-content">
+                        <div class="img-area">
+                            <img src="./assets/images/img-popup01.jpeg" alt="andar 1만원 카카오 채널 쿠폰" class="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

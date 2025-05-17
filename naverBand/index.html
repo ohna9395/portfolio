@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <!-- CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> <!-- 스와이퍼 -->
+     <link rel="stylesheet" href="./assets/css/layout.css">
+     <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.14/lottie.min.js"></script> <!-- 로티 -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!-- 스와이퍼 -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script> <!-- GSAP -->
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script> <!-- GSAP의 스크롤트리거라이브러리 -->
+     <script src="./assets/js/layout.js" defer></script>
+     <script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header-inner"> <!--  헤더는 header-inner로 헤더전용으로 사용해주는 것이 좋다 -->
+                <div class="logo-wrap">
+                    <a href="#sc-visual" class="logo-img"><span class="blind">NAVER logo</span></a>
+                    <a href="#sc-visual" class="logo-txt"><h1>2022 밴드해</h1></a>
+                </div>
+                <div class="util-wrap">
+                    <a href="#" class="util-shortcut">밴드 바로가기</a>
+                    <button class="util-share"></button>
+                </div>
+            </div>
+
+            <!-- 헤더는 fixed상태 그대로 두면서 container의 gnb에 sticky를 사용하고, 그 분기점에서 헤더가 동시에 변하도록 하는 방향을 도전! -->
+            <!-- GNB -->
+            <!-- <div class="header-gnb">
+                <a href="" class="gnb-logo"><span class="blind">NAVER logo</span></a>
+                <nav id="gnb">
+                    <ul class="gnb-list">
+                        <li class="gnb-item"><a href="#">밴드 10주년 보고서</a></li>
+                        <li class="gnb-item"><a href="#">이렇게 밴드해</a></li>
+                        <li class="gnb-item"><a href="#">나의 모임 DNA는?</a></li>
+                        <li class="gnb-item"><a href="#">마이밴드리포트</a></li>
+                        <li class="gnb-item"><a href="#">이벤트</a></li>
+                        <li class="gnb-item"><a href="#">TEAM. 밴드</a></li>
+                    </ul>
+                </nav>
+                <div class="util-wrap">
+                    <a href="#" class="util-shortcut">밴드 바로가기</a>
+                    <button class="util-share"></button>
+                </div>
+            </div> -->
+        </header>
+        
+        
+
+        <main id="container">
+            <!-- section0 : visual -->
+            <section class="sc-visual" id="sc-visual">
+                <div class="video-wrap">
+                    <video class="visual-video" autoplay muted loop playsinline poster="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/img/bg_spot.jpg" src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/bg_spot_v3.mp4">
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
+                <div class="group-content">
+                    <span class="visual-subtxt">HAPPY BAND YEAR</span>
+                    <h2 class="visual-txt">
+                        2022 <br>
+                        밴드해
+                    </h2>
+                    <div class="btn-wrap">
+                        <button class="btn-full"><span class="full-txt">전체 영상 보기</span></button>
+                        <a href="#sc-event1" class="btn-event"><span class="event-txt">10주년 이벤트</span></a>
+                    </div>
+                </div>
+                <a href="#sc-spinnerPhone" class="pagedown"><span class="blind">아래로 내려가기</span></a>
+
+                <div class="video-dimmed">
+                    <div class="video-dimmed-wrap">
+                        <video class="dimmed-visual-video" autoplay muted loop playsinline poster="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/img/bg_spot.jpg" src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/bg_spot_v3.mp4">
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                    <button class="btn-close"><span class="blind">닫기</span></button>
+                </div>
+            </section>
+
+            <nav id="gnb">
+                <div class="gnb-area">
+                    <ul class="gnb-list">
+                        <li class="gnb-item"><a href="#sc-spinnerPhone" class="link-gnb on">밴드 10주년 보고서</a></li>
+                        <li class="gnb-item"><a href="#sc-story" class="link-gnb">이렇게 밴드해</a></li>
+                        <li class="gnb-item"><a href="#sc-dna" class="link-gnb">나의 모임 DNA는?</a></li>
+                        <li class="gnb-item"><a href="#sc-dna" class="link-gnb">마이밴드리포트</a></li>
+                        <li class="gnb-item"><a href="#sc-event1" class="link-gnb">이벤트</a></li>
+                        <li class="gnb-item"><a href="#sc-team" class="link-gnb">TEAM. 밴드</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <!-- section1 : spinnerPhone -->
+            <section class="sc-spinnerPhone" id="sc-spinnerPhone">
+                <div class="inner">
+                    <span class="sc-subtitle">세상 모든 모임의 시작이 되다</span>
+                    <h2 class="sc-title">SNS/커뮤니티앱<br>사용자수 <em class="txt-color">1위</em></h2>
+                    <span class="data-txt">2022.06 기준</span>
+                    <div class="bottom">
+                        <div class="img-wrap">
+                            <img src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/img/article/article01_1.png" alt>
+                        </div>
+                        <p class="sc-caution">
+                            * 빅데이터 분석기업 ㈜아이지에이웍스 모바일인덱스 리포트<br>
+                            * 2022 상반기 랜드스케이프, '한국인이 가장 많이 사용하는 앱’<br>
+                            * 2022년 6월 사용자 (안드로이드 OS+ iOS) 표본조사 기준
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section2 : scrollIcon -->
+            <section class="sc-scrollIcon">
+                <h2 class="blind">10년 동안<br><em class="txt-color">2</em>번의 옷을 갈아입은 밴드!</h2>
+                <div class="before">
+                    <p class="sc-title">10년 동안<br><em class="txt-color">2</em>번의 옷을 갈아입은 밴드!</p>
+                    <div class="img-wrap"><img src="./assets/images/sc-scrollIcon01.png" alt="밴드 이전 로고"></div>
+                    <!-- <div class="img-wrap"><img src="./assets/images/sc-scrollIcon02.png" alt="밴드 현재 로고"></div> -->
+                </div>
+                <div class="after">
+                    <p class="sc-title">10년 동안<br><em class="txt-color">2</em>번의 옷을 갈아입은 밴드!</p>
+                    <!-- <div class="img-wrap"><img src="./assets/images/sc-scrollIcon01.png" alt="밴드 이전 로고"></div> -->
+                    <div class="img-wrap"><img src="./assets/images/sc-scrollIcon02.png" alt="밴드 현재 로고"></div>
+                    <span class="bottom-txt">NEW BAND</span>
+                </div>
+            </section>
+
+            <!-- section3 : userAge -->
+            <section class="sc-userAge">
+                <div class="inner">
+                    <h2 class="sc-title">우리가 몰랐던<br>밴드의 <em class="txt-color">3</em>가지 사실</h2>
+                    <div class="card-area flex-wrap">
+                        <div class="card-item left">
+                            <div class="transition-wrap">
+                                <img class="girl" src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/img/girl.png" alt>
+                            </div>
+                            <strong class="top-txt">1020</strong>
+                            <div class="transition-wrap">
+                                <div class="top-bubble"><span class="blind">밴드를 쓰는</span></div>
+                            </div>
+                            <strong class="bottom-txt">26%</strong>
+                            <div class="transition-wrap">
+                                <div class="bottom-bubble"><span class="blind">전체 사용자의</span></div>
+                            </div>
+                        </div>
+                        <div class="card-item middle">
+                            <div class="transition-wrap">
+                                <div class="bubble"><span class="blind">미션 밴드 참여자의</span></div>
+                            </div>
+                            <strong>3분의 1은<br>1020</strong>
+                            <span class="desc">밴드에서 매일매일<br>미션 인증하며 갓생 사는 중!</span>
+                        </div>
+                        <div class="card-item right">
+                            <strong class="top-txt">또래모임</strong>
+                            <div class="transition-wrap">
+                                <div class="bubble"><span class="blind">1020이 좋아하는 소모임 주제는</span></div>
+                            </div>
+                            <strong class="bottom-txt">독서, 축구</strong>
+                            <div class="transition-wrap">
+                                <img class="boy" src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/img/boy.png" alt>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="sc-caution">
+                        *2022년 5월 누적 밴드 가입자 중 1020의 연령별 비율 기준<br>
+                        *2022.06.24 기준, 1020이 차지하는 비율이 50% 이상인 소모임 밴드 집계
+                    </p>
+                </div>
+            </section>
+
+            <!-- section4 : scrollMarqee -->
+            <section class="sc-scrollMarqee">
+                <div class="title-area">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"><defs><clipPath id="__lottie_element_2"><rect width="1200" height="1200" x="0" y="0"></rect></clipPath><clipPath id="__lottie_element_4"><path d="M0,0 L1000,0 L1000,1000 L0,1000z"></path></clipPath></defs><g clip-path="url(#__lottie_element_2)"><g clip-path="url(#__lottie_element_4)" transform="matrix(1.2000000476837158,0,0,1.2000000476837158,-4.3599853515625,16.14202880859375)" opacity="1" style="display: block;"><g transform="matrix(-0.3632535934448242,0.9316903352737427,-0.9316903352737427,-0.3632535934448242,897.481201171875,-28.254608154296875)" opacity="0.2064661444298473" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(72,143,255)" fill-opacity="1" d=" M293.5,-197.5 C293.5,-197.5 269.5,-195.75 269.5,-195.75 C269.5,-195.75 269.7279968261719,-182.9219970703125 267.25,-176 C263.625,-165.875 258.5,-159 258.5,-159 C258.5,-159 284.75,-156 284.75,-156 C284.75,-156 290.5,-166.75 292,-174 C293.5,-181.25 293.5,-197.5 293.5,-197.5z"></path></g></g><g transform="matrix(0.07393467426300049,0.5651845932006836,-0.5651845932006836,0.07393467426300049,153.77223205566406,-46.09662628173828)" opacity="0.45646618135481076" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(72,143,255)" fill-opacity="1" d=" M293.5,-197.5 C293.5,-197.5 269.5,-195.75 269.5,-195.75 C269.5,-195.75 269.7279968261719,-182.9219970703125 267.25,-176 C263.625,-165.875 258.5,-159 258.5,-159 C258.5,-159 284.75,-156 284.75,-156 C284.75,-156 290.5,-166.75 292,-174 C293.5,-181.25 293.5,-197.5 293.5,-197.5z"></path></g></g><g transform="matrix(-0.44276753067970276,0.896636426448822,-0.896636426448822,-0.44276753067970276,16.236328125,281.3941650390625)" opacity="0.2064661444298473" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(72,143,255)" fill-opacity="1" d=" M293.5,-197.5 C293.5,-197.5 269.5,-195.75 269.5,-195.75 C269.5,-195.75 269.7279968261719,-182.9219970703125 267.25,-176 C263.625,-165.875 258.5,-159 258.5,-159 C258.5,-159 284.75,-156 284.75,-156 C284.75,-156 290.5,-166.75 292,-174 C293.5,-181.25 293.5,-197.5 293.5,-197.5z"></path></g></g><g transform="matrix(0.06291628628969193,0.5966922044754028,-0.5966922044754028,0.06291628628969193,19.97003936767578,687.687255859375)" opacity="0.5397995294007124" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(72,143,255)" fill-opacity="1" d=" M293.5,-197.5 C293.5,-197.5 269.5,-195.75 269.5,-195.75 C269.5,-195.75 269.7279968261719,-182.9219970703125 267.25,-176 C263.625,-165.875 258.5,-159 258.5,-159 C258.5,-159 284.75,-156 284.75,-156 C284.75,-156 290.5,-166.75 292,-174 C293.5,-181.25 293.5,-197.5 293.5,-197.5z"></path></g></g><g transform="matrix(0.08153219521045685,0.7757270336151123,-0.7757270336151123,0.08153219521045685,649.0123291015625,693.9351806640625)" opacity="0.039799459157173235" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(72,143,255)" fill-opacity="1" d=" M293.5,-197.5 C293.5,-197.5 269.5,-195.75 269.5,-195.75 C269.5,-195.75 269.7279968261719,-182.9219970703125 267.25,-176 C263.625,-165.875 258.5,-159 258.5,-159 C258.5,-159 284.75,-156 284.75,-156 C284.75,-156 290.5,-166.75 292,-174 C293.5,-181.25 293.5,-197.5 293.5,-197.5z"></path></g></g><g transform="matrix(-0.06975647062063217,-0.9975640773773193,0.9975640773773193,-0.06975647062063217,993.6427001953125,320.619140625)" opacity="0.039799459157173235" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(176,255,2)" fill-opacity="1" d=" M180.375,-236.25 C180.375,-236.25 163.75,-234.375 163.75,-234.375 C163.75,-234.375 161.75,-226.25 161.75,-220.5 C161.75,-214.75 163.875,-207.125 163.875,-207.125 C163.875,-207.125 178.5,-211.875 178.5,-211.875 C178.5,-211.875 178,-215.5 178.125,-222.25 C178.2449951171875,-228.75399780273438 180.375,-236.25 180.375,-236.25z"></path></g></g><g transform="matrix(0.08715574443340302,-0.9961947202682495,0.9961947202682495,0.08715574443340302,571.9973754882812,286.79443359375)" opacity="0.011777109743246826" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(176,255,2)" fill-opacity="1" d=" M180.375,-236.25 C180.375,-236.25 163.75,-234.375 163.75,-234.375 C163.75,-234.375 161.75,-226.25 161.75,-220.5 C161.75,-214.75 163.875,-207.125 163.875,-207.125 C163.875,-207.125 178.5,-211.875 178.5,-211.875 C178.5,-211.875 178,-215.5 178.125,-222.25 C178.2449951171875,-228.75399780273438 180.375,-236.25 180.375,-236.25z"></path></g></g><g transform="matrix(-0.8319880366325378,-1.424884557723999,1.424884557723999,-0.8319880366325378,511.2098693847656,343.8084411621094)" opacity="0.2897994888693765" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(176,255,2)" fill-opacity="1" d=" M180.375,-236.25 C180.375,-236.25 163.75,-234.375 163.75,-234.375 C163.75,-234.375 161.75,-226.25 161.75,-220.5 C161.75,-214.75 163.875,-207.125 163.875,-207.125 C163.875,-207.125 178.5,-211.875 178.5,-211.875 C178.5,-211.875 178,-215.5 178.125,-222.25 C178.2449951171875,-228.75399780273438 180.375,-236.25 180.375,-236.25z"></path></g></g><g transform="matrix(0.13917310535907745,-0.9902680516242981,0.9902680516242981,0.13917310535907745,323.28533935546875,957.312255859375)" opacity="0.039799459157173235" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(176,255,2)" fill-opacity="1" d=" M180.375,-236.25 C180.375,-236.25 163.75,-234.375 163.75,-234.375 C163.75,-234.375 161.75,-226.25 161.75,-220.5 C161.75,-214.75 163.875,-207.125 163.875,-207.125 C163.875,-207.125 178.5,-211.875 178.5,-211.875 C178.5,-211.875 178,-215.5 178.125,-222.25 C178.2449951171875,-228.75399780273438 180.375,-236.25 180.375,-236.25z"></path></g></g><g transform="matrix(-1.2284796237945557,-0.16863523423671722,0.16863523423671722,-1.2284796237945557,1090.5284423828125,308.4930725097656)" opacity="0.2064661444298473" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(176,255,2)" fill-opacity="1" d=" M85.25,-302 C85.25,-302 59.75,-280.25 59.75,-280.25 C59.75,-280.25 78.25,-264 78.25,-264 C78.25,-264 95,-282 95,-282 C95,-282 85.25,-302 85.25,-302z"></path></g></g><g transform="matrix(-0.8048927187919617,-0.5934203863143921,0.5934203863143921,-0.8048927187919617,1173.7535400390625,225.6998291015625)" opacity="0.5397995294007124" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(250,122,167)" fill-opacity="1" d=" M207.25,-160 C207.25,-160 199,-139.25 199,-139.25 C199,-139.25 217.75,-138.75 217.75,-138.75 C217.75,-138.75 224.5,-158.25 224.5,-158.25 C224.5,-158.25 207.25,-160 207.25,-160z"></path></g></g><g transform="matrix(-0.9513704776763916,-0.3080490529537201,0.3080490529537201,-0.9513704776763916,394.86077880859375,146.8671417236328)" opacity="0.45646618135481076" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(250,122,167)" fill-opacity="1" d=" M207.25,-160 C207.25,-160 199,-139.25 199,-139.25 C199,-139.25 217.75,-138.75 217.75,-138.75 C217.75,-138.75 224.5,-158.25 224.5,-158.25 C224.5,-158.25 207.25,-160 207.25,-160z"></path></g></g><g transform="matrix(-1.073498249053955,-0.6971379518508911,0.6971379518508911,-1.073498249053955,517.6982421875,902.14013671875)" opacity="0.010992178081399118" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(250,122,167)" fill-opacity="1" d=" M207.25,-160 C207.25,-160 199,-139.25 199,-139.25 C199,-139.25 217.75,-138.75 217.75,-138.75 C217.75,-138.75 224.5,-158.25 224.5,-158.25 C224.5,-158.25 207.25,-160 207.25,-160z"></path></g></g><g transform="matrix(-1.130172848701477,-0.6009235978126526,0.6009235978126526,-1.130172848701477,1238.0771484375,737.551025390625)" opacity="0.010992178081399118" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(250,122,167)" fill-opacity="1" d=" M207.25,-160 C207.25,-160 199,-139.25 199,-139.25 C199,-139.25 217.75,-138.75 217.75,-138.75 C217.75,-138.75 224.5,-158.25 224.5,-158.25 C224.5,-158.25 207.25,-160 207.25,-160z"></path></g></g><g transform="matrix(-0.7431448101997375,0.6691306233406067,-0.6691306233406067,-0.7431448101997375,528.6368408203125,-170.08395385742188)" opacity="0.010992178081399118" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(13,203,103)" fill-opacity="1" d=" M85.25,-302 C85.25,-302 59.75,-280.25 59.75,-280.25 C59.75,-280.25 78.25,-264 78.25,-264 C78.25,-264 95,-282 95,-282 C95,-282 85.25,-302 85.25,-302z"></path></g></g><g transform="matrix(-1.2590112686157227,-0.1667049527168274,0.1667049527168274,-1.2590112686157227,332.4400329589844,-273.5885925292969)" opacity="0.2064661444298473" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(13,203,103)" fill-opacity="1" d=" M85.25,-302 C85.25,-302 59.75,-280.25 59.75,-280.25 C59.75,-280.25 78.25,-264 78.25,-264 C78.25,-264 95,-282 95,-282 C95,-282 85.25,-302 85.25,-302z"></path></g></g><g transform="matrix(-0.5877852439880371,0.80901700258255,-0.80901700258255,-0.5877852439880371,345.903076171875,662.93408203125)" opacity="0.009814536158543205" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(13,203,103)" fill-opacity="1" d=" M85.25,-302 C85.25,-302 59.75,-280.25 59.75,-280.25 C59.75,-280.25 78.25,-264 78.25,-264 C78.25,-264 95,-282 95,-282 C95,-282 85.25,-302 85.25,-302z"></path></g></g><g transform="matrix(-0.5394001603126526,0.5353946685791016,-0.5353946685791016,-0.5394001603126526,710.50927734375,634.3170776367188)" opacity="0.45646618135481076" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(13,203,103)" fill-opacity="1" d=" M85.25,-302 C85.25,-302 59.75,-280.25 59.75,-280.25 C59.75,-280.25 78.25,-264 78.25,-264 C78.25,-264 95,-282 95,-282 C95,-282 85.25,-302 85.25,-302z"></path></g></g><g transform="matrix(-0.903725802898407,-0.4281117022037506,0.4281117022037506,-0.903725802898407,1183.5433349609375,-134.709716796875)" opacity="0.2897994888693765" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(244,246,103)" fill-opacity="1" d=" M207.25,-323.625 C207.25,-323.625 192.75,-313.875 192.75,-313.875 C192.75,-313.875 200,-293 200,-293 C200,-293 214.25,-304.375 214.25,-304.375 C214.25,-304.375 207.25,-323.625 207.25,-323.625z"></path></g></g><g transform="matrix(0.08715574443340302,-0.9961947202682495,0.9961947202682495,0.08715574443340302,532.2473754882812,1035.04443359375)" opacity="0.010992178081399118" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(244,246,103)" fill-opacity="1" d=" M180.375,-236.25 C180.375,-236.25 163.75,-234.375 163.75,-234.375 C163.75,-234.375 161.75,-226.25 161.75,-220.5 C161.75,-214.75 163.875,-207.125 163.875,-207.125 C163.875,-207.125 178.5,-211.875 178.5,-211.875 C178.5,-211.875 178,-215.5 178.125,-222.25 C178.2449951171875,-228.75399780273438 180.375,-236.25 180.375,-236.25z"></path></g></g><g transform="matrix(0.13917310535907745,-0.9902680516242981,0.9902680516242981,0.13917310535907745,846.5353393554688,1085.812255859375)" opacity="0.039799459157173235" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(244,246,103)" fill-opacity="1" d=" M180.375,-236.25 C180.375,-236.25 163.75,-234.375 163.75,-234.375 C163.75,-234.375 161.75,-226.25 161.75,-220.5 C161.75,-214.75 163.875,-207.125 163.875,-207.125 C163.875,-207.125 178.5,-211.875 178.5,-211.875 C178.5,-211.875 178,-215.5 178.125,-222.25 C178.2449951171875,-228.75399780273438 180.375,-236.25 180.375,-236.25z"></path></g></g><g transform="matrix(-0.12186934053897858,-0.9925461411476135,0.9925461411476135,-0.12186934053897858,718.7769775390625,68.90335083007812)" opacity="0.12313280119245079" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(244,246,103)" fill-opacity="1" d=" M-4.75,-242.75 C-4.75,-242.75 -18.5,-236 -18.5,-236 C-18.5,-236 -14.706000328063965,-226.6179962158203 -14.5,-223.625 C-14.25,-220 -15,-212.25 -15,-212.25 C-15,-212.25 0.625,-217.125 0.625,-217.125 C0.625,-217.125 0,-226.125 -0.5,-229.625 C-1,-233.125 -4.75,-242.75 -4.75,-242.75z"></path></g></g><g transform="matrix(-0.5633658766746521,1.0595371723175049,-1.0595371723175049,-0.5633658766746521,470.95556640625,-112.94094848632812)" opacity="0.2064661444298473" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(176,255,2)" fill-opacity="1" d=" M46.875,-203.875 C46.875,-203.875 42.375,-192.25 42.375,-192.25 C42.375,-192.25 48.375,-187.875 50,-187.25 C51.625,-186.625 60,-183.875 60,-183.875 C60,-183.875 62.875,-194.375 62.875,-194.375 C62.875,-194.375 58,-195.625 54.75,-197.375 C51.5,-199.125 46.875,-203.875 46.875,-203.875z"></path></g></g><g transform="matrix(-0.6673799157142639,1.0805109739303589,-1.0805109739303589,-0.6673799157142639,1077.55126953125,613.6373901367188)" opacity="0.7477594888962853" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(250,122,167)" fill-opacity="1" d=" M159.5,77.75 C159.5,77.75 155.25,88.5 155.25,88.5 C155.25,88.5 159.5,92.75 163,94.25 C166.5,95.75 173,97.5 173,97.5 C173,97.5 175,86.5 175,86.5 C175,86.5 170.5,86.5 167.5,85.25 C164.5,84 159.5,77.75 159.5,77.75z"></path></g></g><g transform="matrix(-0.1908089965581894,-0.9816271662712097,0.9816271662712097,-0.1908089965581894,1005.222412109375,759.8751220703125)" opacity="0.014132532181181717" style="display: none;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(244,246,103)" fill-opacity="1" d=" M283,-16 C283,-16 260,-4.5 260,-4.5 C260,-4.5 266.5,7.5 266,16.5 C265.5,25.5 264.5,35.5 264.5,35.5 C264.5,35.5 291,28.5 291,28.5 C291,28.5 291,13 289.5,4 C288,-5 283,-16 283,-16z"></path></g></g></g></g></svg> -->
+                    <!-- 로티이기 때문에 svg필요없음 -->
+                    <div id="lottie-firecracker"></div>
+                    <h2 class="sc-title">10년 동안 <em class="txt-color">4</em>랑해 주셔서<br>감<em class="txt-color">4</em>해요!</h2>
+                </div>
+                <div class="scrollMarqee-area">
+                    <div class="top">
+                        <span class="download">1억 5,600만 다운로드!</span>
+                        <span class="write">쌓인 게시글은 61억</span>
+                        <span class="download">1억 5,600만 다운로드!</span>
+                        <span class="write">쌓인 게시글은 61억</span>
+                        <span class="download">1억 5,600만 다운로드!</span>
+                        <span class="write">쌓인 게시글은 61억</span>
+                    </div>
+                    <div class="bottom">
+                        <span class="reply">200억개의 댓글</span>
+                        <span class="chat">500억개의 채팅 메시지</span>
+                        <span class="reply">200억개의 댓글</span>
+                        <span class="chat">500억개의 채팅 메시지</span>
+                        <span class="reply">200억개의 댓글</span>
+                        <span class="chat">500억개의 채팅 메시지</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section5 : keyword -->
+            <section class="sc-keyword">
+                <h2 class="sc-title">연령별 모임 키워드 TOP<em class="txt-color">5</em></h2>
+                <div class="tab-wrap">
+                    <div class="tab-area">
+                        <ul class="tab-list">
+                            <li class="tab-item active"><button>10대</button></li>
+                            <li class="tab-item"><button>20대</button></li>
+                            <li class="tab-item"><button>30대</button></li>
+                            <li class="tab-item"><button>40대</button></li>
+                            <li class="tab-item"><button>50대</button></li>
+                            <li class="slider"></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <!-- 떨어지는공들 -->
+                        <div class="content-area area1 show">
+                            <div id="lottie001"></div>
+                        </div>
+                        <div class="content-area area2">
+                            <div id="lottie002"></div>
+                        </div>
+                        <div class="content-area area3">
+                            <div id="lottie003"></div>
+                        </div>
+                        <div class="content-area area4">
+                            <div id="lottie004"></div>
+                        </div>
+                        <div class="content-area area5">
+                            <div id="lottie005"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="sc-caution">
+                    *2020.06~2022.05 기간 중 연령별 인기 검색 키워드 TOP5(어뷰징, 상업 키워드 제외)
+                </p>
+            </section>
+            
+            <!-- section6 : marquee -->
+            <section class="sc-marquee">
+                <div class="inner">
+                    <div class="content-area">
+                        <span class="sc-subtitle">10년 동안 모임을 위한</span>
+                        <h2 class="sc-title">밴드의 6가지 변화</h2>
+                        <div class="marquee-content">
+                            <div class="swiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <img src="./assets/images/sc-marquee01.png" alt>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="./assets/images/sc-marquee02.png" alt>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="./assets/images/sc-marquee03.png" alt>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section7 : local -->
+            <section class="sc-local">
+                <div class="inner">
+                    <h2 class="sc-title">특이점이 있는 밴드 모임<br>
+                        <em class="txt-color">7</em>가지 지역 탐방
+                    </h2>
+                    <div class="tab-area">
+                        <ul class="tab-list">
+                            <li class="tab-item active"><button>속초에선 드론, 액션캠</button></li>
+                            <li class="tab-item"><button>가평에선 서핑, 웨이크보드</button></li>
+                            <li class="tab-item"><button>무주에선 스노보드, 스키</button></li>
+                            <li class="tab-item"><button>영덕과 완도는 낚시</button></li>
+                            <li class="tab-item"><button>청도는 글쓰기</button></li>
+                            <li class="tab-item"><button>나주는 꽃, 식물 모임이 대세!</button></li>
+                        </ul>
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local01.jpg" alt>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local02.jpg" alt>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local03.jpg" alt>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local04.jpg" alt>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local01.jpg" alt>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local02.jpg" alt>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="./assets/images/sc-local03.jpg" alt>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="link link-black">우리 동네 소모임 바로가기</a>
+                        <p class="sc-caution">
+                            *2022.05 기준 전체 소모임 밴드 중 지역별 TOP10 밴드 인기 주제를 집계
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section8 : bandYear -->
+            <section class="sc-bandYear">
+                <div class="inner flex-wrap">
+                    <div class="card card-left">
+                        <span class="sc-subtitle">Happy Band Year</span>
+                        <h2 class="sc-title">
+                            <em class="txt-color">8</em>월 <em class="txt-color">8</em>일<br>
+                            밴드 10주년
+                        </h2>
+                        <div class="video-wrap">
+                            <video class="video-before" autoplay muted loop playsinline>
+                                <source src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/before_m.mp4" type="video/mp4">
+                            </video>
+                            <!-- <video class="video-after" autoplay muted loop playsinline>
+                                <source src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/after_m.mp4" type="video/mp4">
+                            </video> -->
+                        </div>
+
+                        <label for="switch" class="switch">
+                            <input type="checkbox" id="switch">
+                            <span class="switch_slide"></span>
+                        </label>
+                        <p class="card-desc">밀어서 축하하기</p>
+                    </div>
+                    <div class="card card-right">
+                        <div class="swiper-bandYear swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <span class="sc-subtitle">밴드에서도 갓생 열풍!</span>
+                                    <h2 class="sc-title">
+                                        <em class="txt-color">9</em>가지 갓생밴드
+                                    </h2>
+                                    <div class="video-wrap">
+                                        <video class="god_video" autoplay muted loop playsinline>
+                                            <source src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/god.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <p class="desc">목표를 정하고 인증 챌린지하는<br><em class="txt-color">미션인증밴드</em></p>
+                                    <img src="./assets/images/sc-bandyear01.png" alt>
+                                    <span class="sc-caution">*2019.12~2022.05 기간 중 누적된 미션 수,미션 인증글 수 집계</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="sc-subtitle">밴드에서도 갓생 열풍!</span>
+                                    <ul class="god-list"> <!-- a태그의 백그라운드이미지 추가필요 -->
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">#GOD생</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">운동</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">취미</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">글쓰기</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">외국어</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">습관</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">그림공예</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">팬</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">독서</span></a></li>
+                                        <li class="god-item"><a href="#" class="link-god"><span class="blind">스터디</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="swiper-controller"> <!-- swiper-wrapper 밖에 위치해 있어야 한다! -->
+                                <button class="btn prev" aria-label="이전"></button>
+                                <button class="btn next" aria-label="다음"></button>
+                            </div>                                               
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section9 : thank -->
+            <section class="sc-thank">
+                <h2 class="sc-title">
+                    <em class="txt-color">10</em>년 동안<br>
+                    밴드해줘서<br>
+                    고마워!
+                </h2>
+                <div class="video-wrap">
+                    <video class="heart01" autoplay muted loop playsinline>
+                        <source src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/heart01.mp4" type="video/mp4">
+                    </video>
+                    <video class="heart02" autoplay muted loop playsinline>
+                        <source src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/heart02.mp4" type="video/mp4">
+                    </video>
+                    <video class="heart03" autoplay muted loop playsinline>
+                        <source src="https://campaign-cdn.pstatic.net/0/campaign/2022/08/band-10th-anniversary/video/heart03.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+
+            <!-- section10 : story -->
+            <section class="sc-story" id="sc-story">
+                <div class="inner">
+                    <h2 class="sc-title">대한민국은 지금 <em class="txt-color">이렇게 밴드해</em></h2>
+                    <p class="sc-subtitle">실제 밴드 사용자들의 사연을 모아 보여 드립니다.</p>
+                     <!-- 버튼클릭시, 해당 슬라이드이동을 구현 -->
+                     <!-- const swiper = new Swipe(functoin() {
+                        })
+                        $(btn).click(function() {
+                            let idx = $(this).index();
+                            swiper.slideTo(idx);
+                        }) -->
+                    <div class="flex-wrap">
+                        <div class="left-area">
+                            <ul class="storylist">
+                                <li class="storyitem">
+                                    <button class="btn btn1 on">
+                                        <span class="blind">1번째버튼</span>
+                                        <span class="info-bubble">
+                                            <span class="blind">클릭헤서 확인해보세요</span>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="storyitem"><button class="btn btn2"><span class="blind">2번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn3"><span class="blind">3번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn4"><span class="blind">4번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn5"><span class="blind">5번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn6"><span class="blind">6번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn7"><span class="blind">7번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn8"><span class="blind">8번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn9"><span class="blind">9번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn10"><span class="blind">10번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn11"><span class="blind">11번째버튼</span></button></li>
+                                <li class="storyitem"><button class="btn btn12"><span class="blind">12번째버튼</span></button></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="right-area">
+                            <div class="swiper-story swiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <div class="title-area">
+                                            <h3 class="card-title">광주 20대 직장인 & 대학생 등산밴드</h3>
+                                            <p class="desc">광주에 사는 20대 청년들이 모여서 만든 등산 밴드입니다. 운동을 하고 싶은데 혼자 클라이밍이나 등산을 하기가 어렵고 의욕이 생기지 않아 같이 동기부여해 줄 사람들이 필요해서 만들었어요.</p>
+                                        </div>
+                                        <div class="content-area">
+                                            <div class="function">
+                                                <span class="content-title">
+                                                    &lt;밴드에서 잘 쓰는 기능&gt;
+                                                </span>
+                                                <h4 class="content-sub">등산 공지(투표첨부) + 댓글</h4>
+                                                <p class="desc">등산 코스와 일정, 활동 후기를 게시글로 올리니 멤버들에게 공지하기 편하고, 글을 몇 명이 읽었는지도 확인이 가능해서 관리하기도 수월합니다.  또 개인적인 질문은 1:1채팅으로 별도로 할 수 있다는 점도 좋아요.</p>
+                                                <div class="img-wrap">
+                                                    <img src="./assets/images/sc-story01.png" alt>
+                                                </div>
+                                            </div>
+                                            <div class="episode">
+                                                <h4 class="content-sub">밴드에서 있었던 에피소드</h4>
+                                                <p class="desc">원래 등산에 대한 지식이 거의 없었는데 등산 모임 밴드를 운영하면서 많이 찾아보고 알아가면서 재미와 의욕이 생기게 되었습니다.  밴드는 추억을 기록하는 아카이빙과  커뮤니티 기능이 모두 가능해서 매우 좋습니다. 첫 등산 모임 공지를 올릴 때는 다들 적극적으로 댓글도 달아주시고 첫 모임에 같이 산을 오르면서 간식도 나눠먹고 활동을 잘 마무리할 수 있어서 뿌듯했습니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="slogan-area">
+                                            <h4 class="slogan-title">우리에게 밴드란?</h4>
+                                            <strong class="slogan-txt">밴드는 <span class="underline">움직이게 하는 원동력</span>이다</strong>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <div class="title-area">
+                                            <h3 class="card-title">스마트폰 없는 10대들의 밴드 활용기</h3>
+                                            <p class="desc">핸드폰이 없어 톡을 못 하는데 때마침 친구가 밴드를 알려주더라고요. 그래서 봤더니 원했던 기능이 다 있어서 친구들과 우정밴드를 시작했어요. 밴드를 만드니까 일기나 재밌었던 일들을 보관하기 너무 좋아요.</p>
+                                        </div>
+                                        <div class="content-area">
+                                            <div class="function">
+                                                <span class="content-title">
+                                                    &lt;밴드에서 잘 쓰는 기능&gt;
+                                                </span>
+                                                <h4 class="content-sub">비디오콜</h4>
+                                                <p class="desc">갑자기 얼굴을 보고 싶을 때 비디오콜로 친구와 이야기할 수 있어요. 핸드폰이 없는 친구들에게는 정말 유용한 기능이 될 것 같아요.</p>
+                                                <div class="img-wrap">
+                                                    <img src="./assets/images/sc-story02.png" alt>
+                                                </div>
+                                            </div>
+                                            <div class="episode">
+                                                <h4 class="content-sub">밴드에서 있었던 에피소드</h4>
+                                                <p class="desc">밴드를 만들고 난 후 공부에 힘들어했던 친구가 밴드에 글을 쓰며 공부에 집중이 잘 된다고 했어요! 그러니 마음이 뿌듯했어요! 그래서 밴드가 더 좋아지게 된 것 같아요^^</p>
+                                            </div>
+                                        </div>
+                                        <div class="slogan-area">
+                                            <h4 class="slogan-title">우리에게 밴드란?</h4>
+                                            <strong class="slogan-txt">밴드는 <span class="underline">유일한 소통</span>이다</strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="swiper-controller">
+                                <div class="btn-area">
+                                    <button class="btn prev" aria-label="이전"></button>
+                                    <button class="btn next" aria-label="다음"></button>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="link link-black">12가지 밴드스토리 보기</button>
+                    <!-- 클릭 시, 팝업 구현 필요 -->
+
+                </div>
+            </section>
+
+            <!-- section11 : dna -->
+            <section class="sc-dna" id="sc-dna">
+                <h2 class="blind">특집과보고서</h2>
+                <div class="inner flex-wrap">
+                    <div class="card card-left">
+                        <div class="title-area">
+                            <span class="sc-subtitle">밴드 10주년 특집</span>
+                            <strong class="sc-title">나의 모임 DNA는?</strong>
+                        </div>
+                        <div class="img-area"><img src="./assets/images/sc-dna01.gif" alt></div>
+                        <div class="link-area">
+                            <span class="pop-txt">
+                                지금까지 196,808명이 참여!
+                            </span>
+                            <a href="#" class="link link-white">테스트 시작하기</a>
+                        </div>
+                    </div>
+                    <div class="card card-right">
+                        <div class="title-area">
+                            <span class="sc-subtitle">밴드 10주년 보고서</span>
+                            <strong class="sc-title">마이 밴드 리포트</strong>
+                        </div>
+                        <div class="img-area"><img src="./assets/images/sc-dna03.png" alt></div>
+                        <div class="link-area">
+                            <span class="pop-txt"><!-- 백그라운드이미지 추가필요-->
+                                <span class="blind">밴드에서 확인하면<br>밴드 10주년 이모티콘 100% 지급!</span>
+                            </span>
+                            <a href="#" class="link link-white">BAND에서 확인하기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section12 : event1 -->
+            <section class="sc-event1 event" id="sc-event1">
+                <div class="inner">
+                    <div class="title-area">
+                        <span class="event-num">EVENT 1</span>
+                        <h2 class="sc-title">2022 축하해</h2>
+                        <p class="desc">
+                            아래 밴드 10주년 축하 이미지를 저장 or 캡처해
+                            축하 메시지와 함께 SNS에 인증해 주세요! <br>
+                            <em class="txt-color">총 1,500명에게 네이버페이 포인트</em>를 드립니다.
+                        </p>
+                    </div>
+                    <div class="content-area">
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#" class="link-event1">
+                                        <!-- 다운로드 버튼 after처리 -->
+                                        <img src="./assets/images/sc-event1-01.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="link-event1">
+                                        <img src="./assets/images/sc-event1-02.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="link-event1">
+                                        <img src="./assets/images/sc-event1-03.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="link-event1">
+                                        <img src="./assets/images/sc-event1-04.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="link-event1">
+                                        <img src="./assets/images/sc-event1-05.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="swiper-controller">
+                                <button class="btn prev" aria-label="이전"></button>
+                                <div class="swiper-pagination"></div>
+                                <buitton class="btn next" aria-label="다음"></buitton>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-area">
+                        <ol class="info-list">
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">1</span> 참여방법
+                                </strong>
+                                <ol class="way-list">
+                                    <li class="way-item">
+                                        <span class="num">1.</span>
+                                        <p class="info-txt">
+                                            위의 밴드 10주년 축하 이미지 중 마음에 드는 것을 <br>
+                                            저장 or 캡처해 주세요.
+                                        </p>
+                                    </li>
+                                    <li class="way-item">
+                                        <span class="num">2.</span>
+                                        <p class="info-txt">
+                                             밴드 10주년 축하 메시지를 적어 저장 or 캡처한 이미지, <br>
+                                            &lt;2022 밴드해&gt; 캠페인 링크와 함께 SNS에 공유해 주세요. <br>
+                                            <em class="txt-color">#밴드10주년 #2022밴드해 #네이버밴드</em>
+                                            <span class="caution">*해시태그필수 <br>※ 공유를 많이 할수록 당첨 확률 Up!</span>
+                                        </p>
+                                    </li>
+                                    <li class="way-item">
+                                        <span class="num">3.</span>
+                                        <p class="info-txt">
+                                            포스팅한 내용을 캡처, 업로드한 링크를 <br>
+                                            네이버폼에 제출하면 끝!
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">2</span> 이벤트 상품
+                                </strong>
+                                <ul class="gift-list">
+                                    <li>선착순 1,000명 : <span class="underline">네이버페이 포인트 3,000원</span></li>
+                                    <li>추첨 500명 : <span class="underline">네이버페이 포인트 10,000원</span></li>
+                                </ul>
+                            </li>
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">3</span>  참여 기간
+                                </strong>
+                                <p class="info-txt">2022.08.08(월) ~ 2022.08.21(일)</p>
+                            </li>
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">4</span>  당첨 발표
+                                </strong>
+                                <p class="info-txt">2022.09.30(금), 밴드 블로그 및 공지사항</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#" class="link link-black">응모하기</a>
+                </div>
+            </section>
+
+            <!-- section13 : event2 -->
+            <section class="sc-event2 event">
+                <div class="inner">
+                    <div class="title-area">
+                        <span class="event-num">EVENT 2</span>
+                        <h2 class="sc-title">지금 밴드해</h2>
+                        <p class="desc">
+                            지금 새로운 밴드에 가입하고 활동을 시작해 보세요. <br>
+                            추첨을 통해 <em class="txt-color">총 3명에게 iPhone 13</em>을, <em class="txt-color">총 1천명에게 네이버페이 포인트</em>를 드립니다
+                        </p>
+                    </div>
+                    <div class="img-area">
+                        <strong class="desc"><span class="blind">추천 밴드 가입하면 100% 응모 완료!</span></strong>
+                        <img src="./assets/images/sc-event2-01.png" alt>
+                    </div>
+                    <div class="info-area">
+                        <ol class="info-list">
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">1</span> 참여방법
+                                </strong>
+                                <p class="info-txt">
+                                    ‘추천 밴드 가입하기’ 버튼을 눌러, <br>
+                                    마음에 드는 밴드를 찾아 가입하면 응모 끝!
+                                    <span class="caution">※ 글, 댓글 활동을 많이하면 당첨 확률 UP!</span>
+                                </p>
+                            </li>
+                            <li class="gift-list">
+                                <strong class="info-title">
+                                    <span class="num">2</span> 이벤트 상품
+                                </strong>
+                                <strong class="info-txt underline">iPhone 13 (3명), 네이버페이 포인트 5천원 (1,000명)</strong>
+                                <span class="caution">실제 지급되는 이벤트 경품은 세부 조건이 상기 이미지와 상이할 수 있습니다.</span>
+                                <span class="caution">경품에 대한 제세공과금(22%)은 본인 부담입니다.</span>
+                            </li>
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">3</span>  참여 기간
+                                </strong>
+                                <p class="info-txt">2022.08.08(월) ~ 2022.08.21(일)</p>
+                            </li>
+                            <li class="info-item">
+                                <strong class="info-title">
+                                    <span class="num">4</span>  당첨 발표
+                                </strong>
+                                <p class="info-txt">2022.09.30(금), 밴드 앱 푸시 알림 및 새소식</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#" class="link link-black">추천 밴드 가입하기</a>
+                </div>
+            </section>
+
+            <!-- section14 : team -->
+            <section class="sc-team" id="sc-team">
+                <div class="inner">
+                    <h2 class="sc-title">밴드를 만든 사람들 <em class="txt-color">TEAM.밴드</em></h2>
+                    <div class="content-area flex-wrap">
+                        <div class="video-wrap"><iframe src="https://tv.naver.com/embed/28319858?autoPlay=false" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="autoplay" allowfullscreen=""></iframe></div>
+                        <div class="right">
+                            <p class="sc-subtitle">밴드 10주년, <br>
+                                동료들이 이야기 하는 <br>
+                                성장과 도전 스토리
+                            </p>
+                            <div class="interview">
+                                <p class="desc">빠르게 변화하는 IT산업에서 10주년을 맞는 서비스로 성장하기까지, '밴드를 만드는 사람들'에게 직접 듣는 우리 서비스에 대한 이야기를 준비했습니다.</p>
+                                <a href="#" class="link-interview">인터뷰 보러가기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section15 : notice -->
+            <section class="sc-notice">
+                <div class="inner">
+                    <div class="notice-cotent">
+                        <button class="notice-title">EVENT1. '2022 축하해!' 유의사항</button>
+                        <ul class="notice-list">
+                            <li class="notice-item">이벤트 참여시 필수 해시태그와 축하 내용, 축하 이미지를 함께 업로드하셔야 정상 참여로 인정되며 동일한 SNS 링크로 네이버폼 중복 제출 시 당첨에서 제외됩니다.</li>
+                            <li class="notice-item">이벤트 참여시 전체 공개된 포스팅만 이벤트 응모로 인정됩니다.</li>
+                            <li class="notice-item">상품 또는 업체 홍보 목적 글, 직접 작성하지 않은 글은 혜택 지급 대상에서 제외될 수 있습니다.</li>
+                            <li class="notice-item">동일한 문자, 문구 등을 단순히 반복한 게시물, 내용 없이 태그만 있는 게시물, 수익성 리뷰 및 홍보성 체험단 게시글, 복사/붙여넣기 또는 자동화된 수단을 사용한 게시물, 다른 사람의 콘텐츠를 그대로 가져오는 경우 등 이벤트 취지에 맞지 않는 참여 게시물은 혜택 지급 대상에서 제외될 수 있습니다.</li>
+                            <li class="notice-item">이벤트와 무관하거나 부적절한 방법을 통한 참여는 모두 취소 처리될 수 있습니다.</li>
+                            <li class="notice-item">추첨 이벤트 당첨자는 모든 참여자(선착순 이벤트에 당첨자 포함)를 대상으로 추첨합니다.</li>
+                            <li class="notice-item">당첨자 발표는 이벤트 종료 후 밴드 블로그와 밴드 앱 내 공지사항을 통해 안내 예정입니다.</li>
+                            <li class="notice-item">네이버 폼에 작성한 네이버 ID로 네이버페이 경품이 지급되며, 네이버페이 약관 동의 시에만 받으실 수 있습니다. <a href="#" class="link-notice">약관 동의 확인하기 ></a></li>
+                            <li class="notice-item">네이버페이 포인트는 네이버페이 서비스에 가입되어 있어야 포인트 지급이 가능하며, 지급 시점에 네이버페이에 가입되지 않았을 경우 지급이 불가할 수 있습니다. 이벤트 참여 전, 네이버페이 가입 여부를 꼭 확인해 주세요. <a href="#" class="link-notice">네이버페이 가입 바로 가기 ></a></li>
+                            <li class="notice-item">네이버페이 포인트 보유 한도는 1인 최대 200만원으로 초과 시 지급되지 않습니다.</li>
+                            <li class="notice-item">당첨 발표일을 기준으로 게시글을 삭제하거나 확인할 수 없는 경우 이벤트 당첨 대상에서 제외됩니다.</li>
+                            <li class="notice-item">당첨자 선정은 추첨을 통해 진행되며, 부적절한 방법으로 참여 시 당첨이 취소됩니다.</li>
+                            <li class="notice-item">모든 경품은 명의 변경, 양도, 유효기간 연장, 교환 및 환불 등이 불가하며, 경품 내용 및 당첨 인원 또한 사전 고지없이 변경될 수 있습니다.</li>
+                            <li class="notice-item">수집된 개인 정보는 네이버페이 포인트 지급 외 다른 용도로 사용되지 않으며 지급 후 폐기됩니다.</li>
+                        </ul>
+                    </div>
+                    <div class="notice-cotent">
+                        <button class="notice-title">EVENT2. '지금 밴드해!' 유의사항</button>
+                        <ul class="notice-list">
+                            <li class="notice-item">‘지금 밴드해’ 이벤트는 이벤트 기간 중 공개 밴드/밴드명 공개 밴드에 가입하면 자동으로 응모됩니다.</li>
+                        </ul>
+                    </div>
+                    <div class="notice-cotent">
+                        <button class="notice-title">'밴드 10주년 보고서' 데이터 집계 기준</button>
+                        <ul class="notice-list">
+                            <li class="notice-item">‘지금 밴드해’ 이벤트는 이벤트 기간 중 공개 밴드/밴드명 공개 밴드에 가입하면 자동으로 응모됩니다.</li>
+                        </ul>
+                    </div>
+                    <div class="notice-cotent">
+                        <button class="notice-title">이벤트 공통 유의사항</button>
+                        <ul class="notice-list">
+                            <li class="notice-item">밴드 10주년 캠페인 이벤트는 사전 예고 없이 변경 및 종료될 수 있습니다.</li>
+                            <li class="notice-item">이벤트 관련 문의 사항은 <a href="#" class="link-notice">네이버 고객센터</a>로 연락 부탁드립니다.</li>
+                        </ul>
+                    </div>
+                    <div class="notice-cotent">
+                        <button class="notice-title">마이 밴드 리포트 유의사항</button>
+                        <ul class="notice-list">
+                            <li class="notice-item">마이 밴드 리포트는 2012.08.08 ~ 2022.06.30 기간의 데이터입니다.</li>
+                            <li class="notice-item">마이 밴드 리포트는 2022.06.30 이전에 밴드에 가입하고 활동한 이력이 있는 유저에 한해서만 제공됩니다.</li>
+                            <li class="notice-item">밴드 10주년 스티커는 마이 밴드 리포트를 확인하면 자동으로 지급되며, [밴드 앱 > 키패드 > 스티커]에서 다운로드할 수 있습니다.</li>
+                            <li class="notice-item">밴드 10주년 스티커는 지급일로부터 30일간 사용할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer id="footer">
+            <small class="copy"><a href="#">© NAVER Corporation</a></small>
+            <span class="tel">대표전화 : 1588-3820</span>
+            <button class="btn-top"></button>
+        </footer>
+    </div>
+</body>
+</html>

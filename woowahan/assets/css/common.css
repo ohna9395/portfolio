@@ -1,0 +1,78 @@
+body{
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -.02em;
+    word-break: keep-all; /* 한글 : 단어의 끝에서만 줄을 바꿉니다.  */
+    overscroll-behavior: none; /* scroll chain이 발생을 막음. */
+    color: #232324;
+    font-family: "Noto Sans","Noto Sans KR",sans-serif;
+}
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}
+
+
+
+
+/* 메인공통 */
+/* 제목영역 */
+#container .common-title-area{
+    margin-bottom: 60px;
+    padding: 0 24px;
+    text-align: center;
+}
+#container .common-title-area .common-title{
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+#container .common-title-area .common-txt{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+/* 더보기버튼 */
+.btn-area{
+    /* width: 780px; */ /* width값을 안줘도 div display:block 이기 때문에 부모에 width값이 있었기 떄문에 먹었음! */
+    text-align: center;
+}
+.btn-area .common-more{
+    width: fit-content;
+    margin: 40px auto 0;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.75;
+    border-radius: 8px;
+    background-color: #f3f4f5;
+}
+
+
+
+/* 1920~320 */
+/* 반응형 : 미디어쿼리 */
+.mobile {
+    display: none;
+}
+@media (max-width:750px) { 
+    .mobile {
+        display: block;
+    }
+
+    #container .common-title-area .common-title {
+        font-size: 30px;
+        line-height: 1.4;
+    }
+    .btn-area .common-more {
+        margin: 60px auto 0;
+    }
+}

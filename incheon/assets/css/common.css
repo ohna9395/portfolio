@@ -1,0 +1,131 @@
+/* 
+w: 1190
+
+-헤더
+누리집
+utils
+GNB
+
+-메인
+sect1 :sc-search =검색창 /날씨
+sect2 :sc-info =키비주얼스와이퍼 / 시장인사말
+sect3 :sc-service =주요서비스 아이콘
+sect4 :sc-hashtag =해시태그
+sect5 :sc-board =게시판 / 시민참여알림스와이퍼
+sect6 :sc-sectorinfo =분야별정보 아이콘
+sect7 :sc-citizen =롤링스와이퍼
+sect8 :sc-news =카드영역3개
+sect9 :sc-sns =SNS
+
+-푸터
+*/
+
+
+/* 공통 + 기본세팅(body) */
+
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/notosanskr-bold.woff2') format('woff2');
+}
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/notosanskr-light.woff2') format('woff2');
+}
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/notosanskr-medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: "Noto Sans";
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/notosanskr-regular.woff2') format('woff2');
+}
+
+
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}
+
+.new-tab { 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.new-tab::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-image: url(../images/icon-link.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.modal { 
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 9999;
+}
+.modal::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+.modal.modal-close { 
+    display: none;
+}
+.modal .modal-centered {
+     display: flex;
+     justify-content: center; 
+     align-items: center;
+     height: 100%;
+     /* margin: 4rem; */
+     margin: 0 4rem;
+     padding: 4rem 0;
+}
+.modal .modal-box {
+    max-width: 1190px;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 8rem);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    background-color: #fff;
+}
+.modal .btn.close {
+    position: absolute;
+    top: -35px;
+    right: 2.5rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: url('../images/icon-close-w.png') no-repeat center center / 14px auto;
+    background-color: #266ee4;
+}
+.modal .modal-content {
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}

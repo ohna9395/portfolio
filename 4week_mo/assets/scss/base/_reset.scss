@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+}
+
+body{
+    // 페이지 내 가장많이 쓰는 작은 폰트를 기본으로 한다.
+    color: #222;
+    font-size: 16px;
+    letter-spacing: -0.025em;
+    font-family: $font-base;
+}

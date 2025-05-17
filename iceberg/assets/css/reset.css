@@ -1,0 +1,48 @@
+/* 전체리셋 + font-face세팅 (font-face세팅은 reset에서 하고 body의 font-family세팅은 common에서 함) */
+
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;}
+
+html, body {height:100%;overflow-x: clip;}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+
+ul, ol{list-style: none;}
+
+
+@font-face {
+    font-display: swap; /* 글꼴이 다운로드되기 전까지, 시스템 글꼴을 사용하다가 다운로드가 완료되면 웹 글꼴을 적용한다. */
+    font-family: "Neue Montreal"; /* 웹글꼴 */
+    font-style: normal;
+    font-weight: 650;
+    src: url(../fonts/PPNeueMontreal-Variable.woff) format("woff");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Neue Montreal";
+    font-style: normal;
+    font-weight: 600;
+    src: url(../fonts/PPNeueMontreal-SemiBold.woff) format("woff");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Neue Montreal";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/PPNeueMontreal-Regular.woff) format("woff");
+}
+
+
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-yellow: #ffd34f;
+    --color-orange: #ff6a41;
+    --color-orange-hover: #fa5325;
+    --color-gray: #a6a6a6;
+    --color-gray-dark: #9a9a9a;
+}

@@ -1,0 +1,17 @@
+.flex {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.scene {
+    height: 100%;
+}
+
+.scene__animation {
+    width: 100%;
+    min-width: 300px;
+    max-width: 144rem;
+    height: auto;
+    /* background: url(../images/arw-up-w.svg) no-repeat center center / 100% auto; */
+}

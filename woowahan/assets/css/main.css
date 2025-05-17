@@ -1,0 +1,436 @@
+/* .inner없이 각각 잡아주도록 해보자 */
+#container{
+    /* padding-top: 95px; */
+}
+/* 섹션 1 */
+.sc-visual{
+}
+.sc-visual .swiper {
+    height: calc(100vh - 95px); /* 창크기가 변해도 video 다 보이게함 */
+}
+.sc-visual .swiper-slide{
+    position: relative;
+}
+.sc-visual .visual-area{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(255,255,255);
+}
+.sc-visual .visual-area .top{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: pretendard;
+    margin-bottom: 50px;
+}
+.sc-visual .visual-area .middle{
+    font-size: 72px;
+    font-family: "BM HANNA 11yrs old";
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.sc-visual .swiper-slide-active .visual-area .middle .line{
+    /* display: flex; */ /* 띄어쓰기도 포함해야 해서 마크업에서 span을 한줄로 쓰는 방법으로 처리하였음. */
+}
+.sc-visual .swiper-slide-active .visual-area .middle .char{
+    opacity: 0;
+    animation: fade .1s forwards;
+}
+@keyframes fade{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(1){animation-delay: calc(.2s*1);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(2){animation-delay: calc(.2s*2);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(3){animation-delay: calc(.2s*3);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(4){animation-delay: calc(.2s*4);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(5){animation-delay: calc(.2s*5);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(6){animation-delay: calc(.2s*6);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(7){animation-delay: calc(.2s*7);}
+.sc-visual .swiper-slide-active .visual-area .middle .char:nth-child(8){animation-delay: calc(.2s*8);}
+
+
+.sc-visual .visual-area .bottom {
+    font-size: 20px;
+    font-weight: 700;
+}
+.sc-visual .swiper-slide{
+    position: relative;
+}
+.sc-visual .swiper-slide video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+/* 비주얼이미지 상하좌우 움직임 */
+.sc-visual .visual-img {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+.sc-visual .visual-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    max-width: none;
+    flex-shrink: 0;
+    transition: transform 5s;
+}
+.sc-visual .visual-img[data-dir="left"]{justify-content: flex-start;}
+.sc-visual .visual-img[data-dir="left"] img{width: calc(100% + 150px);}
+.sc-visual .visual-img[data-dir="right"]{justify-content: flex-end;}
+.sc-visual .visual-img[data-dir="right"] img{width: calc(100% + 150px);}
+.sc-visual .visual-img[data-dir="top"]{align-items: flex-start;}
+.sc-visual .visual-img[data-dir="top"] img{height: calc(100% + 150px);}
+.sc-visual .visual-img[data-dir="bottom"]{align-items: flex-end;}
+.sc-visual .visual-img[data-dir="bottom"] img{height: calc(100% + 150px);}
+
+.sc-visual .swiper-slide-active .visual-img[data-dir="left"] img{transform: translateX(-150px);}
+.sc-visual .swiper-slide-active .visual-img[data-dir="right"] img{transform: translateX(150px);}
+.sc-visual .swiper-slide-active .visual-img[data-dir="top"] img{transform: translateY(-150px);}
+.sc-visual .swiper-slide-active .visual-img[data-dir="bottom"] img{transform: translateY(150px);}
+
+
+.sc-visual .swiper-pagination{
+    position: absolute;
+    bottom: 49px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    /* width: fit-content;
+    left: 50%;
+    transform: translateX(-50%); */
+    pointer-events: none; /* 페이지네이션 자체의 클릭이벤트를 없앴다가 자식(bullet)만 클릭될 수 있도록 함.*/
+}
+.sc-visual .swiper-pagination .swiper-pagination-bullet{
+    display: block;
+    opacity: 1;
+    margin: 0 4px;
+    border-radius: 4px;
+    background-color: hsla(0,0%,100%,.5);
+    width: 8px;
+    height: 8px;
+    pointer-events: all; /* 페이지네이션 자체의 클릭이벤트를 없앴다가 자식(bullet)만 클릭될 수 있도록 함.*/
+    transition: width .3s ease-in-out;
+}
+.sc-visual .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #fff;
+    width: 20px;
+}
+
+/* 섹션 2 */
+.sc-card{
+    padding-top: 160px;
+}
+/* 일정하게 재생되야 하는데 
+swiper-wrapper에 transition-duration 값이 들어가 있어서 
+일정하게 흐르지 않는다. 
+그럴경우 swiper-wrapper에 transition-timing-function: linear;
+을 주면 해결된다. */
+.sc-card .swiper-wrapper{
+    transition-timing-function: linear;
+}
+.sc-card .swiper-slide{
+    width: 180px;
+    height: 245px;
+}
+.sc-card .swiper-slide.odd{
+    margin-top: 40px;
+}
+.sc-card .link-card{
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.sc-card .link-card::after{ /* 카드에 그림자 */
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5));
+    pointer-events: none;
+}
+.sc-card .link-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.sc-card .link-card:hover img{
+    transform: scale(1.1);
+}
+.sc-card .card-txt{
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    height: 52px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.625;
+    /* white-space: pre-line; */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    z-index: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.sc-work{
+    padding-top: 160px;
+    margin-bottom: 160px;
+}
+#container .sc-work .common-title-area{
+    margin-bottom: 80px;
+}
+
+.sc-work .video-area{
+    position: relative;
+    max-width: 780px;
+    margin: 0 auto 80px;
+}
+.sc-work .btn-play{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sc-work .video-area:hover .btn-play{
+    display: block;
+}
+.sc-work .btn-play .play{
+    display: none;
+}
+.sc-work .btn-play.change .play{display: block;}
+.sc-work .btn-play.change .pause{display: none;}
+
+
+/* 섹션 4 */
+.sc-news{
+    /* width: 780px; */
+    margin: 0 auto 120px;
+    /* text-align: center; */
+}
+#container .sc-news .common-title-area{
+    margin-bottom: 0;
+}
+
+.sc-news .news-list{
+    display: flex;
+    flex-direction: column;
+    max-width: 820px;
+    margin: 0 auto;
+}
+.sc-news .news-item{
+    padding: 40px 20px;
+    border-bottom: 1px solid #f3f4f5;
+}
+.sc-news .news-item:hover{
+    background-color: rgba(243,244,245,.5);
+}
+.sc-news .news-item img{
+    transition: 1s;
+}
+.sc-news .news-item:hover img{
+    transform: scale(1.1);
+}
+.sc-news .link-news{
+    display: flex;
+    gap: 40px;
+}
+.sc-news .link-news .img-wrap{
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+}
+/* .sc-news .link-news .img-wrap img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+} */
+.sc-news .link-news img{
+    /* width: 200px;
+    height: 160px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sc-news .link-news .right{
+    flex: 1;
+}
+.sc-news .link-news .right .news-title{
+    display: block;
+    max-height: 64px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 20px;
+    font-weight: 700;
+
+    display: -webkit-box;
+    color: #232324;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.sc-news .link-news .right .news-txt{
+    max-height: 52px;
+    margin-bottom: 10px;
+    line-height: 1.625;
+    font-size: 16px;
+
+    display: -webkit-box;
+    color: #232324;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+.sc-news .link-news .right .date{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7142857143;
+    color: #a6a7a9;
+}
+
+/* 섹션 5 */
+.sc-font{
+    padding: 120px 0 136px;
+    background-color: #232324;
+}
+.sc-font .common-title-area{
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 60px;
+    color: #fff;
+}
+/* 일정하게 재생되야 하는데 
+swiper-wrapper에 transition-duration 값이 들어가 있어서 
+일정하게 흐르지 않는다. 
+그럴경우 swiper-wrapper에 transition-timing-function: linear;
+을 주면 해결된다. */
+.sc-font .swiper-wrapper{
+    transition-timing-function: linear;
+}
+
+.sc-font .swiper .swiper-slide{
+    width: 160px;
+}
+.sc-font .swiper .font-content{
+    position: relative;
+    height: 128px;
+    padding: 16px;
+    border-radius: 8px;
+    background: #37373a;
+}
+.sc-font .swiper .font-content span{
+    color: #6c6d6f;
+    font-size: 16px;
+    font-weight: 700;
+}
+.sc-font .swiper .font-content svg{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.sc-font .btn-area .common-more{
+    margin-top: 60px;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,.3);
+}
+
+
+
+/* 1920~320 */
+/* 반응형 : 미디어쿼리 */
+@media (max-width:1280px) {
+}
+
+@media (max-width:980px) { 
+    .sc-visual .swiper {
+        height: calc(100vh - 63px);
+    }
+    .sc-work .video-area {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 0 80px;
+    }
+}
+
+@media (max-width:750px) { 
+    .sc-visual .visual-area {
+        width: 100%;
+    }
+    .sc-visual .visual-area .top {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .sc-visual .visual-area .middle {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+    .sc-visual .visual-area .bottom {
+        font-size: 12px;
+    }
+    .sc-visual .visual-img[data-dir="top"]{justify-content: flex-end;}
+    .sc-visual .visual-img[data-dir="top"] img{width: calc(100% + 150px);}
+    .sc-visual .visual-img[data-dir="right"]{align-items: flex-start;}
+    .sc-visual .visual-img[data-dir="right"] img{height: calc(100% + 150px);}
+    .sc-visual .swiper-slide-active .visual-img[data-dir="top"] img{transform: translateX(150px);}
+    .sc-visual .swiper-slide-active .visual-img[data-dir="right"] img{transform: translateY(-150px);}
+
+    .sc-card {
+        padding-top: 120px;
+    }
+    .sc-work {
+        padding-top: 120px;
+        margin-bottom: 120px;
+    }
+    .sc-news .news-item {
+        padding: 30px 0;
+    }
+    .sc-news .news-list {
+        margin: 0 24px;
+    }
+    .sc-news .link-news {
+        gap: 16px;
+    }
+    .sc-news .link-news .img-wrap {
+        width: 100px;
+        height: 80px;
+    }
+    .sc-news .link-news .right .news-title {
+        max-height: 52px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        line-height: 1.625;
+    }
+    .sc-news .link-news .right .news-txt {
+        margin-bottom: 8px;
+    }
+    .sc-news .link-news .right .date {
+        font-size: 12px;
+        line-height: 1.6666666667;
+    }
+}
+
+
+
+
+

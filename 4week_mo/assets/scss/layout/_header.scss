@@ -1,0 +1,51 @@
+#header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 3px 3px 5px rgba(#000, 0.1);
+    
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+    .group-logo {
+        // margin-left: 55px;
+    }
+
+    .logo {
+        width: 132px;
+    }
+
+    .btn {
+        height: 23px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% auto;
+        
+        &-hamburger {
+            width: 25px;
+
+            /* 백그라운드의 속성 */
+            /*background-image: url();
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% auto;
+            background-color: #000;*/
+            background-image: url(../images/icon-hamburger.png);
+        }
+        
+        &-cart {
+            width: 23px;
+            // margin-left: 48px;
+            background-image: url(../images/icon-cart.png);
+        }
+    }
+}

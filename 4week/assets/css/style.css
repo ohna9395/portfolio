@@ -1,0 +1,604 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  color: #222;
+  font-size: 16px;
+  letter-spacing: -0.025em;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+#wrap {
+  min-width: 1246px;
+}
+
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+.link-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 190px;
+  height: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #222;
+}
+.link-detail:hover {
+  background: #222;
+  color: #fff;
+}
+
+#header::before {
+  content: "";
+  display: block;
+  height: 35px;
+  background: #eee;
+}
+#header .group-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+#header .group-logo .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+#header .group-logo .util-area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%); /* 자기 크기만큼 위로 올림 */
+}
+#header .group-logo .util-area ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  color: #858585;
+  height: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+#header .group-logo .sns-area {
+  margin-left: -8px;
+}
+#header .group-logo .sns-area ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 21px;
+}
+#header .group-logo .sns-area a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28px;
+  height: 28px;
+}
+#header .group-logo .search-area .btn-search {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #ddd;
+  background: url(../images/ic_search.png) no-repeat center;
+}
+
+#gnb {
+  border: 1px solid #ddd; /* bd */
+  border-width: 1px 0;
+}
+#gnb .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#gnb .nav-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+#gnb .link-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: bold;
+}
+#gnb .link-title.active {
+  color: #d71609;
+}
+
+footer {
+  margin-top: 120px;
+  background: #aaaaaa;
+}
+footer .inner {
+  padding: 48px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .inner .group-info {
+  margin-top: 10px;
+}
+footer .inner .group-info .addr-area {
+  color: #fff;
+  font-size: 16px;
+  line-height: 26px;
+}
+footer .inner .group-info .addr-area .addr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 26px;
+}
+footer .inner .group-info .addr-area .addr + .addr {
+  margin-top: 6px;
+}
+footer .inner .group-info .addr-area .addr span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .inner .group-info .addr-area .addr span + span::before {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 3px;
+  height: 12px;
+  margin: 0 10px;
+}
+footer .inner .group-info .addr-area .copy {
+  display: block;
+  margin-top: 23px;
+}
+footer .inner .group-customer {
+  color: #fff;
+  border: 1px solid #000;
+  padding: 20px 22px 28px 20px;
+  border: 3px solid #fff;
+}
+footer .inner .group-customer .title {
+  font-size: 24px;
+  line-height: 34px;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+footer .inner .group-customer .runtime {
+  margin-top: 4px;
+  font-size: 18px;
+  line-height: 28px;
+}
+footer .inner .group-customer .tel {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  display: block;
+  margin-top: 20px;
+  font-size: 36px;
+  line-height: 46px;
+}
+
+.sc-visual .swiper-slide img {
+  margin: 0 auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-visual .swiper .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1200px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.sc-visual .swiper .btns .btn {
+  width: 23px;
+  height: 40px;
+  background: url(../images/arrow_w.png);
+  border-width: 0px;
+  pointer-events: auto;
+}
+.sc-visual .swiper .btns .btn.prev {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%); /* 크기만큼 왼쪽으로 */
+}
+.sc-visual .swiper .btns .btn.next {
+  -webkit-transform: translateX(100%) rotate(180deg);
+          transform: translateX(100%) rotate(180deg); /* 크기만큼 오른쪽으로 */
+}
+.sc-visual .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* 애매한 여백이 위아래로 있어서 flex주었음 */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 33px; /* 기본적으로 absolute속성을 가지고 있기때문에 bottom만 쓸 수 있음 */
+}
+.sc-visual .swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #fff;
+  opacity: 1; /* 투명하게 하기 */
+  background: none;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+}
+.sc-visual .swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.main-headline {
+  font-size: 42px;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500; /* medium */
+  text-align: center;
+  line-height: 60px;
+}
+
+/* 이론 
+&:nth-child(1)이라고 쓰면 태그 순서때문에 꼬일 수 있으므로, 
+&:nth-of-type(1)이라고 사용하면 좋을 거 같다. */
+.sc-service .content:nth-of-type(even) .flex {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.sc-service .content .main-headline {
+  margin: 74px 0 57px;
+}
+.sc-service .content .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.sc-service .content .info {
+  width: 520px;
+}
+.sc-service .content .info .desc {
+  font-size: 18px;
+  line-height: 28px;
+  padding: 40px 0px 45px;
+  word-break: keep-all;
+}
+
+.sc-recomm .main-headline {
+  margin: 100px 0 53px;
+}
+.sc-recomm .recomm-item {
+  padding: 93px 0;
+  position: relative;
+}
+.sc-recomm .recomm-item .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 이미지로 백그라운드 효과 사용법 */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-recomm .recomm-item .info {
+  position: relative;
+  width: 370px;
+  height: 330px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 26px 20px 0 20px;
+}
+.sc-recomm .recomm-item .info .title {
+  font-weight: 700;
+  font-size: 22px;
+}
+.sc-recomm .recomm-item .info .desc {
+  margin-top: 14px;
+  font-size: 18px;
+}
+.sc-recomm .recomm-item .info .link-detail {
+  position: absolute;
+  left: 25px;
+  bottom: 32px;
+  border: 2px solid #fff;
+}
+.sc-recomm .recomm-item .info .link-detail:hover {
+  background: #fff;
+  color: #222;
+}
+
+.sc-event {
+  margin-top: 100px;
+}
+.sc-event .event-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px 102px;
+}
+.sc-event .event-item {
+  min-width: 0;
+}
+.sc-event .event-item .info {
+  margin-top: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.sc-event .event-item .info .time {
+  font-size: 18px;
+  line-height: 28px;
+  color: #858585;
+}
+.sc-event .event-item .info .title {
+  margin-top: 10px;
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.sc-event .event-item .info .desc {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.sc-event .event-item .info .link-detail {
+  margin-top: 25px;
+}
+
+.sc-review .main-headline {
+  padding: 73px 60px;
+}
+.sc-review .content {
+  position: relative;
+  padding: 0 75px 110px 75px;
+  margin: 0 -75px;
+}
+.sc-review .swiper-slide .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+.sc-review .swiper-slide .flex .thumb {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.sc-review .swiper-slide .flex .info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.sc-review .swiper-slide .flex .info .title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.sc-review .swiper-slide .flex .info .desc {
+  font-size: 18px;
+  line-height: 35px;
+  margin-top: 7px;
+}
+.sc-review .swiper-slide .flex .info .link-detail {
+  margin-top: 26px;
+}
+.sc-review .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1200px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: calc(100% - 110px);
+  z-index: 1;
+  pointer-events: none;
+}
+.sc-review .btns .btn {
+  border-width: 0px;
+  width: 23px;
+  height: 40px;
+  background: url(..//images/arrow.png);
+  pointer-events: auto;
+}
+.sc-review .btns .btn.prev {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%); /* 크기만큼 왼쪽으로 */
+}
+.sc-review .btns .btn.next {
+  -webkit-transform: translateX(100%) rotate(180deg);
+          transform: translateX(100%) rotate(180deg); /* 크기만큼 오른쪽으로 */
+}
+.sc-review .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* 애매한 여백이 위아래로 있어서 flex주었음 */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 63px; /* 기본적으로 absolute속성을 가지고 있기때문에 bottom만 쓸 수 있음 */
+}
+.sc-review .swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #dddddd;
+  opacity: 1; /* 투명하게 하기 */
+  background: none;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+}
+.sc-review .swiper-pagination-bullet-active {
+  background: #dddddd;
+}
+
+.board-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 80px;
+}
+
+.sc-board {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.sc-board .group-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sc-board .group-head .title {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  padding: 18px 10px 16px;
+}
+.sc-board .group-head .link-more {
+  width: 30px;
+  height: 30px;
+  background: url(../images/ic_plus.png);
+}
+.sc-board .board-item {
+  padding: 19px 10px;
+  border-top: 3px solid #888888;
+}
+.sc-board .board-item + .board-item {
+  border-top: 1px solid #888888;
+}
+.sc-board .board-item:nth-last-child(1) {
+  border-bottom: 1px solid #888888;
+}
+.sc-board .board-item .board-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 26px;
+}
+.sc-board .board-item .board-content .time {
+  color: #888888;
+  font-size: 16px;
+  line-height: 26px;
+}
+.sc-board .board-item .board-content .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}/*# sourceMappingURL=style.css.map */

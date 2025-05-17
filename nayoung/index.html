@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.12/dist/lenis.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.12/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./assets/js/layout.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/contact.js" defer></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <a href="#wrap" class="logo" data-offset="0">Gem<br>stone<br>CODE</a>
+                <!-- <a href="#wrap" class="logo" data-offset="0">Rock<br>& CODE</a> -->
+                <!-- <a href="#wrap" class="logo" data-offset="0">NA<br>YOUNG</a> -->
+                <nav class="gnb">
+                    <ul class="gnb-list">
+                        <li class="gnb-item"><a href=".sc-main-p .title">Main</a></li>
+                        <li class="gnb-item"><a href=".sc-sub-p">Sub</a></li>
+                        <li class="gnb-item"><a href=".sc-about" data-offset="0">About</a></li>
+                        <li class="gnb-item"><a href=".sc-contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="external">
+                    <a class="link-resume" href="#">Resume</a>
+                    <a class="link-notion pc" href="#">Notion</a>
+                    <a class="link-github pc" href="#">Github</a>
+                </div>
+            </div>
+        </header>
+
+        <mian id="container">
+            <!-- sc-visual -->
+            <section class="sc-visual">
+                <h2 class="blind">비주얼영역</h2>
+                <div class="wrap-video">
+                    <img src="./assets/images/seq/416.webp" alt>
+                </div>
+            </section>
+            <!-- sc-mainP -->
+            <section class="sc-main-p">
+                <h2 class="title" data-text="chars">Main<br class="mobile"> Project</h2>
+                <div class="wrap-grid">
+                    <div class="sticky">
+                        <strong class="p-name">
+                            <span class="txt txt-left"><span class="ani-rotateY">ICEBERG</span></span>
+                            <span class="txt txt-right"><span class="ani-rotateY">ICEBERG</span></span>
+                        </strong>
+                        <strong class="p-name">
+                            <span class="txt txt-left"><span class="ani-rotateY">SAISEI</span></span>
+                            <span class="txt txt-right"><span class="ani-rotateY">SAISEI</span></span>
+                        </strong>
+                        <strong class="p-name">
+                            <span class="txt txt-left"><span class="ani-rotateY">NAVER</span></span>
+                            <span class="txt txt-right"><span class="ani-rotateY">BAND</span></span>
+                        </strong>
+                    </div>
+                    <div class="wrap-list">
+                        <div class="group-project main01">
+                            <div class="inner">
+                                <div class="side">
+                                    <span>Case Project</span>
+                                    <div class="wrap-flex">
+                                        <div class="wrap-svg">
+                                            <svg viewBox="0 0 28 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5 5.969c-3.662-13.698-10.113 13.892-13.5 0-3.662-13.778-10.064 13.858-13.5 0" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                        </div>
+                                        <span>01</span>
+                                    </div>
+                                    <p class="desc">시멘틱 태그를 활용한 섹션별 구조화와 CSS Grid와 Flex를 기반으로 한 반응형 레이아웃을 구현하였으며, HTML DataSet 속성과 GSAP, ScrollTrigger를 활용해 횡스크롤과 스크롤 기반 인터랙션, 마이크로 애니메이션을 정교하게 재현했습니다. WebP 및 SVG 포맷을 통해 이미지 성능을 최적화하였고, 웹 접근성을 고려한 인터랙티브한 사용자 경험을 구현한 Iceberg 공식 사이트 반응형 클론코딩 프로젝트입니다.</p>
+                                </div>
+                                <div class="content">
+                                    <div class="wrap-img">
+                                        <img src="./assets/images/thumb_iceberg.png" alt="아이스버그썸네일이미지">
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="shortcut-area">
+                                            <a href="#" class="shortcut-link link-notion">
+                                                노션바로가기
+                                                <div class="wrap-svg">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="shortcut-link link-github">
+                                                사이트바로가기
+                                                <div class="wrap-svg">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="content-desc">HTML DataSet 속성과 GSAP 애니메이션 라이브러리를 활용한 인터랙티브한 구성과 횡스크롤 구현, 반응형 레이아웃을 포함해 Iceberg 공식 웹사이트를 클론 코딩해 보았습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-project main02">
+                            <div class="inner">
+                                <div class="side">
+                                    <span>Case Project</span>
+                                    <div class="wrap-flex">
+                                        <div class="wrap-svg">
+                                            <svg viewBox="0 0 28 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5 5.969c-3.662-13.698-10.113 13.892-13.5 0-3.662-13.778-10.064 13.858-13.5 0" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                        </div>
+                                        <span>02</span>
+                                    </div>
+                                    <p class="desc">시멘틱 태그를 활용한 섹션별 구조화와 CSS Grid와 Flex를 기반으로 한 반응형 레이아웃을 구현하였으며, GSAP과 ScrollTrigger를 활용해 스크롤 기반 인터랙션과 마이크로 애니메이션을 정교하게 재현했습니다. WebP 및 SVG 포맷을 통해 이미지 성능을 최적화하였고, 정적인 퍼블리싱을 넘는 풍부한 사용자 경험을 구현한 반응형 클론코딩 프로젝트입니다.</p>
+                                  </div>
+                                <div class="content">
+                                    <div class="wrap-img">
+                                        <img src="./assets/images/thumb_saisei.png" alt="아이스버그썸네일이미지">
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="shortcut-area">
+                                            <a href="#" class="shortcut-link link-notion">
+                                                노션바로가기
+                                                <div class="wrap-svg">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="shortcut-link link-github">
+                                                사이트바로가기
+                                                <div class="wrap-svg">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="content-desc">지속 가능한 건축과 일본 전통 미학을 현대적인 웹 디자인에 융합한 웹사이트로, 퍼블리싱과 인터랙션 디자인의 우수 사례로 평가받고 있는 Saisei 건축 스튜디오 웹사이트를 반응형 레이아웃을 포함해 클론 코딩해 보았습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-project main03">
+                            <div class="inner">
+                                <div class="side">
+                                    <span>Case Project</span>
+                                    <div class="wrap-flex">
+                                        <div class="wrap-svg">
+                                            <svg viewBox="0 0 28 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5 5.969c-3.662-13.698-10.113 13.892-13.5 0-3.662-13.778-10.064 13.858-13.5 0" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                        </div>
+                                        <span>03</span>
+                                    </div>
+                                    <p class="desc">섹션별 레이아웃을 시멘틱 태그로 구조화하고, CSS Grid와 Flex를 활용해 반응형 레이아웃을 구현했으며, 마우스 스크롤에 따른 인터랙션과 요소 애니메이션은 GSAP 및 ScrollTrigger를 활용해 동적인 사용자 경험을 구현했습니다. 또한, SVG 및 WebP 등 다양한 미디어 포맷을 활용해 성능 최적화를 고려하고 웹 접근성을 위한 IS&IR 기법에 중점을 둔 적응형 PC 프로젝트입니다.</p>
+                                  </div>
+                                <div class="content">
+                                    <div class="wrap-img">
+                                        <img src="./assets/images/thumb_band.png" alt="아이스버그썸네일이미지">
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="shortcut-area">
+                                            <a href="#" class="shortcut-link link-notion">
+                                                노션바로가기
+                                                <div class="wrap-svg">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="shortcut-link link-github">
+                                                사이트바로가기
+                                                <div class="wrap-svg">
+                                                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="content-desc">네이버 밴드 10주년 캠페인 페이지를 적응형 PC로 클론 코딩해 보았습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <!-- sc-subP -->
+            <section class="sc-sub-p">
+                <h2 class="title" data-text="chars">Sub<br class="mobile"> Project</h2>
+                <div class="inner">
+                    <div class="wrap-grid">
+                        <div class="group-project sub01">
+                            <div class="content">
+                                <div class="wrap-img">
+                                    <div class="card">
+                                        <span class="txt txt-top">WOOWAHAN BROTHERS</span>
+                                        <img src="./assets/images/thumb_woowahan2.jpg" alt="우아한형제들썸네일이미지">
+                                        <span class="txt txt-bottom">responsible</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="shortcut-area">
+                                        <a href="#" class="shortcut-link link-notion">
+                                            노션바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="shortcut-link link-github">
+                                            사이트바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="wrap-flex">
+                                        <h3 class="p-name">우아한형제들</h3>
+                                        <p class="content-desc">마퀴 효과와 사용자 제어가 가능한 비디오 요소를 포함하여 사용자 흐름을 고려한 인터렉션과 동적 요소 구현에 중점을 둔 반응형 클론코딩 프로젝트입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-project sub02">
+                            <div class="content">
+                                <div class="wrap-img">
+                                    <div class="card">
+                                        <span class="txt txt-top">NAVER CAREERS</span>
+                                        <img src="./assets/images/thumb_career3.png" alt="네이버커리어스썸네일이미지">
+                                        <span class="txt txt-bottom">responsible</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="shortcut-area">
+                                        <a href="#" class="shortcut-link link-notion">
+                                            노션바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="shortcut-link link-github">
+                                            사이트바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="wrap-flex">
+                                        <h3 class="p-name">네이버커리어스</h3>
+                                        <p class="content-desc">시맨틱 마크업의 중요성과 Class Naming 작성법, 접근성을 위한 IR 기법과 효율적인 이미지 로딩을 위한 IS 기법, swiper활용에 중점을 둔 반응형 클론코딩 프로젝트입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-project sub03">
+                            <div class="content">
+                                <div class="wrap-img">
+                                    <div class="card">
+                                        <span class="txt txt-top">ANDAR</span>
+                                        <img src="./assets/images/thumb_andar.jpg" alt="안다르썸네일이미지">
+                                        <span class="txt txt-bottom">only MOBILE</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="shortcut-area">
+                                        <a href="#" class="shortcut-link link-notion">
+                                            노션바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="shortcut-link link-github">
+                                            사이트바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="wrap-flex">
+                                        <h3 class="p-name">안다르</h3>
+                                        <p class="content-desc">웹 표준을 기반으로 시멘틱 태그를 활용해 구조적으로 탄탄한 마크업을 구현하였으며, 공통되는 레이아웃 요소에는 동일한 클래스명을 부여해 효율적인 CSS 레이아웃을 구성한 적응형 모바일 클론코딩 프로젝트입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-project sub04">
+                            <div class="content">
+                                <div class="wrap-img">
+                                    <div class="card">
+                                        <span class="txt txt-top">INCHEON CITY HALL</span>
+                                        <img src="./assets/images/thumb_incheon.png" alt="인천시청썸네일이미지">
+                                        <span class="txt txt-bottom">only PC</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="shortcut-area">
+                                        <a href="#" class="shortcut-link link-notion">
+                                            노션바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="shortcut-link link-github">
+                                            사이트바로가기
+                                            <div class="wrap-svg">
+                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 5 3 3-3 3" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"></path><path d="M3 8h10" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="wrap-flex">
+                                        <h3 class="p-name">인천시청</h3>
+                                        <p class="content-desc">IR기법, WAI-ARIA로 웹 접근성에 초점을 맞추고, TAB 컨트롤로 키보드로 접근하는 사용자의 편의성을 높여 Swiper 라이브러리와 제이쿼리를 통한 다양한 스크립트를 구현한 적응형 PC 클론코딩 프로젝트입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- sc-about -->
+            <section class="sc-about">
+                <div class="inner">
+                    <h2 class="blind">소개영역</h2>
+                    <div class="wrap-cont">
+                        <div class="cont-line">
+                            <p class="txt">웹 표준과 웹 접근성을</p>
+                            <div class="wrap-img about01">
+                                <img src="./assets/images/about01.png" alt="about관련이미지01">
+                            </div>
+                            <p class="txt">준수하며,</p>
+                        </div>
+                        <div class="cont-line">
+                            <p class="txt">꼼꼼하게 시멘틱한 마크업을 만들어냅니다.</p>
+                        </div>
+                        <div class="cont-line">
+                            <p class="txt">더불어 </p>
+                            <div class="wrap-img about02">
+                                <img src="./assets/images/about03.png" alt="about관련이미지02">
+                            </div>
+                            <!-- <p class="txt">효율적인 CSS로 감각적인 UI를 만들어내고</p> -->
+                            <p class="txt">CSS를 효율적으로 작성하고</p>
+                        </div>
+                        <div class="cont-line">
+                            <p class="txt">기초가 탄탄한 JavaScript와</p>
+                            <!-- <p class="txt">동적인 Javascript와 시선을 사로잡는</p> -->
+                            <div class="wrap-img about03">
+                                <img src="./assets/images/about06.png" alt="about관련이미지03">
+                            </div>
+                            <p class="txt">라이브러리를 활용하여</p>
+                        </div>
+                        <div class="cont-line">
+                            <div class="wrap-img about03">
+                                <img src="./assets/images/about04.png" alt="about관련이미지03">
+                            </div>
+                            <p class="txt">성장하는 도전적인 사람이 되고 싶습니다</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- sc-contact -->
+            <section class="sc-contact">
+                <h2>CONTACT ME</h2>
+                <div class="scene flex">
+                    <svg class="scene__animation" id="animation" xmlns="http://www.w3.org/2000/svg" role="img"></svg>
+                </div>
+            </section>
+        </mian>
+
+        <footer id="footer">
+            <div class="inner">
+                <div class="left">
+                    <a class="email" href="ohna93@naver.com">EMAIL : <br class="mobile">ohna93@naver.com</a>
+                    <br class="mobile">
+                    <a class="tel" href="tel:01055074277">TEL : <br class="mobile">010-5507-4277</a>
+                    <div class="wrap-flex">
+                        <a href="#" class="icon icon-resume"><span class="blind">자소서이동</span></a>
+                        <a href="#" class="icon icon-notion"><span class="blind">노션이동</span></a>
+                        <a href="#" class="icon icon-github"><span class="blind">깃허브이동</span></a>
+                    </div>
+                </div>
+                <small class="footer-copy">
+                    <span>© 2025 Oh-nayoung All Rights Reserved</span>
+                </small>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,604 @@
+/* sc1 */
+.visual-wrapper{
+    height: 300vh;
+}
+.sc-visual{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background: #000;
+}
+.sc-visual video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* reset의 max-width:100% 때문에 비디오가 잘리므로 비율유지를 위해 필요한 코드임.*/
+
+    /* 얼마나 잘라낼지! */
+    clip-path: inset(40% 40% 40% 40%);
+    transition: 1s;
+}
+.sc-visual video.start{
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.sc-visual .visual-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 5;
+}
+.sc-visual .visual-title{
+    color: var(--color-white);
+    display: grid;
+    font-size: 16vw;
+    font-weight: 600;
+    left: 0;
+    letter-spacing: -.04em;
+    line-height: .8524590164em;
+    text-align: center;
+    top: 0;
+    transform: translate(-.5%);
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+.sc-visual .visual-title >span{ /* .visual-title의 직계자식인 span만 선택 */
+    display: block;
+    grid-area: 1/1;
+}
+.sc-visual .visual-title >span.first{}
+.sc-visual .visual-title >span.last{
+    transform: translateY(100%);
+}
+
+.sc-visual svg{
+    bottom: 2.8vw; 
+    /* vh = viewport height , vw = viewport width 
+    즉, 현재 실행중인 화면 크기에 맞춰 상대적 크기를 반환하겠다는 뜻입니다.*/
+    /* 자식의 높이를 100vh로 바꾸면 자식은 부모의 높이(50px)를 무시하고 화면 높이와 동일하게 바뀐다. 
+    그리고 vh, vw는 스크롤바(빨간색 화살표) 영역을 포함한다.*/
+    color: var(--color-white);
+    display: block;
+    height: auto;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+    width: 8.6vw;
+    z-index: 5;
+}
+
+.sc-visual .grid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr); /* 이거하기전에는 가로로 6등분이 되어있네 */
+    z-index: 10;
+    pointer-events: none;
+}
+.sc-visual .grid .col{
+    background: #000;
+    clip-path: inset(0% 100% 0% 0%);
+    /* width: 0%; */ /* clip-path를 width로 하는 방법 */
+}
+
+
+/* sc2 */
+.sc-slogun{
+    background-color: var(--color-black);
+    height: 100svh; /* svh는 사용자 화면 기준으로 가장 짧은 뷰포트 값을 가져온다. 주소 표시줄이 없어져도 기존 주소표시줄의 높이 값을 뺀 나머지 값을 가져온다. */
+    padding-top: 9.8vw;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+.sc-slogun h2{
+    display: flex; /* 자식span요소를 컨트롤하기위해 줌 */
+    color: var(--color-white);
+    font-size: 15vw;
+    font-weight: 600;
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    /* position: relative; */
+    white-space: nowrap;
+    will-change: transform; /* 요소의 변화를 미리 브라우저에게 알려주어 브라우저가 미리 최적화 함 */
+}
+.sc-slogun h2 span{}
+
+/* 블러 처리하는거 애니메이션으로 시도 -> GSAP으로 변경함. */
+/* .sc-slogun h2 .line .char{
+    opacity: 0;
+    animation: blur .1s forwards;
+    transition: .5s;
+}
+@keyframes blur{
+    0% {
+        filter: blur(50px);
+        opacity: 0;
+      }
+    100% {
+    filter: blur(0px);
+    opacity: 1;
+    }
+}
+.sc-slogun h2 .line .char:nth-child(1){animation-delay: calc(1s*1);}
+.sc-slogun h2 .line .char:nth-child(2){animation-delay: calc(1s*2);}
+.sc-slogun h2 .line .char:nth-child(3){animation-delay: calc(1s*3);}
+.sc-slogun h2 .line .char:nth-child(4){animation-delay: calc(1s*4);}
+.sc-slogun h2 .line .char:nth-child(5){animation-delay: calc(1s*5);}
+.sc-slogun h2 .line .char:nth-child(6){animation-delay: calc(1s*6);}
+.sc-slogun h2 .line .char:nth-child(7){animation-delay: calc(1s*7);}
+.sc-slogun h2 .line .char:nth-child(8){animation-delay: calc(1s*8);} */
+
+.sc-slogun .bg-area{
+    display: block;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(-5%,-20%);
+    width: 57.3vw;
+ }
+
+/* sc3 */
+.sc-project{
+    display: grid;
+}
+.sc-project .sticky{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    grid-area: 1/1;
+    overflow: hidden; /* 이미지 내리고올려놓은 모션: 내리고올려놓은만큼 잘려보이게 하려고 줌. */
+}
+.sc-project .sticky .project-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .5s;
+}
+/* JS로 두번째,세번째에 active를 겹쳐주는 코드를 짠다. */
+.sc-project .sticky .project-img.active{opacity: 1;}
+
+.sc-project .project-list{
+    grid-area: 1/1;
+}
+.sc-project .project-item{
+    position: relative;
+    height: 100vh;
+}
+.sc-project .project-area{
+    /* position: absolute; */
+    top: 0;
+    display: flex;
+    color: var(--color-white);
+    align-items: baseline;
+    padding-left: 11.7vw;
+    padding-top: calc(188/2024*100vw);
+    z-index: 2;
+}
+.sc-project .project-area .number{
+    font-size: calc(14/2024*100vw);
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 100%;
+    width: 5.7vw;
+}
+.sc-project .project-area .text{
+    font-size: calc(36/2024*100vw);
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 110%;
+    width: calc(493/2024*100vw);
+}
+.sc-project .project-item:nth-child(even) .project-area{
+    padding-left: 46.3vw;
+}
+/* sc3 사이드 : 기본은 숨김처리(밀어두고 transition줘놓기)*/ 
+.sc-project .link-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(98/2024*100vw);
+    max-width: 145px;
+    height: 100vh;
+    z-index: 10;
+    background-color: var(--color-yellow);
+
+    transform: translateX(100%);
+    transition: .3s;
+}
+.sc-project.show .link-side{
+    transform: translateX(0%);
+}
+
+.sc-project .link-side .txt-area {
+    color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.9vw;
+    font-size: 0.7vw;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 100%;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.sc-project .link-side svg{
+    flex-shrink: 0;
+    height: auto;
+    width: 1.7vw;
+    transition: transform .4s ease-in-out;
+}
+
+/* sc4 */
+.sc-sentence{
+    background-color: var(--color-orange);
+    overflow: hidden;
+    padding-top: 26vw;
+    padding-bottom: 32.9vw;
+    width: 100%;
+    /* position: relative; */
+}
+.sc-sentence .text{
+    color: var(--color-white);
+    /* color: #ff8c6c; */
+    font-size: 3.5vw;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 102%;
+    margin: 0 auto;
+    text-align: center;
+    width: 44.4vw;
+    /* position: relative; */
+}
+
+/* sc5 */
+.sc-impact{
+    height: 500vh;   
+}
+.sc-impact .sticky{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.sc-impact .sticky .bg-img{
+    position: absolute;
+    top: 0;left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.sc-impact .sticky .bg-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sc-impact .sticky .bg-img.active{opacity: 1;}
+
+.sc-impact .flex-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 300px;
+    padding-left: 8.3vw;
+    position: relative;
+}
+.sc-impact .text{
+    color: var(--color-white);
+    font-size: 1.4vw;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 110%;
+    width: 25.8vw;
+}
+.sc-impact .card-list{
+    display: flex;
+}
+.sc-impact .card-item{
+    display: flex;
+    flex-direction: column;
+    min-height: 62svh;
+    max-height: 72vw;
+    width: 29.1vw;
+    margin: 0 20vw;
+}
+.sc-impact .img-wrap{
+    flex: 6.7;
+    overflow: hidden;
+}
+.sc-impact .card-item .card-img{
+    transition: transform 1s ease;
+}
+.sc-impact .card-item.hover .card-img{
+    transform: scale(1.2);
+}
+.sc-impact .card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center;
+    transition: transform 1.2s ease-in-out;
+}
+.sc-impact .card-item.hover .card-info{
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+.sc-impact .card-info{
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 3.3;
+    padding: 0.9vw 1vw;
+    transition: background-color .3s ease-in-out;
+    width: 100%;
+}
+.sc-impact .card-info .card-title{
+    font-size: 1.4vw;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 110%;
+    transition: color .3s ease-in-out;
+}
+.sc-impact .card-info .top{
+    font-size: 0.8vw;
+    font-weight: 600;
+    line-height: 120%;
+    margin-top: 0.4vw;
+    transition: color .3s ease-in-out;
+    width: 90%;
+}
+.sc-impact .card-item.hover .top .desc{
+    margin-top: 10px;
+    opacity: 1;
+    transform: translateY(0%);
+}
+.sc-impact .card-info .top .desc{
+    font-size: 14.5px;
+    line-height: 120%;
+    margin-top: 10px;
+    color: var(--color-white);
+    opacity: 0;
+    transform: translateY(50%);
+    transition: transform .5s;
+}
+.sc-impact .card-info .bottom{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8vw;
+    line-height: 120%;
+    transition: color .3s ease-in-out;
+}
+.sc-impact .card-info .bottom .scope{
+    font-size: 0.8vw;
+    font-weight: 600;
+    line-height: 120%;
+    transition: color .3s ease-in-out;
+}
+/* sc5 사이드 : 기본은 숨김처리(transition쓸거라 opacity로)*/ 
+.sc-impact .link-side{
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 4.8vw;
+    max-width: 145px;
+    height: 100vh;
+    z-index: 10;
+    background-color: var(--color-orange);
+}
+.sc-impact .link-side .txt-area {
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.9vw;
+    font-size: 0.7vw;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 100%;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.sc-impact .link-side svg{
+    flex-shrink: 0;
+    height: auto;
+    width: 1.73vw;
+    transition: transform .4s ease-in-out;
+    color: #e55129;
+}
+
+
+/* sc6 */
+.sc-podcast{
+    background-color: #c4c4c4;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 14.8vw;
+    position: relative;
+}
+
+.sc-podcast .podcast-top{
+    color: var(--color-white);
+    font-weight: 600;
+    padding-bottom: 15vw;
+}
+.sc-podcast .podcast-top h2{
+    display: flex;
+    font-size: 17.3vw;
+    /* overflow: hidden; */
+    white-space: nowrap;
+}
+.sc-podcast .podcast-top .text{
+    font-size: 1.7vw;
+    letter-spacing: -.01em;
+    line-height: 110%;
+    padding-left: 17.2vw;
+    padding-top: 13.8vw;
+    width: 47.6vw;
+}
+.sc-podcast .podcast-top .stroke-wrap{
+    position: relative;
+}
+.sc-podcast .podcast-top .stroke-wrap .stroke{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 400px;
+    height: auto; 
+    transform: translateY(-50%);
+}
+.sc-podcast .podcast-top .stroke-wrap .lower{
+    position: absolute;
+    top: 100%;
+    left: 70%;
+    width: 400px;
+    height: auto;
+}
+.sc-podcast .podcast-top .stroke-wrap path{
+    stroke: var(--color-black);                                                                               
+    opacity: .3;
+    stroke-width: .5;
+    /* stroke-dasharray: 9000px; */
+    /* stroke-dashoffset: 9000px; */
+    /* animation: drawLoop 2s linear infinite; */
+}
+.sc-podcast .podcast-top .stroke-wrap .lower path{
+    /* animation-delay: 2s; */
+}
+/* @keyframes drawLoop {
+    0% {
+        stroke-dashoffset: 9000px;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+} */
+.sc-podcast .podcast-top .bg-area{
+    display: block;
+    height: auto;
+    left: 17.5vw;
+    position: absolute;
+    top: 0;
+    transform: translate(-5%,-20%);
+    width: 57vw;
+ }
+.sc-podcast .podcast-bottom{
+    align-items: flex-start;
+    display: flex;
+    min-height: 100svh;
+    padding: 22.2vw 16.6vw 15.5vw;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.sc-podcast .podcast-bottom .bg-background{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+}
+.sc-podcast .podcast-bottom .bg-background img{
+    max-width: auto;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+}
+.sc-podcast .podcast-bottom .bg-area{
+    height: 21.8vw;
+    left: 0;
+    mix-blend-mode: screen; /* 요소의 배경과 해당 요소의 내용물을 블렌딩하는 방법을 결정. screen 모드는 요소와 배경의 반전된 값을 곱하여 밝은 부분을 강조. 결과적으로 배경과 요소가 밝아지며, 더 밝고 부드러운 느낌을 연출 */
+    object-fit: cover;
+    position: absolute;
+    top: 10%;
+    width: 33.3vw;
+ }
+.sc-podcast .card-group{
+    display: flex;
+}
+.sc-podcast .card-area{
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(35.6vw);
+    padding: 1vw;
+    position: relative;
+    width: 50%;
+}
+.sc-podcast .card-title{
+    font-size: 3.5vw;
+    font-weight: 600;
+    letter-spacing: -.03em;
+    line-height: 90%;
+    text-transform: uppercase;
+}
+.sc-podcast .card-bottom{ /* line-height: 120%;은 왜 위에 공통으로 빼서 줄 수 없나요??? */
+    font-weight: 600;
+    line-height: 120%;
+}
+.sc-podcast .card-bottom .text{
+    position: relative;
+    display: block;
+    font-size: 1vw;
+    padding-left: 1.2vw;
+}
+.sc-podcast .card-bottom .desc{
+    margin-top: 2.9vw;
+    font-size: 1vw;
+    width: 70%;
+    line-height: 120%;
+}
+.sc-podcast .card-area:nth-child(2) {
+    backdrop-filter: blur(calc(4.9vw));
+    background: #ffffff05;
+    margin-top: 250px;
+}
+.sc-podcast .card-bottom .arrow{
+    height: auto;
+    width: 1vw;
+}
+.sc-podcast .card-bottom .flex-wrap{
+    display: flex;
+    align-items: center;
+    width: fit-content; /* flex는 유지하면서 a태그의 범위를 글자범위까지만 주고 싶어서 쓴 코드 */
+    position: relative;
+}
+.sc-podcast .card-bottom .line{
+    left: 0;
+    top: 50%;
+    width: 120%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    position: absolute;
+}
+.sc-podcast .card-area:nth-child(2) .line {
+    /* top: unset; */
+    /* bottom: 0; */
+    /* width: 110%;      */
+     /* 가져온 코드인데 왜 없어도 잘 돼요??? */
+    transform: translateY(120%);
+}

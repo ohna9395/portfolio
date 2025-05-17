@@ -1,0 +1,97 @@
+#header{
+    // 선택자 & : 자기자신
+    &::before{
+        content: '';
+        display: block;
+        height: 35px;
+        background: #eee;
+    }
+
+    .group-logo{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        // background: #f00;
+        
+        .logo{
+            @include position-c;
+        }
+
+        .util-area{
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateY(-100%); /* 자기 크기만큼 위로 올림 */
+            ul{
+                display: flex;
+                font-size: 14px;
+                color: #858585;
+                height: 35px;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+        .sns-area{
+            margin-left: -8px;
+            ul{
+                display: flex; 
+                gap: 21px;
+            }
+            a{
+                // sns 이미지의 크기가 각자 다르기 때문에
+                // a안에 sns이미지를 중앙에 둘 필요가 있어서 flex를 주었음.
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 28px;
+                height: 28px;
+
+            }
+        }
+        .search-area{
+            .btn-search{
+                width: 35px;
+                height: 35px;
+                border: 2px solid #ddd;
+                // 보더로 영역을 만들어 둔 후, 그 안에 백그라운드로 이미지를 삽입하는 방식
+                background: url(../images/ic_search.png) no-repeat center;
+                // 이미지 경로를 scss가 아닌 css 파일 기준으로 잡아야 하는 것을 주의..
+            }
+        }
+
+    }
+    
+}
+
+#gnb{
+    border: 1px solid #ddd; /* bd */
+    border-width: 1px 0;
+    // 다른방법
+    // border-top: 1px solid #000;
+    // border-bottom: 1px solid #000;
+
+    .nav-list{
+        display: flex;
+    }
+    .nav-item{
+        // 비율에 맞게 등분해줌.
+        flex: 1;
+    }
+
+    .link-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        font-family: $font-en;
+        font-weight: bold;
+
+        &.active{
+            color: #d71609;
+        }
+    }
+    
+}
+

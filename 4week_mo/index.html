@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   
+</head>
+<body>
+    <!-- 헤더+메인+푸터를 하나 감싸둠. -->
+    <div id="wrap">
+        <header id="header">
+            <!-- 로고영역과 GNB영역의 CSS를 같이 줘야할 것이 있으므로 inner라고 각각 묶어주었다. -->
+            <div class="inner">
+                <button class="btn btn-hamburger"><span class="blind">햄버거 메뉴</span></button>
+                
+                <div class="group-logo">
+                    <h1 class="logo">
+                        <a href="">
+                            <img src="./assets/images/logo.png" alt="">
+                        </a>
+                    </h1>
+                </div>
+                
+                <button class="btn btn-cart"><span class="blind">장바구니</span></button>
+            </div>
+        </header>
+
+        <main id="container">
+            <!-- 우선 main안에서도 inner로 묶을 수 있는 영역을 똑같은 이름의 클래스로 감싸주고 시작.  -->
+            <section class="sc-visual">
+                <h2 class="blind">메인비주얼</h2>
+
+                <!-- 스와이퍼 구조 암기 :  
+                <ul class="swiper-wrapper"> , <li class="swiper-slide">
+                <div class="swiper-pagination">
+                 -->
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href=""><img src="./assets/images/img-visual.jpg" alt=""></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href=""><img src="./assets/images/img-visual.jpg" alt=""></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href=""><img src="./assets/images/img-visual.jpg" alt=""></a>
+                        </li>
+                    </ul>
+
+                    <div class="swiper-pagination"></div>
+
+                </div>
+            </section>
+
+            <div class="inner">
+                <section class="sc-service">
+                    <h2 class="blind">서비스소개</h2>
+
+                    <div class="content">
+                        <h3 class="main-headline">About us</h3>
+                        
+                        <div class="flex">
+                            <!-- 이미지태그는 무조건 하나 묶어주는 버릇! ex)thumb-->
+                            <div class="thumb"><img src="./assets/images/service01.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="desc">
+                                    좋은제품연구소가 추구하는 좋은 제품이란 5G를 만족하는 제품입니다. <br>
+                                    <br>
+                                    좋은 생각(Good Think) , 좋은 품질(Good Quality) , 좋은 디자인(Good Design), 좋은 가격(Good Price), 좋은 서비스(Good Service)로 
+                                    늘 소비자의 입장에서 제품을 바라보고 생각하며, 고객의 마음을 제품에 적용하고자 합니다.
+                                    </p>
+                                <!-- 버튼처럼 생겼어도 페이지이동을 하는 역할이므로 a태그를 사용함. -->
+                                <a href="" class="link-detail">자세히 알아보기</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <h3 class="main-headline">Monitor</h3>
+                        
+                        <div class="flex">
+                            <div class="thumb"><img src="./assets/images/service02.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="desc">좋은 제품 연구소 AMF는 많은 고객님의 니즈와 모니터 시장의 제품을 분석하여, 사실적이고 성능이 뛰어난 제품들을 고객님들께 부담없이 제공하기 위해서 최선을 다 하고 있습니다.</p>
+                                <a href="" class="link-detail">자세히 알아보기</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <h3 class="main-headline">TV</h3>
+                        
+                        <div class="flex">
+                            <div class="thumb"><img src="./assets/images/service03.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="desc">좋은 제품 연구소 QUQU는 기존의 UHD TV를 많은 고객님께 합리적인 가격으로 제공하기 위해 다양한 제품을 개발 중입니다.
+                                </p>
+                                <a href="" class="link-detail">자세히 알아보기</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <h3 class="main-headline">Home appliances</h3>
+                        
+                        <div class="flex">
+                            <div class="thumb"><img src="./assets/images/service04.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="desc">좋은 제품 연구소 QUQU는 UHD TV 및 다양한 생활가전도 고객님들께 제공하기 위해 많은 제품들을 개발중입니다. </p>
+                                <a href="" class="link-detail">자세히 알아보기</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </section>
+            </div>
+            <!-- 질문 : 텍스트가 많거나 화면이 작아지면 아래 영역까지 침범해요ㅜ -->
+            <section class="sc-recomm">
+                <h2 class="main-headline">추천제품</h2>
+                <ul class="recomm-list">
+                    <li class="recomm-item">
+                        <!-- 이미지로 백그라운드 효과 사용법
+                         1. 백그라운드용 이미지태그를 넣는다.
+                         2. 이미지가 읽히면 안되기 때문에 alt속성값을 없앤다.
+                          -->
+                        <img src="./assets/images/recomm01.jpg" alt class="bg">
+                        <div class="info">
+                            <strong class="title">AMF24PV144</strong>
+                            <p class="desc">이 제품은 배틀그라운드 및 FPS에 최적화 되어 있는 144Hz 주사율을 가지고 있는 제품으로써 게임 환경에 가장 어울리는 제품이며, 또한 기존에 모니터 디자인에 많은 차이점을 두어 Z스탠드라는 새로운 디자인에 도전했습니다.
+                            </p>
+                        </div>
+                        <!-- <div class="thumb"><img src="" alt=""></div> -->
+
+                    </li>
+                    <li class="recomm-item">
+                        <img src="./assets/images/recomm02.jpg" alt class="bg">
+                        <div class="info">
+                            <strong class="title">G65N4K</strong>
+                            <p class="desc">좋은  제품 연구소 G65N4K는 UHD TV으로써 대화면으로 즐기는 선명한 화질과 다양한 포트로 PS4 및 엑스박스 , USB로 연결 후 게임 및 영화, IPTV를 즐길 수 있는 제품입니다. 
+                            </p>
+                        </div>
+
+                    </li>
+                    <li class="recomm-item">
+                        <img src="./assets/images/recomm03.jpg" alt class="bg">
+                        <div class="info">
+                            <strong class="title">에어프라이기</strong>
+                            <p class="desc">좋은제품연구소 GA-10는 오픈형 에어프라이기 로 10L의 대용량 에어프라이기입니다. </p>
+                        </div>
+
+                    </li>
+                </ul>
+
+            </section>
+            
+            <div class="inner">
+                <section class="sc-event">
+                    <h2 class="blind">이벤트</h2>
+
+                    <ul class="event-list">
+                        <li class="event-item">
+                            <a href="">
+                                <div class="thumb">
+                                    <img src="./assets/images/event01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <!-- time태그는 SEO적 효과 + datetime 속성값은 접근성코드 -->
+                                    <time datetime="2020-01-11~2020-01-20" class="time">[2018.12.01 ~ 2018.12.26]</time>
+                                    <strong class="title">크리스마스 랜덤받스 증정 이벤트</strong>
+                                    <p class="desc">
+                                        좋은제품연구소가 크리스마스를 맞이하여 랜덤박스 증정 이벤트를 진행한다. 모니터와 TV 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게
+                                        KXG-언더독 모니터와 TV(일부 제품 제외) 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게 
+                                        커브드 모니터, 언더독 게이밍 체어, 블루투스 이어폰, 게이밍 스툴, QX260 번지, 게이밍 장패드를 랜덤박스를 통해 증정한다.
+                                    </p>
+                                    <!-- a태그 안에 a태그 또 쓸 수 없으므로, span 태그로 변경해주었다. 
+                                     a태그 안에 버튼도 안됨.-->
+                                    <span class="link-detail">자세히 알아보기</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="event-item">
+                            <a href="">
+                                <div class="thumb">
+                                    <img src="./assets/images/event01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <time datetime="2020-01-11~2020-01-20" class="time">[2018.12.01 ~ 2018.12.26]</time>
+                                    <strong class="title">크리스마스 랜덤받스 증정 이벤트</strong>
+                                    <p class="desc">
+                                        좋은제품연구소가 크리스마스를 맞이하여 랜덤박스 증정 이벤트를 진행한다. 모니터와 TV 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게
+                                        KXG-언더독 모니터와 TV(일부 제품 제외) 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게 
+                                        커브드 모니터, 언더독 게이밍 체어, 블루투스 이어폰, 게이밍 스툴, QX260 번지, 게이밍 장패드를 랜덤박스를 통해 증정한다.
+                                    </p>
+                                    <span class="link-detail">자세히 알아보기</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="event-item">
+                            <a href="">
+                                <div class="thumb">
+                                    <img src="./assets/images/event01.jpg" alt="">
+                                </div>
+                                <div class="info">
+
+                                    <time datetime="2020-01-11~2020-01-20" class="time">[2018.12.01 ~ 2018.12.26]</time>
+                                    <strong class="title">크리스마스 랜덤받스 증정 이벤트</strong>
+                                    <p class="desc">
+                                        좋은제품연구소가 크리스마스를 맞이하여 랜덤박스 증정 이벤트를 진행한다. 모니터와 TV 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게
+                                        KXG-언더독 모니터와 TV(일부 제품 제외) 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게 
+                                        커브드 모니터, 언더독 게이밍 체어, 블루투스 이어폰, 게이밍 스툴, QX260 번지, 게이밍 장패드를 랜덤박스를 통해 증정한다.
+                                    </p>
+                                    <span class="link-detail">자세히 알아보기</span>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="event-item">
+                            <a href="">
+                                <div class="thumb">
+                                    <img src="./assets/images/event01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <time datetime="2020-01-11~2020-01-20" class="time">[2018.12.01 ~ 2018.12.26]</time>
+                                    <strong class="title">크리스마스 랜덤받스 증정 이벤트</strong>
+                                    <p class="desc">
+                                        좋은제품연구소가 크리스마스를 맞이하여 랜덤박스 증정 이벤트를 진행한다. 모니터와 TV 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게
+                                        KXG-언더독 모니터와 TV(일부 제품 제외) 구입자를 대상으로 진행하는 이번 이벤트는 총 200분에게 
+                                        커브드 모니터, 언더독 게이밍 체어, 블루투스 이어폰, 게이밍 스툴, QX260 번지, 게이밍 장패드를 랜덤박스를 통해 증정한다.
+                                    </p>
+                                    <span class="link-detail">자세히 알아보기</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+                </section>
+
+
+                <section class="sc-review">
+                    <h2 class="main-headline">Best Reviews</h2>
+                    <!-- 메인비주얼 스와이퍼 구조와 똑같아서 복붙해서 쓰임. -->
+                    <div class="content">
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="thumb"><img src="./assets/images/review01.jpg" alt=""></div>
+                                    <div class="info">
+                                        <strong class="title">GGLAB 에어프라이기 솔직 구매후기!!</strong>
+                                        <p class="desc">에어프라이기를 살까 말까 엄청 고민하다가, 이번에 GGLAB 신년 이벤트를 한다길래 저렴한 가격에 구입했어요!! 에어프라이어로 감자튀김을 만들어 먹었는데, 아래로 기름이 쫙 빠지면서 바삭하고 맛있게 구워지더라구요~ 남편 안주로도, 한끼 식사로도, 너무 좋습니다! GGLAB에서 에어프라이어 구매하길 100번 잘했어요! 구매 고민하시는 분들은 지금 이벤트
+                                            중이니까 바로 구입하세요!! 가성비 최고에요 ~ 요리의 품질이 달라졌어요</p>
+                                        <a href="" class="link-detail">자세히 알아보기</a>
+                                    </div>
+                        
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="thumb"><img src="./assets/images/review01.jpg" alt=""></div>
+                                    <div class="info">
+                                        <strong class="title">GGLAB 에어프라이기 솔직 구매후기!!</strong>
+                                        <p class="desc">에어프라이기를 살까 말까 엄청 고민하다가, 이번에 GGLAB 신년 이벤트를 한다길래 저렴한 가격에 구입했어요!!
+                                            에어프라이어로 감자튀김을 만들어 먹었는데, 아래로 기름이 쫙 빠지면서 바삭하고 맛있게 구워지더라구요~ 남편 안주로도, 한끼 식사로도, 너무 좋습니다!
+                                            GGLAB에서 에어프라이어 구매하길 100번 잘했어요! 구매 고민하시는 분들은 지금 이벤트 중이니까 바로 구입하세요!! 가성비 최고에요 ~ 요리의 품질이 달라졌어요 만족….100%</p>
+                                        <a href="" class="link-detail">자세히 알아보기</a>
+                                    </div>
+                        
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="thumb"><img src="./assets/images/review01.jpg" alt=""></div>
+                                    <div class="info">
+                                        <strong class="title">GGLAB 에어프라이기 솔직 구매후기!!</strong>
+                                        <p class="desc">에어프라이기를 살까 말까 엄청 고민하다가, 이번에 GGLAB 신년 이벤트를 한다길래 저렴한 가격에 구입했어요!!
+                                            에어프라이어로 감자튀김을 만들어 먹었는데, 아래로 기름이 쫙 빠지면서 바삭하고 맛있게 구워지더라구요~ 남편 안주로도, 한끼 식사로도, 너무 좋습니다!
+                                            GGLAB에서 에어프라이어 구매하길 100번 잘했어요! 구매 고민하시는 분들은 지금 이벤트 중이니까 바로 구입하세요!! 가성비 최고에요 ~ 요리의 품질이 달라졌어요 만족….100%</p>
+                                        <a href="" class="link-detail">자세히 알아보기</a>
+                                    </div>
+                        
+                                </li>
+                            </ul>
+                        
+                        
+                        </div>
+                        <!-- btns랑 pagination 위치 맞춰주기위해 , swiper밖으로 빼고 swiper랑 다시 묶어줌
+                         swiper의 overflow:hidden 때문 -->
+                        <div class="btns">
+                            <button class="btn prev" aria-label="이전"></button>
+                            <button class="btn next" aria-label="다음"></button>
+                        </div>
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+                </section>
+
+                <div class="board-inner">
+
+                    <section class="sc-board">
+                        <div class="group-head">
+                            <h2 class="title">News</h2>
+                            <a href="" class="link-more">
+                                <span class="blind">더보기</span>
+                            </a>
+                        </div>
+                        <ul class="board-list">
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2019-01-03" class="time">2019.01.03</time>
+                                    <span class="title">좋은제품연구소 홈페이지 리뉴얼  안내</span>
+                                </a>
+                            </li>
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2018-12-28" class="time">2018.12.28</time>
+                                    <span class="title">2019년 1월 좋은제품연구소 휴무 안내</span>
+                                </a>
+                            </li>
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2018-12-20" class="time">2018.12.20</time>
+                                    <span class="title">크리스마스 좋은제품연구소 고객센터 휴무 안내</span>
+                                </a>
+                            </li>
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2018-12-28" class="time">2018.12.28</time>
+                                    <span class="title">2019년 1월 좋은제품연구소 휴무 안내</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="sc-board">
+                        <div class="group-head">
+                            <h2 class="title">Download</h2>
+                            <a href="" class="link-more">
+                                <span class="blind">더보기</span>
+                            </a>
+                        </div>
+                        <ul class="board-list">
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2019-01-03" class="time">2019.01.03</time>
+                                    <span class="title">AMF24PV144 모니터 프리싱크 활성화AMF24PV144</span>
+                                </a>
+                            </li>
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2018-12-28" class="time">2018.12.28</time>
+                                    <span class="title">모니터에서 글씨가 흐릿하게 보여요 눈이AMF24PV144</span>
+                                </a>
+                            </li>
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2018-12-20" class="time">2018.12.20</time>
+                                    <span class="title">AMF24PV144 75Hz 주사율과 10bit 컬AMF24PV144</span>
+                                </a>
+                            </li>
+                            <li class="board-item">
+                                <a href="" class="board-content">
+                                    <time datetime="2018-12-28" class="time">2018.12.28</time>
+                                    <span class="title">모니터에서 글씨가 흐릿하게 보여요 눈이AMF24PV144</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            
+            <div class="sns-area">
+                    <ul class="sns-list">
+                        <li><a href=""><img src="./assets/images/sns01.png" alt="" class="facebook"></a></li>
+                        <li><a href=""><img src="./assets/images/sns02.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/sns03.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/sns04.png" alt=""></a></li>
+                    </ul>
+            </div>
+        </main>
+        
+
+        <footer id="footer">
+            <h2 class="blind">좋은제품연구소푸터</h2>
+            <div class="inner">
+                
+                <div class="group-customer">
+                    <h3 class="title">Customer Center</h3>
+                    <p class="runtime">09:00 ~ 18:00 (주말/공휴일 휴무)</p>
+                    <a href="tel:0105507" class="tel">070-7733-1029</a>
+                </div>
+
+
+                <div class="group-info">
+                    
+                    <div class="logo-area">
+                        <a href=""><img src="./assets/images/footer-logo.png" alt=""></a>
+                    </div>
+
+                    <address class="addr-area">
+                        <!-- p태그로 묶어도 상관없음. -->
+                        <div class="addr">
+                            <!-- | 처리를 가상요소로 해주기 위해 span 태그로 묶어두었음. -->
+                            <span>㈜좋은제품연구소</span> 
+                            <span>대표 : 박현주</span>
+                        </div>
+                        <div class="addr">
+                            <span>주소 : 서울특별시 강서구 방화대로 21길 64 1층</span>
+                        </div>
+                        <div class="addr">
+                            <span>대표번호 : 070-7733-1029</span>
+                            <span>FAX : 031-312-8689</span>
+                        </div>
+                        <span><a href="mailto:kty@gglab.co.kr">kty@gglab.co.kr</a></span>
+                        
+
+                        <!-- Copyrights는 small태그를 쓰도록 한다. -->
+                        <small class="copy">Copyrights by ㈜좋은제품연구소. 
+                        <br>All rights reserved. Designed & Hosted by MODOOM.
+                        </small>
+
+                    </address>
+                </div>
+
+
+
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        slide1 = new Swiper('.sc-visual .swiper',{
+            // option
+            pagination:{ /* 이름만 넣어주면 요소가 생김 */
+                el:".sc-visual .swiper-pagination"
+            }
+        })
+
+        slide1 = new Swiper('.sc-review .swiper',{
+            // option
+            pagination:{ /* 이름만 넣어주면 요소가 생김 */
+                el:".sc-review .swiper-pagination"
+            }
+        })
+    </script>
+</body>
+</html>
