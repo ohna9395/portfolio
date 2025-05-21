@@ -31,6 +31,10 @@
     pointer-events: auto;
 }
 #header .gnb{
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out;
@@ -154,7 +158,7 @@
         display: none;
     }
     #header .external a{
-        padding: 0 1rem;
+        padding: 0.5rem 1rem;
     }
     #header .external .link-notion {
         border-radius: 0.8rem;

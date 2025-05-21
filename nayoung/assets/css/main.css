@@ -443,6 +443,7 @@
     transform: translateY(100%);
     text-transform: uppercase;
     font-family: 'AMORIA';
+    text-align: center;
 }
 .sc-about .wrap-img {
     flex: 1;
@@ -598,9 +599,9 @@
     .sc-about .inner{
         padding: 2rem 2rem;
     }
-    .sc-about .cont-line {
+    /* .sc-about .cont-line {
         justify-content: start;
-    }
+    } */
     .sc-about .txt{
         font-size: 2.5rem;
     }
@@ -609,5 +610,8 @@
         justify-content: center;
         align-items: center;
         height: 50vh;
+    }
+    .sc-contact .inner {
+        width: 100%;
     }
 }
