@@ -134,7 +134,7 @@ ScrollTrigger.create({
     trigger: '.sc-innovation',
     start: '0% 0%',
     end: '100% 100%',
-    markers: true,
+    // markers: true,
     animation: innovationTl,
     scrub: 0,
 })

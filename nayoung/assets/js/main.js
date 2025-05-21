@@ -12,6 +12,10 @@ $(document).ready(function() {
             }
         )
     }})
+
+    gsap.set('.sc-main-p', {
+        '--main-bg-color': '#000'
+    })
     
     ScrollTrigger.create({
         trigger: '#wrap',
@@ -19,10 +23,11 @@ $(document).ready(function() {
         end: '100% 0%',
         endTrigger: '.sc-visual',
         animation: visual,
-        scrub: 1,
+        scrub: 2,
         // markers: true,
         onLeave: () => {
             gsap.to('.sc-main-p', {
+                '--main-bg-color': '#dfddd6',
                 background: '#dfddd6'
             })
             gsap.to('.sc-main-p .title', {
@@ -31,12 +36,36 @@ $(document).ready(function() {
         },
         onEnterBack: () => {
             gsap.to('.sc-main-p', {
+                '--main-bg-color': '#000',
                 background: '#000'
             })
             gsap.to('.sc-main-p .title', {
                 color: '#fff'
             })
         }
+    })
+
+    // 비주얼 영역 텍스트 애니메이션
+    const visualTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.sc-visual',
+            start: '0% 0%',
+            end: '100% 100%',
+            scrub: 1,
+        }
+    })
+    .to($('.sc-visual .txt-area'), {
+        delay: 1,
+        duration: 1.5,
+        opacity: 1,
+        y: '-50%',
+        ease:'power2.inOut',
+    })
+    .to($('.sc-visual .txt .char'), {
+        opacity: 1,
+        stagger: {
+            each: .1
+        },
     })
 
     // 사이드에 p-name 회전
@@ -51,6 +80,16 @@ $(document).ready(function() {
                 targets: $(project).closest('.wrap-grid').find('.p-name').eq(idx),
                 className: 'active'
             },
+        })
+    })
+
+    //사이드에 more버튼 opacity 효과
+    $('.btn-more').click(function() {
+        $(this).hide();
+
+        gsap.to($(this).closest('.side').find('.tag-list'), {
+            height: 'fit-content',
+            '--opacity': 0,
         })
     })
 
