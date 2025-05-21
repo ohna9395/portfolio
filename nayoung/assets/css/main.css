@@ -17,6 +17,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    pointer-events: none;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%);
 }
 .sc-visual .wrap-video {
@@ -494,7 +495,7 @@
         margin: 0;
     }
     .sc-visual .txt-area{
-        width: 70rem;
+        width: 70%;
     }
     .sc-sub-p {
         margin: 0;
@@ -524,13 +525,13 @@
 }
 @media screen and (max-width: 768px) {
     .sc-visual .txt-area{
-        width: fit-content;
-        font-size: 1.5rem;
+        width: 90%;
+        font-size: 1.8rem;
         text-align: left;
     }
     .sc-visual .txt-lg {
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: #fff;
     }
     /* sc-main-p */
@@ -601,9 +602,12 @@
         justify-content: start;
     }
     .sc-about .txt{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     .sc-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 50vh;
     }
 }

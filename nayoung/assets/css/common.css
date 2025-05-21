@@ -26,6 +26,11 @@ body {
     display: none;
 }
 
+/* aos 거리 조정 */
+html [data-aos="fade-up"] {
+  transform: translateY(50px);
+}
+
 
 /* 폰트쪼개기 */
 .title[data-text="chars"] .char {

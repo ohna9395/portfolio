@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    // // 스크롤 트리거 초기화 (marker나 값을 다시 계산)
+    // ScrollTrigger.refresh();
+    
+    // // 화면 리사이즈
+    // $(window).on('resize', function() {
+    //     ScrollTrigger.refresh();
+    // })
+
     // visual 영역스크롤 이미지변경 + 상단 배경색 전환 (이미지 완료 후)
     const frame = {
         count: 416
@@ -113,6 +121,23 @@ $(document).ready(function() {
         })
     })
 
+    // 프로젝트 보이기 애니메이션
+    $('.sc-sub-p .group-project .content').each(function(idx, content) {
+        gsap.fromTo(content, {
+            yPercent: 10,
+            opacity: 0
+        }, {
+            yPercent: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: $(content).closest('.group-project'),
+                start: '0% 60%',
+                end: '0% 60%',
+                toggleActions: 'restart none none reverse'
+            }
+        })
+    })
+
     // 하단 배경색 전환
     ScrollTrigger.create({
         trigger: '.sc-sub-p',
@@ -143,13 +168,23 @@ $(document).ready(function() {
 
     // about 애니메이션
     const aboutTl = gsap.timeline()
+    .fromTo('.sc-about .inner', {
+        yPercent: 10,
+        opacity: 0,
+    }, {
+        yPercent: 0,
+        opacity: 1,
+        ease: 'power.inOut'
+    })
     .fromTo('.sc-about .txt', {
+        opacity: 0,
         y: '100%',
         immediateRender: false, // 애니메이션이 중복 실행 시, 가장 최근에 애니메이션을 실행시키도록
     }, {
         y: '0%',
+        opacity: 1,
         stagger: {
-            each: 0.1
+            each: 0.05
         }
     })
     .fromTo('.sc-about .wrap-img', {
@@ -164,11 +199,26 @@ $(document).ready(function() {
 
     ScrollTrigger.create({
         trigger: '.sc-about',
-        start: '0% 80%',
-        end: '100% 80%',
+        start: '0% 60%',
+        end: '100% 60%',
         animation: aboutTl,
         // markers: true,
         toggleActions: 'restart none none reverse' // enter leave enterback leaveback
+    })
+
+    ScrollTrigger.create({
+        trigger: '.sc-contact',
+        start: '0% 60%',
+        end: '0% 60%',
+        animation: gsap.fromTo('.sc-contact .inner', {
+            opacity: 0,
+            yPercent: 10
+        }, {
+            yPercent: 0,
+            opacity: 1,
+            ease: 'power.inOut'
+        }),
+        toggleActions: 'restart none none reverse'
     })
     
     

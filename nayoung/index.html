@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/contact.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.12/dist/lenis.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css">
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script><!-- AOS -->
 
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
@@ -34,8 +36,7 @@
         <header id="header">
             <div class="inner">
                 <a href="#wrap" class="logo" data-offset="0">Gem<br>stone<br>CODE</a>
-                <!-- <a href="#wrap" class="logo" data-offset="0">Rock<br>& CODE</a> -->
-                <!-- <a href="#wrap" class="logo" data-offset="0">NA<br>YOUNG</a> -->
+                <!-- <a href="#wrap" class="logo" data-offset="0">ROCK<br>& CODE</a> -->
                 <nav class="gnb">
                     <ul class="gnb-list">
                         <li class="gnb-item"><a href=".sc-main-p .title">Main</a></li>
@@ -93,7 +94,7 @@
                     <div class="wrap-list">
                         <div class="group-project main01">
                             <div class="inner">
-                                <div class="side">
+                                <div data-aos="fade-up" data-aos-delay="300" class="side">
                                     <span>Case Project</span>
                                     <div class="wrap-flex">
                                         <div class="wrap-svg">
@@ -113,11 +114,11 @@
                                     <!-- <p class="desc">시멘틱 태그를 활용한 섹션별 구조화와 CSS Grid와 Flex를 기반으로 한 반응형 레이아웃을 구현하였으며, HTML DataSet 속성과 GSAP, ScrollTrigger를 활용해 횡스크롤과 스크롤 기반 인터랙션, 마이크로 애니메이션을 정교하게 재현했습니다. WebP 및 SVG 포맷을 통해 이미지 성능을 최적화하였고, 웹 접근성을 고려한 인터랙티브한 사용자 경험을 구현한 Iceberg 공식 사이트 반응형 클론코딩 프로젝트입니다.</p> -->
                                 </div>
                                 <div class="content">
-                                    <div class="wrap-img">
+                                    <div data-aos="fade-up" class="wrap-img">
                                         <a href="https://ohna9395.github.io/portfolio/iceberg/" target="_blank"><img src="./assets/images/thumb_iceberg.png" alt="아이스버그썸네일이미지"></a>
                                     </div>
                                     <div class="bottom">
-                                        <div class="shortcut-area">
+                                        <div  data-aos="fade-up" class="shortcut-area">
                                             <a href="https://www.notion.so/ICEBERG-1d95dac0031780c992bdf295de2ba6b1" target="_blank" class="shortcut-link">
                                                 Notion
                                                 <div class="wrap-svg">
@@ -131,14 +132,14 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <p class="content-desc">GSAP 애니메이션 라이브러리를 활용한 인터랙티브한 구성과 횡스크롤 구현, clip-path와 svg의 길이를 조절을 통한 애니메이션 구현, 반응형 레이아웃을 포함해 Iceberg 공식 웹사이트를 클론 코딩해 보았습니다.</p>
+                                        <p data-aos="fade-up" data-aos-delay="300" class="content-desc">GSAP 애니메이션 라이브러리를 활용한 인터랙티브한 구성과 횡스크롤 구현, clip-path와 svg의 길이를 조절을 통한 애니메이션 구현, 반응형 레이아웃을 포함해 Iceberg 공식 웹사이트를 클론 코딩해 보았습니다.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="group-project main02">
                             <div class="inner">
-                                <div class="side">
+                                <div data-aos="fade-up" data-aos-delay="300" class="side">
                                     <span>Case Project</span>
                                     <div class="wrap-flex">
                                         <div class="wrap-svg">
@@ -159,11 +160,11 @@
                                     <!-- <p class="desc">시멘틱 태그를 활용한 섹션별 구조화와 CSS Grid와 Flex를 기반으로 한 반응형 레이아웃을 구현하였으며, GSAP과 ScrollTrigger를 활용해 스크롤 기반 인터랙션과 마이크로 애니메이션을 정교하게 재현했습니다. WebP 및 SVG 포맷을 통해 이미지 성능을 최적화하였고, 정적인 퍼블리싱을 넘는 풍부한 사용자 경험을 구현한 반응형 클론코딩 프로젝트입니다.</p> -->
                                   </div>
                                 <div class="content">
-                                    <div class="wrap-img">
+                                    <div data-aos="fade-up" class="wrap-img">
                                         <a href="https://ohna9395.github.io/portfolio/saisei/" target="_blank"><img src="./assets/images/thumb_saisei.png" alt="사이세이썸네일이미지"></a>
                                     </div>
                                     <div class="bottom">
-                                        <div class="shortcut-area">
+                                        <div data-aos="fade-up" class="shortcut-area">
                                             <a href="https://www.notion.so/SAISEI-1a85dac0031780898cd4e5ddb0cd38ab" target="_blank" class="shortcut-link">
                                                 Notion
                                                 <div class="wrap-svg">
@@ -178,14 +179,14 @@
                                             </a>
                                         </div>
                                         <!-- <p class="content-desc">지속 가능한 건축과 일본 전통 미학을 현대적인 웹 디자인에 융합한 웹사이트로, 퍼블리싱과 인터랙션 디자인의 우수 사례로 평가받고 있는 Saisei 건축 스튜디오 웹사이트를 반응형 레이아웃을 포함해 클론 코딩해 보았습니다.</p> -->
-                                        <p class="content-desc">스크롤 위치에 따라 고정되는 sticky 속성과 grid를 활용해 사용자 시선 흐름을 유도하는 다양한 레이아웃을 유연하게 적용하고, JavaScript의 random함수를 활용하여 rotate 텍스트 애니메이션과 미디어쿼리를 사용한 반응형 웹사이트를 구현했습니다.</p>
+                                        <p data-aos="fade-up" data-aos-delay="300" class="content-desc">스크롤 위치에 따라 고정되는 sticky 속성과 grid를 활용해 사용자 시선 흐름을 유도하는 다양한 레이아웃을 유연하게 적용하고, JavaScript의 random함수를 활용하여 rotate 텍스트 애니메이션과 미디어쿼리를 사용한 반응형 웹사이트를 구현했습니다.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="group-project main03">
                             <div class="inner">
-                                <div class="side">
+                                <div data-aos="fade-up" data-aos-delay="300" class="side">
                                     <span>Case Project</span>
                                     <div class="wrap-flex">
                                         <div class="wrap-svg">
@@ -206,11 +207,11 @@
                                     <!-- <p class="desc">섹션별 레이아웃을 시멘틱 태그로 구조화하고, CSS Grid와 Flex를 활용해 반응형 레이아웃을 구현했으며, 마우스 스크롤에 따른 인터랙션과 요소 애니메이션은 GSAP 및 ScrollTrigger를 활용해 동적인 사용자 경험을 구현했습니다. 또한, SVG 및 WebP 등 다양한 미디어 포맷을 활용해 성능 최적화를 고려하고 웹 접근성을 위한 IS&IR 기법에 중점을 둔 적응형 PC 프로젝트입니다.</p> -->
                                   </div>
                                 <div class="content">
-                                    <div class="wrap-img">
+                                    <div data-aos="fade-up" class="wrap-img">
                                         <a href="https://ohna9395.github.io/portfolio/naverBand/" target="_blank"><img src="./assets/images/thumb_band.png" alt="네이버밴드썸네일이미지"></a>
                                     </div>
                                     <div class="bottom">
-                                        <div class="shortcut-area">
+                                        <div data-aos="fade-up" class="shortcut-area">
                                             <a href="https://www.notion.so/NAVER-Band-PC-1d65dac00317802d866bf7e2afb9963e" target="_blank" class="shortcut-link">
                                                 Notion
                                                 <div class="wrap-svg">
@@ -225,7 +226,7 @@
                                             </a>
                                         </div>
                                         <!-- <p class="content-desc">네이버 밴드 10주년 캠페인 페이지를 적응형 PC로 클론 코딩해 보았습니다.</p> -->
-                                        <p class="content-desc">스크롤에 따른 인터랙션과 요소 애니메이션은 GSAP의 ScrollTrigger를 활용해 움직이는 이미지를 구현하고, Lottie를 활용해 GIF를 표현했으며 Swiper로 다양한 슬라이드 레이아웃을 적용해보면서 웹 접근성을 위한 IS&IR 기법에 중점을 두고 10주년 캠페인 페이지를 적응형 PC로 클론 코딩해 보았습니다.</p>
+                                        <p data-aos="fade-up" data-aos-delay="300" class="content-desc">스크롤에 따른 인터랙션과 요소 애니메이션은 GSAP의 ScrollTrigger를 활용해 움직이는 이미지를 구현하고, Lottie를 활용해 GIF를 표현했으며 Swiper로 다양한 슬라이드 레이아웃을 적용해보면서 웹 접근성을 위한 IS&IR 기법에 중점을 두고 10주년 캠페인 페이지를 적응형 PC로 클론 코딩해 보았습니다.</p>
                                     </div>
                                 </div>
                             </div>
@@ -430,9 +431,11 @@
             </section>
             <!-- sc-contact -->
             <section class="sc-contact">
-                <h2>CONTACT ME</h2>
-                <div class="scene flex">
-                    <svg class="scene__animation" id="animation" xmlns="http://www.w3.org/2000/svg" role="img"></svg>
+                <div class="inner">
+                    <h2>CONTACT ME</h2>
+                    <div class="scene flex">
+                        <svg class="scene__animation" id="animation" xmlns="http://www.w3.org/2000/svg" role="img"></svg>
+                    </div>
                 </div>
             </section>
         </mian>

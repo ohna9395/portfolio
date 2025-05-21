@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    AOS.init({
+      duration: 1000,
+    })
+
     gsap.registerPlugin(ScrollTrigger);
     gsap.defaults({
         ease:'linear'
