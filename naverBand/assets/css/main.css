@@ -18,6 +18,7 @@
     gap: 10px;
 }
 #gnb .link-gnb{
+    display: block;
     font-size: 12px;
     font-weight: bold;
     line-height: 18px;
