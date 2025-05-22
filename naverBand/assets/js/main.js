@@ -239,14 +239,6 @@ slide1 = new Swiper(".sc-bandYear .swiper", {
   });
 
 
-//sc-story의 +버튼
-$('.sc-story .btn').on('click',function(e){
-
-    $('.sc-story .btn').removeClass('on');
-    $(this).addClass('on');
-
-    $('.sc-story .info-bubble').addClass('remove');
-});
 // sc-story스와이퍼
 slide3 = new Swiper(".sc-story .swiper", { 
     slidesPerView: 1,
@@ -269,6 +261,25 @@ slide3 = new Swiper(".sc-story .swiper", {
         nextEl:".sc-story .next",
         prevEl:".sc-story .prev"
     },
+    on: {
+        slideChange: function(swiper) {
+            let idx = swiper.realIndex;
+
+            $('.sc-story .storyitem').find('.btn').removeClass('on')
+            $('.sc-story .storyitem').eq(idx).find('.btn').addClass('on')
+        }
+    }
+});
+
+//sc-story의 +버튼
+$('.sc-story .left-area .btn').on('click',function(e){
+    let idx = $(this).closest('.storyitem').index();
+
+    $('.sc-story .btn').removeClass('on');
+    $(this).addClass('on');
+
+    $('.sc-story .info-bubble').addClass('remove');
+    slide3.slideTo(idx);
 });
 
 

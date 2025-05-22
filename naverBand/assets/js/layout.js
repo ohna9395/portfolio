@@ -37,3 +37,27 @@ $('.link-gnb').on('click',function(e){
         $($(this).attr('href')).offset().top -64
     }, 500);
 });
+
+// 스크롤에 따른 gnb 버튼 css
+$('section[id]').each(function(idx, section) {
+    let target = $(section).attr('id');
+    
+    ScrollTrigger.create({
+        trigger: section,
+        start: '0% 50%',
+        end: '100% 50%',
+        // markers: true,
+        onEnter: () => {
+            $('.gnb-item').find('a').removeClass('on')
+            $(`.gnb-item a[href="#${target}"]`).addClass('on')
+        },
+        onEnterBack: () => {
+            $('.gnb-item').find('a').removeClass('on')
+            $(`.gnb-item a[href="#${target}"]`).addClass('on')
+        }
+        // toggleClass: {
+        //     targets: $('.gnb-item').eq(idx).find('a'),
+        //     className: 'on'
+        // }
+    })
+})
