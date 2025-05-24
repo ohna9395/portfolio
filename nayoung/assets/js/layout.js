@@ -88,21 +88,4 @@ $(document).ready(function() {
       className: 'active'
     }
   })
-
-  // 메인 타이틀 글자간격 줄어드는 애니메이션
-  const $mainTitle = $('.title[data-text="chars"]');
-  $mainTitle.each((idx, titleItem) => {
-      const $mainTitleChar = $(titleItem).find('.char');
-      ScrollTrigger.create({
-        trigger: titleItem,
-        start: 'top 90%',
-        end: 'bottom 90%',
-        animation: gsap.to($mainTitleChar, {
-            margin: 0,
-            delay: .3,
-            ease: 'power2.inOut',
-        }),
-        toggleActions: 'restart none none reverse'
-      })
-  })
 })

@@ -110,7 +110,8 @@ class Animation {
   
     animate() {
       window.addEventListener("mousemove", this.setMouseCoords.bind(this));
-      gsap.ticker.add(this.setLineRotation.bind(this));
+      this.setLineRotationBound = this.setLineRotation.bind(this);
+      gsap.ticker.add(this.setLineRotationBound);
     }
   
     setLineRotation() {
@@ -152,7 +153,7 @@ class Animation {
       this.element.setAttribute("x2", x2 ?? this.x2);
       this.element.setAttribute("y1", y1 ?? this.y1);
       this.element.setAttribute("y2", y2 ?? this.y2);
-      this.element.setAttribute("stroke", strokeColor ?? this.strokeColor);
+      this.element.style.stroke = strokeColor ? strokeColor : this.strokeColor;
       this.element.setAttribute("stroke-width", strokeWidth ?? this.strokeWidth);
       this.element.setAttribute("marker-end", marker ? `url(#${marker})` : `url(#${this.marker})`);
     }
@@ -161,4 +162,3 @@ class Animation {
   const animation = new Animation("#animation");
   
 
-//   

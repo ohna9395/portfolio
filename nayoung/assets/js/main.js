@@ -2,7 +2,7 @@ $(document).ready(function() {
     // // 스크롤 트리거 초기화 (marker나 값을 다시 계산)
     // ScrollTrigger.refresh();
     
-    // // 화면 리사이즈
+    // 화면 리사이즈
     // $(window).on('resize', function() {
     //     ScrollTrigger.refresh();
     // })
@@ -28,10 +28,10 @@ $(document).ready(function() {
     ScrollTrigger.create({
         trigger: '#wrap',
         start: '0% 0%',
-        end: '100% 0%',
-        endTrigger: '.sc-visual',
+        end: '0% 0%',
+        endTrigger: '.sc-main-p',
         animation: visual,
-        scrub: 2,
+        scrub: 1,
         // markers: true,
         onLeave: () => {
             gsap.to('.sc-main-p', {
@@ -59,7 +59,7 @@ $(document).ready(function() {
             trigger: '.sc-visual',
             start: '0% 0%',
             end: '100% 100%',
-            scrub: 1,
+            scrub: 0,
         }
     })
     .to($('.sc-visual .txt-area'), {
@@ -74,6 +74,23 @@ $(document).ready(function() {
         stagger: {
             each: .1
         },
+    })
+
+    // 메인 타이틀 글자간격 줄어드는 애니메이션
+    const $mainTitle = $('.title[data-text="chars"]');
+    $mainTitle.each((idx, titleItem) => {
+        const $mainTitleChar = $(titleItem).find('.char');
+        ScrollTrigger.create({
+            trigger: titleItem,
+            start: 'top 90%',
+            end: 'bottom 90%',
+            animation: gsap.to($mainTitleChar, {
+                margin: 0,
+                delay: .3,
+                ease: 'power2.inOut',
+            }),
+            toggleActions: 'restart none none reverse',
+        })
     })
 
     // 사이드에 p-name 회전
