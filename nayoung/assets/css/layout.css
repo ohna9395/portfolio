@@ -130,10 +130,6 @@
 
 
 
-
-
-
-
 /* 반응형처리 */
 @media screen and (max-width: 1200px) {
     #header .gnb .gnb-list{
@@ -166,6 +162,7 @@
     /* 푸터 */
     #footer{
         height: 100%;
+        padding: calc(var(--vh) * 10) 0;
     }
     #footer .inner{
         flex-direction: column;

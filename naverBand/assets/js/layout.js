@@ -1,3 +1,9 @@
+gsap.registerPlugin(ScrollTrigger);
+// ScrollTrigger.defaults({
+//     markers: true
+//   });
+
+
 //헤더 스크롤
 $(window).scroll(function() {
     // 스크롤 값

@@ -20,9 +20,24 @@ $(document).ready(function() {
     //   ScrollTrigger.refresh();
     // })
 
+    //모바일로 열었을 시, 주소표시줄때문에 깜빡이는거 잡는 코드
+    // 100vh가 주소표시줄에 따라 달라져서
+    // 고정된 px값으로 변환
+    function setVhUnit() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setVhUnit();/* 처음 한번 실행시키고 */
 
-
-
+    let prevWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== prevWidth) {
+        prevWidth = currentWidth;
+        // 주소표시줄이 사라질때 세로의 높이가 달라져서 그것도 리사이즈로 인식해서 그건 제외하려고
+        setVhUnit(); /* 리사이즈 될때마다 실행시키고! 단, 주소표시줄을 제외한 가로값만 체크하여 리사이즈한다 */
+      }
+    });
 
 
   // 헤더클리시 영역이동 애니메이션

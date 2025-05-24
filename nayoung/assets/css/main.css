@@ -525,6 +525,12 @@
     }
 }
 @media screen and (max-width: 768px) {
+    .sc-visual{
+        height: calc(var(--vh) * 300);
+    }
+    .sc-visual .sticky {
+        height: calc(var(--vh) * 100);
+    }
     .sc-visual .txt-area{
         width: 90%;
         font-size: 1.8rem;
@@ -537,12 +543,13 @@
     }
     /* sc-main-p */
     .sc-main-p{
-        padding-top: 20vh;
+        padding-top: calc(var(--vh) * 20);
     }
     .sc-main-p .title{
         font-size: 3rem;
     }
     .sc-main-p .sticky {
+        height: calc(var(--vh) * 100);
         display: none;
     }
     .sc-main-p .group-project{
@@ -609,7 +616,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50vh;
+        height: calc(var(--vh) * 50);
     }
     .sc-contact .inner {
         width: 100%;

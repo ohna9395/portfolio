@@ -54,7 +54,7 @@ ul, ol{list-style: none;}
     src: url('../fonts/NanumSquareNeoTTF-eHv.woff') format('woff');
     font-weight: 900;
 }
-
 :root {
     --arrows: #f7f1e3;
+    --vh: 1vh;
 }

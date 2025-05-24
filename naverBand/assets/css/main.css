@@ -424,6 +424,7 @@ body.dimmed{
     height: 100%;
     margin: 0 auto;
 }
+/* 로티를 쓰게되면 알아서 들어가므로 필요없음 */
 /* .sc-scrollMarqee #lottie-firecracker svg{
     width: 100%;
     height: 100%;
@@ -540,10 +541,14 @@ body.dimmed{
 }
 .sc-keyword .tab-content{
     margin-bottom: 13px;
+    margin-top: -160px;
+    position: relative;
+    z-index: -1;
 }
 .tab-content .content-area {
     display: none;
 }
+
 /* 활성화된 area만 보이게 */
 .tab-content .content-area.show {
     display: block;
@@ -723,6 +728,16 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+.sc-bandYear .card-left .video-after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* '밀어서 축하하기' label 버튼 꾸밈 */
@@ -757,6 +772,16 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
     width: 40px;
     background-color: #f7f7f7;
     border-radius: 50%;
+    transition: transform .5s ease-in-out;
+    will-change: transform;
+}
+/* 체크박스 요소 체크되었을때 꾸밈 */
+.sc-bandYear .card-left .switch input:checked + .switch_slide {
+    background-color: #bb58e9;
+}
+.sc-bandYear .card-left .switch input:checked + .switch_slide:after {
+    transform: translatex(54px);
+    background-color: #f7f7f7;
 }
 .sc-bandYear .card-left .card-desc{
     font-size: 18px;
@@ -836,7 +861,9 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
     height: 24px;
 }
 .sc-bandYear .card-right img {
-    
+    width: 410px;
+    height: 382px;
+    margin: 0 auto;
 }
 .sc-bandYear .card-right .sc-caution{
     color: #888;
@@ -917,6 +944,10 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
     letter-spacing: -3px;
     font-weight: 800;
 }
+.sc-thank .sc-title span {
+    display: block;
+    transform: scale(0);
+}
 .sc-thank .video-wrap{
     /* position: absolute;
     left: 50%;
@@ -926,6 +957,9 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
     transform: scale(0);
     transform-origin: center center;
     background-color: white; */
+}
+.sc-thank .video-wrap video {
+    transform: scale(0);
 }
 .sc-thank .video-wrap .heart01{
     position: absolute;
@@ -1387,6 +1421,7 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
 .sc-event1 .swiper-pagination{
     position: initial;
     width: fit-content;
+    min-width: 34px;
     font-size: 14px;
     line-height: 30px;
     font-weight: 800;

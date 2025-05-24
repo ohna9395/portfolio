@@ -8,9 +8,7 @@ $('.video-dimmed .btn-close').click(function () {
     $('.video-dimmed').removeClass('dimmed');
 })
 
-gsap.registerPlugin(ScrollTrigger);// ScrollTrigger.defaults({
-//     markers: true
-//   });
+
 
 // 1. 이미지가 스크롤 트리거로 돌아가는 것 구현
 // 2. 이미지가 돌아가는 중에 특정 구간이 지나면 올라가는 애니메이션 구현
@@ -142,16 +140,23 @@ var animationBall5 = bodymovin.loadAnimation({
 var animations = [animationBall1, animationBall2, animationBall3, animationBall4, animationBall5];
 
 // 클릭이벤트 전 첫 번째 로티애니메이션만 재생
-window.addEventListener('load', function () {
-    if (animations[0].isLoaded) {
-        animations[0].goToAndPlay(0, true);
-    } else {
-        animations[0].addEventListener('DOMLoaded', function handler() {
-        animations[0].removeEventListener('DOMLoaded', handler);
-        animations[0].goToAndPlay(0, true);
-        });
+ScrollTrigger.create({
+    trigger: '.sc-keyword',
+    start: '0% 50%',
+    end: '100% 0%',
+    once: true,
+    onEnter: () => {
+        if (animations[0].isLoaded) {
+            animations[0].goToAndPlay(0, true);
+        } else {
+            animations[0].addEventListener('DOMLoaded', function handler() {
+            animations[0].removeEventListener('DOMLoaded', handler);
+            animations[0].goToAndPlay(0, true);
+            });
+        }
     }
-});
+})
+
 // sc-keyword 탭 클릭 시, slider의 위치이동 + 떨어지는공들 로티
 $('.sc-keyword .tab-item').click(function() {
     index = $(this).index(); /* 번째 */
@@ -170,9 +175,10 @@ $('.sc-keyword .tab-item').click(function() {
     
     // animationBall1.stop();
     // animationBall1.play();
-    animations.forEach(anim => anim.stop()); /* 모든 애니메이션 정지 */
+    animations.forEach(el => el.stop()); /* 모든 애니메이션 정지 */
     animations[index].goToAndPlay(0, true);  /* 클릭한 탭에 맞는 애니메이션만 재생 */
 })
+
 
 
 // sc-marquee 자동스와이퍼
@@ -224,6 +230,20 @@ $('.sc-local .tab-item button').click(function() {
     // slideTo() 기본 || 옵션에 loop: true 인 경우 slideToLoop() 사용
 })
 
+// sc-bandYear '밀어서 축하하기' 체크박스의 input의 변화값에 따른 이벤트
+$('.sc-bandYear .card-left .switch input').on('change', function() {
+    if ($(this).is(':checked')) {
+        $('.sc-bandYear .video-before').css('visibility', 'hidden')
+        $('.sc-bandYear .video-after').css('visibility', 'visible')
+        $(".sc-bandYear .video-after").get(0).currentTime = 0;
+        $(".sc-bandYear .video-after").get(0).play();   
+    } else {
+        $('.sc-bandYear .video-before').css('visibility', 'visible')
+        $(".sc-bandYear .video-before").get(0).currentTime = 0;
+        $(".sc-bandYear .video-before").get(0).play();   
+        $('.sc-bandYear .video-after').css('visibility', 'hidden')
+    }
+})
 
 // sc-bandYear스와이퍼
 slide1 = new Swiper(".sc-bandYear .swiper", { 
@@ -238,6 +258,33 @@ slide1 = new Swiper(".sc-bandYear .swiper", {
     },
   });
 
+// sc-thank 뿅뿅뿅 애니메이션
+const thankTl = gsap.timeline()
+.to('.sc-thank span[data-show="1"]', {
+    duration: .5,
+    scale: 1,
+    ease: 'back.out(1.3)',
+    stagger: {
+        each: .5,
+    }
+})
+.to('.sc-thank video[data-show="1"]', {
+    duration: .5,
+    delay: .2,
+    scale: 1,
+    ease: 'back.out(1.3)',
+    stagger: {
+        each: .5,
+    }
+}, '<')
+
+ScrollTrigger.create({
+    trigger: '.sc-thank',
+    start: '0% 50%',
+    end: '0% 50%',
+    animation: thankTl,
+    toggleActions: 'restart none none reset'
+})
 
 // sc-story스와이퍼
 slide3 = new Swiper(".sc-story .swiper", { 
