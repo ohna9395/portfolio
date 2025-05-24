@@ -33,24 +33,6 @@ $(document).ready(function() {
         animation: visual,
         scrub: 1,
         // markers: true,
-        onLeave: () => {
-            gsap.to('.sc-main-p', {
-                '--main-bg-color': '#dfddd6',
-                background: '#dfddd6'
-            })
-            gsap.to('.sc-main-p .title', {
-                color: '#2b2b2b'
-            })
-        },
-        onEnterBack: () => {
-            gsap.to('.sc-main-p', {
-                '--main-bg-color': '#000',
-                background: '#000'
-            })
-            gsap.to('.sc-main-p .title', {
-                color: '#fff'
-            })
-        }
     })
 
     // 비주얼 영역 텍스트 애니메이션
@@ -74,6 +56,30 @@ $(document).ready(function() {
         stagger: {
             each: .1
         },
+    })
+
+    ScrollTrigger.create({
+        trigger: '.sc-visual',
+        start: '0% 0%',
+        end: '100% 0%',
+         onLeave: () => {
+            gsap.to('.sc-main-p', {
+                '--main-bg-color': '#dfddd6',
+                background: '#dfddd6'
+            })
+            gsap.to('.sc-main-p .title', {
+                color: '#2b2b2b'
+            })
+        },
+        onEnterBack: () => {
+            gsap.to('.sc-main-p', {
+                '--main-bg-color': '#000',
+                background: '#000'
+            })
+            gsap.to('.sc-main-p .title', {
+                color: '#fff'
+            })
+        }
     })
 
     // 메인 타이틀 글자간격 줄어드는 애니메이션
