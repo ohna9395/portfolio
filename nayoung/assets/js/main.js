@@ -28,7 +28,7 @@ $(document).ready(function() {
     ScrollTrigger.create({
         trigger: '#wrap',
         start: '0% 0%',
-        end: '0% 0%',
+        end: '0% 100%',
         endTrigger: '.sc-main-p',
         animation: visual,
         scrub: 1,
