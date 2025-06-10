@@ -41,11 +41,11 @@ $(document).ready(function() {
 
 
   // 헤더클리시 영역이동 애니메이션
-  $('.gnb-item a, #header .logo').on('click', function(e) {
+  $('.gnb-item a, #header .logo a').on('click', function(e) {
       e.preventDefault();
       const target = $(this).attr('href');
       const offset = $(this).attr('data-offset');
-
+      
       lenis.scrollTo(target, {
           offset: offset ? offset : -80, // offset 값이 있으면 그 값 사용 아니면 -80
           duration: 1.2,

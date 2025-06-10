@@ -2,10 +2,16 @@
 @import url(./common.css);
 /* 우선 1920기준으로 px로 잡고 반응형은 나중에 미디어쿼리를 추가하는 방향으로 작업 */
 
+#wrap{
+    min-width: 1260px;
+}
 /* 헤더 */
 #header{
-    position: fixed;
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
+    min-width: 1260px;
     z-index: 999;
 }
 #header .header-inner{

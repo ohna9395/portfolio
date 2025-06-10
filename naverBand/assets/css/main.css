@@ -2,9 +2,9 @@
 #gnb {
     position: sticky;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
+    left: 0;
+    width: 100%;
+    min-width: 1260px;
     z-index: 999;
 }
 #gnb .gnb-area{
@@ -44,6 +44,7 @@
 
 /* section0 : visual */
 .sc-visual{
+    margin-top: -64px;
     position: relative;
 }
 .sc-visual .video-wrap{
@@ -741,6 +742,9 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
 }
 
 /* '밀어서 축하하기' label 버튼 꾸밈 */
+.sc-bandYear .card-left #switch{
+    visibility: hidden;
+}
 .sc-bandYear .card-left .switch{
     position: relative;
     display: block;
@@ -1382,7 +1386,7 @@ swiper-wrapper에 transition-duration 값이 들어가 있어서
 .sc-event1 .swiper .link-event1{
     position: relative;
     display: block;
-    width: 370px;
+    /* width: 370px; */
     overflow: hidden;
     border-radius: 22px;
     border: 1px solid #ccc;

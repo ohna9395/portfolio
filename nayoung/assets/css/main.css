@@ -1,7 +1,19 @@
 /* sc-visual */
 .sc-visual{
     height:300vh;
-    background: #000;
+    background: var(--sub-bg);
+    position: relative;
+}
+.sc-visual .name{
+    z-index: 10;
+    position: absolute;
+    left: 40px;
+    bottom: 10px;
+    font-size: 15vw;
+    color: #fff;
+    font-weight: bold;
+    font-family: AMORIA;
+    line-height: 1;
 }
 .sc-visual .sticky {
     position: sticky;
@@ -30,13 +42,14 @@
 }
 .sc-visual .txt-area {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 128rem;
-    transform: translate(-50%, -30%);
-    font-size: 2.8rem;
+    top: 60%;
+    transform: translateY(-60%);
+    right: 40px;
+    z-index: 10;
+    /* width: 128rem; */
+    font-size: 1.4rem;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-    text-align: right;
+    /* text-align: right; */
     opacity: 0;
 }
 .sc-visual .txt + .txt {
@@ -44,12 +57,12 @@
 }
 .sc-visual .txt {
     font-weight: 500;
-    color: #f5f5f5;
+    color: #fff;
+    /* color: #f5f5f5; */
 }
 .sc-visual .txt-lg {
     font-weight: 700;
-    font-size: 3.2rem;
-    color: #fff;
+    font-size: 1.6rem;
 }
 .sc-visual .char {
     opacity: .3;
@@ -57,15 +70,15 @@
 
 /* sc-main-p */
 .sc-main-p{
-    --main-bg-color: #dfddd6;
-    padding-top: 50vh;
-    background: #000;
+    --main-bg-color: var(--main-bg);
+    padding-top: 20vh;
+    /* background: var(--sub-bg); */
 }
 .sc-main-p .title{
-    font-size: 8rem;
+    font-size: 6rem;
     width: fit-content;
     margin: 0 auto;
-    color: #fff;
+    color: var(--main-color);
 }
 .sc-main-p .wrap-grid {
     display: grid;
@@ -125,6 +138,8 @@
     grid-area: 1 / 1;
 }
 .sc-main-p .group-project{
+    display: flex;
+    align-items: center;
     height: 100vh;
     margin: 10rem 0;
     position: relative;
@@ -164,12 +179,12 @@
     width: fit-content;
     padding: 3px 12px;
     border-radius: 9999px;
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--main-color);
 }
 .sc-main-p .tag.point {
-    color: #dfddd6;
-    border: 1px solid #2b2b2b;
-    background: #2b2b2b;
+    color: var(--main-bg);
+    border: 1px solid var(--main-color);
+    background: var(--main-color);
 }
 .sc-main-p .btn-more {
     text-decoration: underline;
@@ -225,7 +240,7 @@
 /* sc-sub-p */
 .sc-sub-p{
     margin-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
 }
 .sc-sub-p .inner{
     max-width: 148rem;
@@ -234,7 +249,7 @@
     /* width: 75%; */
 }
 .sc-sub-p .title{
-    font-size: 10rem;
+    font-size: 6rem;
     width: fit-content;
     margin: 0 auto;
 }
@@ -283,7 +298,7 @@
     background: linear-gradient(to left, #ebf6f6, #04fc6b33)
 }
 .sc-sub-p .group-project:nth-child(3) .wrap-img{
-    background: linear-gradient(to right, #00000038, #cf4f0b)
+    background: linear-gradient(to right, var(--sub-bg)38, #cf4f0b)
 }
 .sc-sub-p .group-project:nth-child(4) .wrap-img{
     background: linear-gradient(to right, #0578ec3c, #ebf6f6)
@@ -293,7 +308,7 @@
     width: 40%;
     aspect-ratio: 1 / 1.3;
     margin: 0 auto;
-    perspective: 1000px;
+    perspective: var(--sub-bg)px;
     transform-style: preserve-3d;
     pointer-events: none; 
 }
@@ -334,7 +349,7 @@
     background: #0f3519;
 } */
 .sc-sub-p .group-project:nth-child(3) .img-area::before {
-    background: #6b3000;
+    background: #6bvar(--sub-bg);
 }
 .sc-sub-p .group-project:nth-child(4) .img-area::before {
     background: #5d6c94c6;
@@ -367,8 +382,8 @@
 }
 .sc-sub-p .group-project:nth-child(3) .card .txt,
 .sc-sub-p .group-project:nth-child(4) .card .txt{
-    /* color: #2b2b2b */
-    /* color: #dfddd6; */
+    /* color: var(--main-color) */
+    /* color: var(--main-bg); */
 }
 .sc-sub-p .card .txt.txt-top {
     top: 10%;
@@ -460,6 +475,7 @@
 
 /* sc-contact */
 .sc-contact{
+    padding: 50px 0;
     position: relative;
     /* height: 60vh; */
 }
@@ -469,7 +485,7 @@
     left: 50%;
     width: fit-content;
     transform: translate(-50%, -50%);
-    background-color: #2b2b2b;
+    background-color: var(--main-color);
     text-align: center;
     font-size: 5.2vw;
     line-height: 2.5;
@@ -495,9 +511,9 @@
     .sc-main-p .group-project {
         margin: 0;
     }
-    .sc-visual .txt-area{
+    /* .sc-visual .txt-area{
         width: 70%;
-    }
+    } */
     .sc-sub-p {
         margin: 0;
     }
@@ -533,13 +549,22 @@
     }
     .sc-visual .txt-area{
         width: 90%;
-        font-size: 1.8rem;
+        top: unset;
+        bottom: 15vw;
+        right: unset;
+        left: 1.5rem;
+        font-size: 1.2rem;
         text-align: left;
     }
     .sc-visual .txt-lg {
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 1.4rem;
         color: #fff;
+    }
+    .sc-visual .name {
+        left: 1.5rem;
+        bottom: 1.5rem;
+        font-size: 18vw;
     }
     /* sc-main-p */
     .sc-main-p{

@@ -10,11 +10,6 @@ table {border-collapse:collapse;border-spacing:0}
 
 ul, ol{list-style: none;}
 
-@font-face {
-    font-family: 'DMSans';
-    src: url('../fonts/DMSans-Regular.woff2') format('woff2');
-    font-weight: 400;
-}
 /* 폰트세팅(영문헤더) */
 @font-face {
     font-family: 'AMORIA';
@@ -34,27 +29,17 @@ ul, ol{list-style: none;}
 }
 /* 폰트세팅(국문) */
 @font-face {
-    font-family: 'NanumSquareNeo';
-    src: url('../fonts/NanumSquareNeoTTF-bRg.woff') format('woff');
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Regular.otf') format('opentype');
     font-weight: 400;
 }
 @font-face {
-    font-family: 'NanumSquareNeo';
-    src: url('../fonts/NanumSquareNeoTTF-cBd.woff') format('woff');
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Medium.otf') format('opentype');
     font-weight: 700;
 }
 @font-face {
-    font-family: 'NanumSquareNeo';
-    src: url('../fonts/NanumSquareNeoTTF-dEb.woff') format('woff');
-    font-weight: 800;
-}
-
-@font-face {
-    font-family: 'NanumSquareNeo';
-    src: url('../fonts/NanumSquareNeoTTF-eHv.woff') format('woff');
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Bold.otf') format('opentype');
     font-weight: 900;
-}
-:root {
-    --arrows: #f7f1e3;
-    --vh: 1vh;
 }

@@ -3,8 +3,6 @@
 
 // header및 section내의 요소들 각 방향대로 움직이면서 나타남
 $(window).on('load', function() {
-    
-
     // gsap은 자바스크립트 써주는게 좋음
     const aniSection = document.querySelectorAll('.sc-animation'); /* 전체 section 찾기=querySelectorAll */
     aniSection.forEach((section, index) => {
@@ -99,42 +97,39 @@ $(window).on('load', function() {
             }
         })
     })
-
-})
-
-
     
+    //스크롤에 따라 위치찾으면서 글자가 돌아가는모션
+    const innovationTl = gsap.timeline()
+    .set('.sc-innovation .sticky .sub-title .char',{
+        rotateY:"random(-90,90)deg",
+        x:"random(-30,30)%",
+        y:"random(-30,30)%",
+        scale:"random(0,1)"
+    })
+    .to('.sc-innovation .sticky .sub-title .char', {
+        rotateY: 0,
+        x:0,
+        y:0,
+        scale:1
+    })
+    .to('.sc-innovation .kanji-svg, .sc-innovation .line', {
+        y: '0%'
+    }, '<')
+    .to('.sc-innovation .img-content > div', {
+        yPercent: -120,
+    }, '<')
+    .to('.sc-innovation .img-content .img-area', {
+        y:"random(-50, -100)%",
+    }, '<')
+    
+    ScrollTrigger.create({
+        trigger: '.sc-innovation',
+        start: '0% 0%',
+        end: '100% 100%',
+        // markers: true,
+        animation: innovationTl,
+        scrub: 0,
+    })
+})
 
 
-//스크롤에 따라 위치찾으면서 글자가 돌아가는모션
-const innovationTl = gsap.timeline()
-.set('.sc-innovation .sticky .sub-title .char',{
-    rotateY:"random(-90,90)deg",
-    x:"random(-30,30)%",
-    y:"random(-30,30)%",
-    scale:"random(0,1)"
-})
-.to('.sc-innovation .sticky .sub-title .char', {
-    rotateY: 0,
-    x:0,
-    y:0,
-    scale:1
-})
-.to('.sc-innovation .kanji-svg, .sc-innovation .line', {
-    y: '0%'
-}, '<')
-.to('.sc-innovation .img-content > div', {
-    yPercent: -120,
-}, '<')
-.to('.sc-innovation .img-content .img-area', {
-    y:"random(-50, -100)%",
-}, '<')
-
-ScrollTrigger.create({
-    trigger: '.sc-innovation',
-    start: '0% 0%',
-    end: '100% 100%',
-    // markers: true,
-    animation: innovationTl,
-    scrub: 0,
-})

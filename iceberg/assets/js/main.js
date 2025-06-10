@@ -189,13 +189,13 @@ $('.sc-impact .card-item').each(function(i,el) {
     // console.log(el);
     ScrollTrigger.create({
         trigger: $(this),
-        start: "0% 50%",
-        end: "100% 50%",
+        start: "0% 70%",
+        end: "100% 70%",
         // markers: true, /* ease:"linear" 해줘야 정확한 시작점끝점을 파악할 수 있음. */
         containerAnimation:hori, 
         onEnter:function() { 
             $('.sc-impact .bg-img').removeClass('active');
-            $('.sc-impact .bg-img').eq(i).addClass('active');
+            $('.sc-impact .bg-img').eq(i+1).addClass('active');
         },
         onLeaveBack:function() { 
             $('.sc-impact .bg-img').eq(i).removeClass('active');

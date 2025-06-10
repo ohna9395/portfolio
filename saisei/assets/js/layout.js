@@ -16,18 +16,9 @@ function splitLinesInit() {
     const splitChars = new SplitType('.split-char', { types: 'chars' })
     $('.line').wrap('<div class="animation-hidden"></div>')
 }
-  
+
 // 초기화 함수 호출
 splitLinesInit();
-
-// 리사이즈 이벤트에 대응하여 재초기화
-$(window).resize(function() {
-// 기존 SplitType으로 생성된 요소들 제거
-SplitType.revert('.split-line')
-
-// SplitType 다시 초기화
-splitLinesInit();
-});
 
 // 헤더 스크롤 (.scroll은 헤더 숨기는 css)
 let lastScrollY = 0;

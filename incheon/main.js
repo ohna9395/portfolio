@@ -3,7 +3,7 @@ $(window).scroll(function(){
     curr = $(this).scrollTop();
     target = $('.sc-info').offset().top;
     
-    console.log("curr=" + curr + "," + "target=" + target );
+    // console.log("curr=" + curr + "," + "target=" + target );
     
 
     if (curr >= target) {

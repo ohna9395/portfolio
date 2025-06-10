@@ -337,7 +337,7 @@
     transform-origin: left top;
 }
 
-#footer .footer-name{ /* 이렇게 안하면 왜 .footer-name 하단에 공간이 생기나요???*/
+#footer .footer-name{
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -345,12 +345,11 @@
 #footer .footer-name h2{
     color: var(--color-white);
     display: block;
-    font-size: 474px;
+    font-size: 24vw;
     font-weight: 600;
     letter-spacing: -14.2292px;
     line-height: 1;
     text-align: center;
-    /* transform: translate(-1.5%); */
 }
 
 
@@ -371,6 +370,152 @@
 .line-vt:nth-child(3),
 .line-vt:nth-child(5) {
     border-right: 1px solid #ccc;
-    opacity: .5;
+    opacity: .4;
 }
     
+
+
+
+
+/* [적응형 미디어쿼리]
+이때까지 작업한건 1920~1280 --->1920을 바라봄
+(max-width:1280px) : 1280px 1024까지 --->1024을 바라봄
+(max-width:1024px) : 1024px 768까지 --->768을 바라봄
+(max-width:768px) : 768px 320까지 --->320을 바라봄 
+*/
+@media (max-width:1280px) {
+    #header .header-logo{
+        font-size: 14px;
+    }
+    #header .group-gnb .link-gnb{
+        font-size: 11px;
+    }
+    .sc-impact .card-item {
+        width: 40vw;
+    }
+}
+
+@media (max-width:1024px) {
+   #footer .sc-contact{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        font-size: 5vw;
+        width: 60vw;
+    }
+    #footer .sc-contact .link-contact{
+        margin-top: 100px;
+    }
+    #footer .sc-email .left .newsletter-text{
+        font-size: 22px;
+    }
+    #footer .sc-email .newsletter-title{
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+    #footer .sc-email .right .site-list{
+        font-size: 22px;
+    }
+    #footer .checkbox-area label::before{
+        flex-shrink: 0;
+    }
+    #footer .sc-content .footer-logo{
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 72px;
+    }
+    #footer .sc-content .footer-logo span {
+        font-size: 10px;
+    }
+    #footer .sc-content .footer-logo img {
+        width: 16vw;
+    }
+    #footer .sc-content .footer-copy{
+        display: block;
+        text-align: center;
+        padding-bottom: 150px;
+    }
+    #footer .sc-content .footer-copy span{
+        font-size: 14px;
+    }
+    #footer .sc-content .footer-copy span:nth-child(2) {
+        padding-left: 0;
+        justify-content: center;
+    }
+    #footer .sc-content .footer-copy span:nth-child(3) {
+        justify-content: center;
+    }
+}
+
+@media (max-width:768px) {
+    /* .line-wrap .line-vt{
+        display: none;
+    }
+    .line-wrap .line-vt.mo{
+        display: block;
+    } */
+    .line-vt:nth-child(1),
+    .line-vt:nth-child(5) {
+    opacity: 0;
+}
+
+    #header .group-gnb{
+        display: none;
+    }
+    #header {
+        display: flex;
+        justify-content: center;
+    }
+    #header .header-logo {
+        font-size: 20px;
+    }
+    #footer .sc-contact {
+        font-size: 33px;
+        width: 90vw;
+    }
+    #footer .sc-email {
+        flex-direction: column;
+        gap: 150px;
+    }
+    #footer .sc-email .right {
+        order: -1;
+        width: 100%;
+    }
+    #footer .sc-email .newsletter-title{
+        font-size: 12px;
+    }
+    #footer .sc-email .right .site-list{
+        font-size: 18px;
+        gap: 10px;
+    }
+    #footer .sc-email .left .newsletter-text {
+        font-size: 18px;
+    }
+    #footer .sc-email .left {
+        width: 100%;
+    }
+    #footer .sc-email .left .email-area{
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    #footer .sc-email .left .email-area input{
+        font-size: 17px;
+        padding: 20px 15px;
+    }
+    #footer .sc-email .left .email-area .send {
+        flex-shrink: 0;
+    }
+    #footer .sc-email .left .checkbox-area p {
+        font-size: 11px;       
+    }
+    #footer .sc-content .footer-logo img {
+        width: 30vw;
+    }
+    #footer .sc-content .footer-copy span  {
+        font-size: 11px;
+        line-height : 1.5;
+    }
+    #footer .footer-name h2{
+        letter-spacing: -4px;
+    }
+}

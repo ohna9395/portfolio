@@ -161,4 +161,3 @@ class Animation {
   
   const animation = new Animation("#animation");
   
-

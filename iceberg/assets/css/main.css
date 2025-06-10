@@ -168,8 +168,13 @@
     opacity: 0;
     transition: opacity .5s;
 }
-/* JS로 두번째,세번째에 active를 겹쳐주는 코드를 짠다. */
-.sc-project .sticky .project-img.active{opacity: 1;}
+/* .sc-project .sticky .project-img:nth-of-type(1){z-index: 30;}
+.sc-project .sticky .project-img:nth-of-type(2){z-index: 20;}
+.sc-project .sticky .project-img:nth-of-type(3){z-index: 10;} */
+/* JS로 첫번째,두번째에 active를 겹쳐주는 코드를 짠다. */
+.sc-project .sticky .project-img.active{
+    opacity: 1;
+}
 
 .sc-project .project-list{
     grid-area: 1/1;
@@ -335,7 +340,7 @@
     height: 100%;
     object-fit: cover;
     transform-origin: center;
-    transition: transform 1.2s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 .sc-impact .card-item.hover .card-info{
     background-color: var(--color-orange);
@@ -378,7 +383,7 @@
     color: var(--color-white);
     opacity: 0;
     transform: translateY(50%);
-    transition: transform .5s;
+    transition: transform .3s;
 }
 .sc-impact .card-info .bottom{
     display: flex;
@@ -556,7 +561,7 @@
     line-height: 90%;
     text-transform: uppercase;
 }
-.sc-podcast .card-bottom{ /* line-height: 120%;은 왜 위에 공통으로 빼서 줄 수 없나요??? */
+.sc-podcast .card-bottom{ 
     font-weight: 600;
     line-height: 120%;
 }
@@ -596,9 +601,5 @@
     position: absolute;
 }
 .sc-podcast .card-area:nth-child(2) .line {
-    /* top: unset; */
-    /* bottom: 0; */
-    /* width: 110%;      */
-     /* 가져온 코드인데 왜 없어도 잘 돼요??? */
     transform: translateY(120%);
 }

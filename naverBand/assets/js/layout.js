@@ -18,7 +18,7 @@ $(window).scroll(function() {
     if (curr > target) {
         $('#header').addClass('scroll');
     }else{
-        console.log('false');
+        // console.log('false');
         $('#header').removeClass('scroll');
     }
 
@@ -46,8 +46,8 @@ $('.link-gnb').on('click',function(e){
 
 // 스크롤에 따른 gnb 버튼 css
 $('section[id]').each(function(idx, section) { /* id를 가진 section만 잡는다는 뜻 */
-    console.log(section);
-    console.log($(section).attr('id'));
+    // console.log(section);
+    // console.log($(section).attr('id'));
     
     let target = $(section).attr('id');
     

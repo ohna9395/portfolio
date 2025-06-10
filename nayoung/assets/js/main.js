@@ -8,32 +8,32 @@ $(document).ready(function() {
     // })
 
     // visual 영역스크롤 이미지변경 + 상단 배경색 전환 (이미지 완료 후)
-    const frame = {
-        count: 416
-    }
-    const $img = $('.sc-visual img');
-    const visual = gsap.to(frame, { count: 457, snap: 'count', onUpdate: () => {
-        gsap.set( $img, { 
-                attr: { 
-                    src: `./assets/images/seq/${frame.count}.webp`
-                }
-            }
-        )
-    }})
+    // const frame = {
+    //     count: 416
+    // }
+    // const $img = $('.sc-visual img');
+    // const visual = gsap.to(frame, { count: 457, snap: 'count', onUpdate: () => {
+    //     gsap.set( $img, { 
+    //             attr: { 
+    //                 src: `./assets/images/seq/${frame.count}.webp`
+    //             }
+    //         }
+    //     )
+    // }})
 
-    gsap.set('.sc-main-p', {
-        '--main-bg-color': '#000'
-    })
+    // gsap.set('.sc-main-p', {
+    //     '--main-bg-color': '#000'
+    // })
     
-    ScrollTrigger.create({
-        trigger: '#wrap',
-        start: '0% 0%',
-        end: '0% 100%',
-        endTrigger: '.sc-main-p',
-        animation: visual,
-        scrub: 1,
-        // markers: true,
-    })
+    // ScrollTrigger.create({
+    //     trigger: '#wrap',
+    //     start: '0% 0%',
+    //     end: '0% 100%',
+    //     endTrigger: '.sc-main-p',
+    //     animation: visual,
+    //     scrub: 1,
+    //     // markers: true,
+    // })
 
     // 비주얼 영역 텍스트 애니메이션
     const visualTl = gsap.timeline({
@@ -58,44 +58,36 @@ $(document).ready(function() {
         },
     })
 
-    ScrollTrigger.create({
-        trigger: '.sc-visual',
-        start: '0% 0%',
-        end: '100% 0%',
-         onLeave: () => {
-            gsap.to('.sc-main-p', {
-                '--main-bg-color': '#dfddd6',
-                background: '#dfddd6'
-            })
-            gsap.to('.sc-main-p .title', {
-                color: '#2b2b2b'
-            })
-        },
-        onEnterBack: () => {
-            gsap.to('.sc-main-p', {
-                '--main-bg-color': '#000',
-                background: '#000'
-            })
-            gsap.to('.sc-main-p .title', {
-                color: '#fff'
-            })
-        }
-    })
+    // 배경색 전체 전환
+    // ScrollTrigger.create({
+    //     trigger: '.sc-visual',
+    //     start: '0% 0%',
+    //     end: '0% 50%',
+    //     endTrigger: '#footer',
+    //     toggleClass: {
+    //         targets: 'html',
+    //         className: 'dark'
+    //     }
+    // })
 
     // 메인 타이틀 글자간격 줄어드는 애니메이션
     const $mainTitle = $('.title[data-text="chars"]');
     $mainTitle.each((idx, titleItem) => {
         const $mainTitleChar = $(titleItem).find('.char');
         ScrollTrigger.create({
-            trigger: titleItem,
-            start: 'top 90%',
-            end: 'bottom 90%',
-            animation: gsap.to($mainTitleChar, {
-                margin: 0,
-                delay: .3,
-                ease: 'power2.inOut',
-            }),
-            toggleActions: 'restart none none reverse',
+            trigger: $(titleItem).closest('section'),
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleClass: {
+                targets: titleItem,
+                className: 'active'
+            }
+            // animation: gsap.to($mainTitleChar, {
+            //     margin: 0,
+            //     delay: .3,
+            //     ease: 'power2.inOut',
+            // }),
+            // toggleActions: 'restart none none reverse',
         })
     })
 
@@ -167,26 +159,26 @@ $(document).ready(function() {
         start: '80% 0%',
         end: '100% 100%',
         // markers: true,
-        onLeave: () => {
-            gsap.to('.sc-sub-p,.sc-about, .sc-contact, #footer', {
-                color: '#dfddd6',
-                background: '#2b2b2b'
-            })
-            gsap.to('.sc-sub-p .shortcut-link', {
-                color: '#dfddd6',
-                borderColor: '#dfddd6'
-            })
-        },
-        onEnterBack: () => {
-            gsap.to('.sc-sub-p .shortcut-link', {
-                color: '#dfddd6',
-                borderColor: '#2b2b2b'
-            })
-            gsap.to('.sc-sub-p,.sc-about, .sc-contact, #footer', {
-                color: '#2b2b2b',
-                background: '#dfddd6'
-            })
-        }
+        // onLeave: () => {
+        //     gsap.to('.sc-sub-p,.sc-about, .sc-contact, #footer', {
+        //         color: '#dfddd6',
+        //         background: '#2b2b2b'
+        //     })
+        //     gsap.to('.sc-sub-p .shortcut-link', {
+        //         color: '#dfddd6',
+        //         borderColor: '#dfddd6'
+        //     })
+        // },
+        // onEnterBack: () => {
+        //     gsap.to('.sc-sub-p .shortcut-link', {
+        //         color: '#dfddd6',
+        //         borderColor: '#2b2b2b'
+        //     })
+        //     gsap.to('.sc-sub-p,.sc-about, .sc-contact, #footer', {
+        //         color: '#2b2b2b',
+        //         background: '#dfddd6'
+        //     })
+        // }
     })
 
     // about 애니메이션
