@@ -203,6 +203,9 @@
      #footer .top {
         margin-bottom: 3rem;
     }
+    #footer .info{
+        max-width: 100%;
+    }
     #footer .left{
         width: 100%;
         font-size: 1.5rem;

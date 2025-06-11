@@ -16,6 +16,7 @@
 .sc-visual .txt-area {
     position: absolute;
     width: 100%;
+    left: 0;
     bottom: 0px;
     padding: 70px 20px;
     font-size: 26px;
