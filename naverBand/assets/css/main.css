@@ -6,6 +6,7 @@
     width: 100%;
     min-width: 1260px;
     z-index: 999;
+    pointer-events: none;
 }
 #gnb .gnb-area{
     display: flex;
@@ -16,6 +17,7 @@
 #gnb .gnb-list{
     display: flex;
     gap: 10px;
+    pointer-events: auto;
 }
 #gnb .link-gnb{
     display: block;

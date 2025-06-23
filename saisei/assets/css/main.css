@@ -379,6 +379,9 @@
     padding: 112px 0;
     border-bottom: 1px solid #000;
 }
+.sc-architecture .container .sub-title{
+    font-size: 66px;
+}
 .sc-architecture .grid-left{
     grid-column: 1 / span 4;
 }
@@ -528,7 +531,7 @@
 
 
 
-/* 적응형 미디어쿼리 */
+/* 반응형 */
 @media (max-width:1280px) {
     .container .inner{
         padding: 85px 30px;

@@ -364,7 +364,6 @@
     transition: color .3s ease-in-out;
 }
 .sc-impact .card-info .top{
-    font-size: 0.8vw;
     font-weight: 600;
     line-height: 120%;
     margin-top: 0.4vw;
@@ -602,4 +601,34 @@
 }
 .sc-podcast .card-area:nth-child(2) .line {
     transform: translateY(120%);
+}
+
+
+
+
+/* 반응형 */
+@media (max-width:1280px) {
+    .sc-project .link-side .txt-area {
+        font-size: 10px;
+    }
+    .sc-impact .card-info .card-title {
+        font-size: 22px;
+    }
+    .sc-impact .card-info .bottom .scope, 
+    .sc-impact .card-info .bottom {
+        font-size: 11px;
+    }
+    .sc-podcast .podcast-top .stroke-wrap .stroke {
+        width: 230px;
+    }
+    .sc-podcast .card-bottom .text,
+    .sc-podcast .card-bottom .desc {
+        font-size: 11px;
+    }
+}
+@media (max-width:1024px) {
+    
+}
+@media (max-width:768px) {
+    
 }
