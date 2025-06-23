@@ -26,23 +26,26 @@ $(window).scroll(function() {
 
 
 //gnb버튼 클릭 시 스크롤 영역 이동
-// $('a[href*="#"]').on('click',function(e){
-//     e.preventDefault();
-
-//     $('html,body').animate({scrollTop:
-//         $($(this).attr('href')).offset().top -64
-//     }, 500);
-// });
-$('.link-gnb').on('click',function(e){
+$('a[href*="#"]').on('click',function(e){
     e.preventDefault();
 
-    $('.link-gnb').removeClass('on');
-    $(this).addClass('on');
+    if ($(this).hasClass('.link-gnb')) {
+        $('.link-gnb').removeClass('on');
+        $(this).addClass('on');
+    }
 
     $('html,body').animate({scrollTop:
         $($(this).attr('href')).offset().top -64
     }, 500);
 });
+// $('.link-gnb').on('click',function(e){
+//     e.preventDefault();
+
+
+//     $('html,body').animate({scrollTop:
+//         $($(this).attr('href')).offset().top -64
+//     }, 500);
+// });
 
 // 스크롤에 따른 gnb 버튼 css
 $('section[id]').each(function(idx, section) { /* id를 가진 section만 잡는다는 뜻 */
