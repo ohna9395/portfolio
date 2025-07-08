@@ -6,6 +6,8 @@ $('.sc-visual .btn-full').click(function () {
 $('.video-dimmed .btn-close').click(function () {
     $('html,body').removeClass('dimmed');
     $('.video-dimmed').removeClass('dimmed');
+    const iframe = $('#iframe');
+    iframe.attr('src', iframe.attr('src'));
 })
 
 

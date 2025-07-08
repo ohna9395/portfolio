@@ -109,6 +109,8 @@ $(document).ready(function() { // dom이 생성된 이후에 실행되어야할 
     $(this).toggleClass('on').siblings('.family-content').stop().slideToggle(); 
 })
 
+
+//전체보기 버튼
 $('.modal-toggle').click(function() {
     let target = $(this).data('target');
     
