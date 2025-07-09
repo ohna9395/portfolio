@@ -627,8 +627,182 @@
     }
 }
 @media (max-width:1024px) {
-    
+    .sc-project .project-area {
+        display: block;
+        padding-left: 25px;
+        padding-top: 73px;
+    }
+    .sc-project .project-area .number{
+        font-size: 14px;
+    }
+    .sc-project .project-area .text {
+        font-size: 32px;
+        width: 45%;
+    }
+    .sc-project .project-item:nth-child(even) .project-area {
+        padding-left: 25px;
+    }
+    .sc-sentence .text {
+        font-size: 40px;
+        width: 50vw;
+    }
+    .sc-impact .flex-wrap {
+        gap: 250px;
+    }
+    .sc-impact .text {
+        font-size: 22px;
+        width: 35vw;
+    }
+    .sc-impact .card-item {
+        width: 50vw;
+        min-height: 60svh;
+    }
+    .sc-impact .card-info .card-title {
+        font-size: 28px;
+    }
+    .sc-impact .card-info .bottom .scope, .sc-impact .card-info .bottom {
+        font-size: 16px;
+    }
+    .sc-impact .card-info .top {
+        width: 100%;
+    }
+    .sc-impact .card-info .top .desc {
+        font-size: 12px;
+    }
+    .sc-podcast{
+        padding-top: 90px;
+    }
+    .sc-podcast .podcast-top{
+        padding-bottom: 90px;
+    }
+    .sc-podcast .podcast-top h2{
+        font-size: 200px;
+    }
+    .sc-podcast .podcast-top .stroke-wrap .stroke{
+        width: 180px;
+    }
+    .sc-podcast .podcast-top .text{
+        font-size: 21px;
+        padding: 180px 25px 0;
+    }
+    .sc-podcast .card-title {
+        font-size: 42px;
+    }
+    .sc-podcast .card-bottom .text, .sc-podcast .card-bottom .desc{
+        font-size: 22px;
+    }
+    .sc-podcast .card-area{
+        padding: 20px;
+        height: 500px;
+    }
+    .sc-podcast .podcast-bottom{
+        padding: 195px 16px 120px;
+    }
+    .sc-podcast .card-bottom .desc {
+        margin-top: 40px;
+        width: 90%;
+    }
+    .sc-podcast .card-bottom .arrow{
+        width: 20px;
+    }
 }
 @media (max-width:768px) {
-    
+    .sc-visual .visual-title{
+        font-size: 20vw;
+    }
+    .sc-visual svg{
+        width: 100px;
+        bottom: 20%;
+    }
+    .sc-slogun{
+        height: 60svh;
+    }
+    .sc-slogun h2{
+        font-size: 105px;
+    }
+    .sc-project .link-side {
+        display: none;
+    }
+    .sc-project .project-area {
+        padding: 60px 20px 0;
+    }
+    .sc-project .project-area .number{
+        font-size: 11px;
+    }
+    .sc-project .project-area .text {
+        font-size: 26px;
+        width: 85%;
+    }
+    .sc-project .project-item:nth-child(even) .project-area {
+        padding-left: 20px;
+    }
+    .sc-sentence .text {
+        font-size: 32px;
+        width: 80vw;
+    }
+    .sc-impact .flex-wrap {
+        gap: 100px;
+    }
+    .sc-impact .text {
+        font-size: 17px;
+        width: 70vw;
+    }
+    .sc-impact .card-item {
+        width: 80vw;
+        margin: 0 10vw;
+    }
+    .sc-impact .card-info{
+        padding: 8px;
+    }
+    .sc-impact .card-info .card-title {
+        font-size: 22px;
+    }
+    .sc-impact .card-info .bottom .scope, .sc-impact .card-info .bottom {
+        font-size: 13px;
+    }
+    .sc-impact .card-info .top .desc {
+        font-size: 11px;
+    }
+    .sc-podcast{
+        padding-top: 70px;
+    }
+    .sc-podcast .podcast-top{
+        padding-bottom: 90px;
+    }
+    .sc-podcast .podcast-top h2{
+        font-size: 160px;
+    }
+    .sc-podcast .podcast-top .stroke-wrap .stroke{
+        width: 20vw;
+    }
+    .sc-podcast .podcast-top .text{
+        font-size: 18px;
+        padding: 140px 20px 0;
+        width: 80%;
+    }
+    .sc-podcast .card-title {
+        font-size: 34px;
+    }
+    .sc-podcast .card-bottom .text, .sc-podcast .card-bottom .desc{
+        font-size: 18px;
+    }
+    .sc-podcast .card-group{
+        display: block;
+    }
+    .sc-podcast .card-area{
+        width: 100%;
+        padding-top: 45px;
+    }
+    .sc-podcast .podcast-bottom{
+        padding: 195px 0px 120px;
+    }
+    .sc-podcast .card-bottom .desc {
+        margin-top: 100px;
+    }
+    .sc-podcast .card-bottom .arrow{
+        width: 16px;
+    }
+    .sc-podcast .card-area:nth-child(2) {
+        margin-top: 30px;
+    }
 }
